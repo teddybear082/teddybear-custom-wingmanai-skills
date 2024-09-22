@@ -1,0 +1,26 @@
+name: XPlane
+module: skills.xplane.main
+category: general
+description:
+  en: "Communicate with the X-Plane flight simulator to read and set aircraft and environment data."
+  de: "Kommuniziere mit dem X-Plane-Flugsimulator, um Flugzeug- und Umweltdaten abzulesen und zu setzen."
+hint:
+  en: "Use this skill to interact with the X-Plane flight simulator."
+  de: "Verwende diesen Skill, um mit dem X-Plane-Flugsimulator zu interagieren."
+examples:
+  - question:
+      en: "Read the true airspeed from the simulator."
+      de: "Lies die tatsächliche Fluggeschwindigkeit aus dem Simulator aus."
+    answer:
+      en: "The true airspeed is 250 knots."
+      de: "Die tatsächliche Fluggeschwindigkeit beträgt 250 Knoten."
+  - question:
+      en: "Set the aircraft altitude to 10,000 feet."
+      de: "Stelle die Flughöhe des Flugzeugs auf 10.000 Fuß ein."
+    answer:
+      en: "The aircraft altitude has been set to 10,000 feet."
+      de: "Die Flughöhe des Flugzeugs wurde auf 10.000 Fuß eingestellt."
+prompt: |
+  You can interact with the X-Plane flight simulator to read and set various aircraft and environment data.
+  Use specific functions to read variables like altitude and airspeed or set them as per the user's requests.
+custom_properties: []

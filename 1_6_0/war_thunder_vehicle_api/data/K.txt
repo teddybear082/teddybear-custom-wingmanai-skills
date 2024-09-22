@@ -1,0 +1,558 @@
+Model Kfir C.2
+ wings 1,460 km/h
+ gear 426 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing  km/h
+ Max speed 2 376 km/h at at 10 668 m
+ Turn time 27 s
+ Max altitude 16 000 m
+Model Kfir C.7
+ wings 1,460 km/h
+ gear 426 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 2 390 km/h at at 10 668 m
+ Turn time 27 s
+ Max altitude 16 000 m
+Model Kfir Canard
+ wings 1,460 km/h
+ gear 426 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing  km/h
+ Max speed 2 376 km/h at at 10 668 m
+ Turn time 27 s
+ Max altitude 16 000 m
+Model Ki10I C
+ wings 600 km/h
+ gear 560 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 402 km/h at at 4 000 m
+ Turn time 15 s
+ Max altitude 8 100 m
+Model Ki10I
+ wings 600 km/h
+ gear 560 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 402 km/h at at 4 000 m
+ Turn time 15 s
+ Max altitude 8 100 m
+Model Ki10II C
+ wings 600 km/h
+ gear 560 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 402 km/h at at 4 000 m
+ Turn time 15 s
+ Max altitude 8 100 m
+Model Ki10II
+ wings 600 km/h
+ gear 560 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 402 km/h at at 4 000 m
+ Turn time 15 s
+ Max altitude 8 100 m
+Model Ki100II
+ wings 850 km/h
+ gear 250 km/h
+ flaps_combat 292 km/h
+ flaps_takeoff 282 km/h
+ flaps_landing 230 km/h
+ Max speed 590 km/h at at 10 000 m
+ Turn time 21 s
+ Max altitude 12 000 m
+Model Ki100
+ wings 850 km/h
+ gear 250 km/h
+ flaps_combat 292 km/h
+ flaps_takeoff 282 km/h
+ flaps_landing 230 km/h
+ Max speed 580 km/h at at 6 000 m
+ Turn time 20 s
+ Max altitude 10 000 m
+Model Ki102 otsu
+ wings 762 km/h
+ gear 310 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 580 km/h at at 1 900 m
+ Turn time 24 s
+ Max altitude 10 000 m
+Model Ki108 Kai
+ wings 762 km/h
+ gear 310 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 622 km/h at at 8 000 m
+ Turn time 21 s
+ Max altitude 13 000 m
+Model Ki109
+ wings 650 km/h
+ gear 300 km/h
+ flaps_combat 428 km/h
+ flaps_takeoff 399 km/h
+ flaps_landing 250 km/h
+ Max speed 550 km/h at at 6 050 m
+ Turn time 20 s
+ Max altitude 9 300 m
+Model Ki200
+ wings 1040 km/h
+ gear 550 km/h
+ flaps_combat 598 km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 420 km/h
+ Max speed 995 km/h at at 10 000 m
+ Turn time 17 s
+ Max altitude 14 900 m
+Model Ki21I hei
+ wings 540 km/h
+ gear 380 km/h
+ flaps_combat 428 km/h
+ flaps_takeoff 399 km/h
+ flaps_landing 250 km/h
+ Max speed 432 km/h at at 400 m
+ Turn time 14 s
+ Max altitude 8 600 m
+Model Ki21Ia
+ wings 540 km/h
+ gear 380 km/h
+ flaps_combat 428 km/h
+ flaps_takeoff 399 km/h
+ flaps_landing 250 km/h
+ Max speed 432 km/h at at 400 m
+ Turn time 14 s
+ Max altitude 8 600 m
+Model Ki27 otsu (China)
+ wings 554 km/h
+ gear 550 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 220 km/h
+ Max speed 495 km/h at at 3 500 m
+ Turn time 10 s
+ Max altitude 8 500 m
+Model Ki27 otsu Tachiarai
+ wings 554 km/h
+ gear 550 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 220 km/h
+ Max speed 495 km/h at at 3 500 m
+ Turn time 10 s
+ Max altitude 8 500 m
+Model Ki27 otsu
+ wings 554 km/h
+ gear 550 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 220 km/h
+ Max speed 495 km/h at at 3 500 m
+ Turn time 10 s
+ Max altitude 8 500 m
+Model Ki32
+ wings 600 km/h
+ gear 600 km/h
+ flaps_combat 564 km/h
+ flaps_takeoff 518 km/h
+ flaps_landing 280 km/h
+ Max speed 423 km/h at at 3 950 m
+ Turn time 14 s
+ Max altitude 7 000 m
+Model Ki43I
+ wings 630 km/h
+ gear 300 km/h
+ flaps_combat 416 km/h
+ flaps_takeoff 373 km/h
+ flaps_landing 250 km/h
+ Max speed 495 km/h at at 4 000 m
+ Turn time 14 s
+ Max altitude 9 000 m
+Model Ki43II (USA)
+ wings 661 km/h
+ gear 300 km/h
+ flaps_combat 416 km/h
+ flaps_takeoff 373 km/h
+ flaps_landing 250 km/h
+ Max speed 558 km/h at at 6 000 m
+ Turn time 15 s
+ Max altitude 9 800 m
+Model Ki43II
+ wings 661 km/h
+ gear 300 km/h
+ flaps_combat 416 km/h
+ flaps_takeoff 373 km/h
+ flaps_landing 250 km/h
+ Max speed 558 km/h at at 6 000 m
+ Turn time 15 s
+ Max altitude 9 800 m
+Model Ki43III ko (China)
+ wings 661 km/h
+ gear 330 km/h
+ flaps_combat 477 km/h
+ flaps_takeoff 448 km/h
+ flaps_landing 300 km/h
+ Max speed 558 km/h at at 6 000 m
+ Turn time 15 s
+ Max altitude 9 800 m
+Model Ki43III otsu
+ wings 661 km/h
+ gear 330 km/h
+ flaps_combat 387 km/h
+ flaps_takeoff 371 km/h
+ flaps_landing 250 km/h
+ Max speed 574 km/h at at 6 800 m
+ Turn time 16 s
+ Max altitude 11 000 m
+Model Ki44I 34
+ wings 850 km/h
+ gear 250 km/h
+ flaps_combat 400 km/h
+ flaps_takeoff 400 km/h
+ flaps_landing 250 km/h
+ Max speed 558 km/h at at 6 000 m
+ Turn time 16 s
+ Max altitude 9 800 m
+Model Ki44I
+ wings 850 km/h
+ gear 250 km/h
+ flaps_combat 400 km/h
+ flaps_takeoff 400 km/h
+ flaps_landing 250 km/h
+ Max speed 558 km/h at at 6 000 m
+ Turn time 16 s
+ Max altitude 9 800 m
+Model Ki44II hei (China)
+ wings 850 km/h
+ gear 250 km/h
+ flaps_combat 400 km/h
+ flaps_takeoff 400 km/h
+ flaps_landing 250 km/h
+ Max speed 606 km/h at at 5 200 m
+ Turn time 20 s
+ Max altitude 9 800 m
+Model Ki44II hei
+ wings 850 km/h
+ gear 250 km/h
+ flaps_combat 400 km/h
+ flaps_takeoff 400 km/h
+ flaps_landing 250 km/h
+ Max speed 606 km/h at at 5 200 m
+ Turn time 20 s
+ Max altitude 9 800 m
+Model Ki44II otsu
+ wings 850 km/h
+ gear 250 km/h
+ flaps_combat 400 km/h
+ flaps_takeoff 400 km/h
+ flaps_landing 250 km/h
+ Max speed 605 km/h at at 5 200 m
+ Turn time 21 s
+ Max altitude 9 800 m
+Model Ki45 hei
+ wings 712.5 km/h
+ gear 350 km/h
+ flaps_combat 450 km/h
+ flaps_takeoff 444 km/h
+ flaps_landing 308 km/h
+ Max speed 570 km/h at at 6 300 m
+ Turn time 24 s
+ Max altitude 9 900 m
+Model Ki45 hei/tei (China)
+ wings 712.5 km/h
+ gear 350 km/h
+ flaps_combat 450 km/h
+ flaps_takeoff 444 km/h
+ flaps_landing 308 km/h
+ Max speed 570 km/h at at 6 300 m
+ Turn time 24 s
+ Max altitude 9 900 m
+Model Ki45 ko
+ wings 712.5 km/h
+ gear 350 km/h
+ flaps_combat 450 km/h
+ flaps_takeoff 444 km/h
+ flaps_landing 308 km/h
+ Max speed 570 km/h at at 6 300 m
+ Turn time 24 s
+ Max altitude 9 900 m
+Model Ki45 otsu
+ wings 712.5 km/h
+ gear 350 km/h
+ flaps_combat 450 km/h
+ flaps_takeoff 444 km/h
+ flaps_landing 308 km/h
+ Max speed 570 km/h at at 6 300 m
+ Turn time 24 s
+ Max altitude 9 900 m
+Model Ki45 tei
+ wings 712.5 km/h
+ gear 350 km/h
+ flaps_combat 450 km/h
+ flaps_takeoff 444 km/h
+ flaps_landing 308 km/h
+ Max speed 570 km/h at at 6 300 m
+ Turn time 24 s
+ Max altitude 9 900 m
+Model Ki48II otsu
+ wings 650 km/h
+ gear 300 km/h
+ flaps_combat 428 km/h
+ flaps_takeoff 400 km/h
+ flaps_landing 250 km/h
+ Max speed 499 km/h at at 6 200 m
+ Turn time 28 s
+ Max altitude 9 300 m
+Model Ki49I
+ wings 580 km/h
+ gear 260 km/h
+ flaps_combat 412 km/h
+ flaps_takeoff 369 km/h
+ flaps_landing 240 km/h
+ Max speed 466 km/h at at 5 000 m
+ Turn time 29 s
+ Max altitude 9 000 m
+Model Ki49IIa
+ wings 580 km/h
+ gear 300 km/h
+ flaps_combat 427 km/h
+ flaps_takeoff 398 km/h
+ flaps_landing 250 km/h
+ Max speed 502 km/h at at 5 150 m
+ Turn time 30 s
+ Max altitude 9 300 m
+Model Ki49IIb
+ wings 610 km/h
+ gear 300 km/h
+ flaps_combat 427 km/h
+ flaps_takeoff 398 km/h
+ flaps_landing 250 km/h
+ Max speed 502 km/h at at 5 150 m
+ Turn time 30 s
+ Max altitude 9 300 m
+Model Ki49IIb/L
+ wings 580 km/h
+ gear 300 km/h
+ flaps_combat 427 km/h
+ flaps_takeoff 398 km/h
+ flaps_landing 250 km/h
+ Max speed 502 km/h at at 5 150 m
+ Turn time 30 s
+ Max altitude 9 300 m
+Model Ki61I hei
+ wings 850 km/h
+ gear 250 km/h
+ flaps_combat 292 km/h
+ flaps_takeoff 282 km/h
+ flaps_landing 230 km/h
+ Max speed 591 km/h at at 6 000 m
+ Turn time 21 s
+ Max altitude 10 300 m
+Model Ki61I ko
+ wings 850 km/h
+ gear 250 km/h
+ flaps_combat 292 km/h
+ flaps_takeoff 282 km/h
+ flaps_landing 230 km/h
+ Max speed 590 km/h at at 5 000 m
+ Turn time 19 s
+ Max altitude 10 000 m
+Model Ki61I otsu (China)
+ wings 850 km/h
+ gear 250 km/h
+ flaps_combat 292 km/h
+ flaps_takeoff 282 km/h
+ flaps_landing 230 km/h
+ Max speed 587 km/h at at 5 000 m
+ Turn time 20 s
+ Max altitude 10 000 m
+Model Ki61I otsu
+ wings 850 km/h
+ gear 250 km/h
+ flaps_combat 292 km/h
+ flaps_takeoff 282 km/h
+ flaps_landing 230 km/h
+ Max speed 587 km/h at at 5 000 m
+ Turn time 20 s
+ Max altitude 10 000 m
+Model Ki61I tei
+ wings 850 km/h
+ gear 250 km/h
+ flaps_combat 292 km/h
+ flaps_takeoff 282 km/h
+ flaps_landing 230 km/h
+ Max speed 580 km/h at at 5 000 m
+ Turn time 21 s
+ Max altitude 10 000 m
+Model Ki61Ib (USA)
+ wings 850 km/h
+ gear 250 km/h
+ flaps_combat 292 km/h
+ flaps_takeoff 282 km/h
+ flaps_landing 230 km/h
+ Max speed 587 km/h at at 5 000 m
+ Turn time 20 s
+ Max altitude 10 000 m
+Model Ki61II Otsu Kai
+ wings 850 km/h
+ gear 330 km/h
+ flaps_combat 292 km/h
+ flaps_takeoff 282 km/h
+ flaps_landing 230 km/h
+ Max speed 625 km/h at at 6 000 m
+ Turn time 20 s
+ Max altitude 11 000 m
+Model Ki67I Ko
+ wings 650 km/h
+ gear 300 km/h
+ flaps_combat 427 km/h
+ flaps_takeoff 398 km/h
+ flaps_landing 250 km/h
+ Max speed 502 km/h at at 5 150 m
+ Turn time 30 s
+ Max altitude 9 300 m
+Model Ki67I otsu
+ wings 650 km/h
+ gear 300 km/h
+ flaps_combat 427 km/h
+ flaps_takeoff 398 km/h
+ flaps_landing 250 km/h
+ Max speed 502 km/h at at 5 150 m
+ Turn time 30 s
+ Max altitude 9 300 m
+Model Ki83
+ wings 870 km/h
+ gear 310 km/h
+ flaps_combat 525 km/h
+ flaps_takeoff 479 km/h
+ flaps_landing 420 km/h
+ Max speed 704 km/h at at 9 500 m
+ Turn time 24 s
+ Max altitude 12 600 m
+Model Ki84 hei
+ wings 837 km/h
+ gear 270 km/h
+ flaps_combat 470 km/h
+ flaps_takeoff 431 km/h
+ flaps_landing 280 km/h
+ Max speed 692 km/h at at 6 000 m
+ Turn time 19 s
+ Max altitude 13 000 m
+Model Ki84 ko (China)
+ wings 837 km/h
+ gear 270 km/h
+ flaps_combat 470 km/h
+ flaps_takeoff 431 km/h
+ flaps_landing 280 km/h
+ Max speed 692 km/h at at 6 000 m
+ Turn time 19 s
+ Max altitude 13 000 m
+Model Ki84 ko
+ wings 837 km/h
+ gear 270 km/h
+ flaps_combat 470 km/h
+ flaps_takeoff 431 km/h
+ flaps_landing 280 km/h
+ Max speed 692 km/h at at 6 000 m
+ Turn time 19 s
+ Max altitude 13 000 m
+Model Ki84 otsu
+ wings 837 km/h
+ gear 270 km/h
+ flaps_combat 470 km/h
+ flaps_takeoff 431 km/h
+ flaps_landing 280 km/h
+ Max speed 692 km/h at at 6 000 m
+ Turn time 19 s
+ Max altitude 13 000 m
+Model Ki87
+ wings 880 km/h
+ gear 320 km/h
+ flaps_combat 457 km/h
+ flaps_takeoff 428 km/h
+ flaps_landing 280 km/h
+ Max speed 707 km/h at at 10 000 m
+ Turn time 22 s
+ Max altitude 13 800 m
+Model Ki94II
+ wings 850 km/h
+ gear 280 km/h
+ flaps_combat 580 km/h
+ flaps_takeoff 471 km/h
+ flaps_landing 280 km/h
+ Max speed 720 km/h at at 12 000 m
+ Turn time 23 s
+ Max altitude 14 000 m
+Model Ki96
+ wings 762 km/h
+ gear 310 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 600 km/h at at 5 000 m
+ Turn time 24 s
+ Max altitude 10 000 m
+Model Kikka
+ wings 980 km/h
+ gear 380 km/h
+ flaps_combat 558 km/h
+ flaps_takeoff 529 km/h
+ flaps_landing 380 km/h
+ Max speed 875 km/h at at 0 m
+ Turn time 22 s
+ Max altitude 12 500 m
+Model Kingcobra (USA)
+ wings 887 km/h
+ gear 304 km/h
+ flaps_combat 378 km/h
+ flaps_takeoff 359 km/h
+ flaps_landing 262 km/h
+ Max speed 663 km/h at at 4 572 m
+ Turn time 23 s
+ Max altitude 12 500 m
+Model KOR1
+ wings 0 km/h
+ gear 400 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 412 km/h at at 4 000 m
+ Turn time 17 s
+ Max altitude 9 200 m
+Model Krasnolutsky's I15bis
+ wings 580 km/h
+ gear 580 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing  km/h
+ Max speed 380 km/h at at 4 000 m
+ Turn time 10 s
+ Max altitude 8 600 m
+Model Kurnass 2000
+ wings 1458 km/h
+ gear 463 km/h
+ flaps_combat 1,458 km/h
+ flaps_takeoff 625 km/h
+ flaps_landing 463 km/h
+ Max speed 2 140 km/h at at 12 192 m
+ Turn time 26 s
+ Max altitude 16 000 m
+Model Kurnass
+ wings 1458 km/h
+ gear 463 km/h
+ flaps_combat 607 km/h
+ flaps_takeoff 584 km/h
+ flaps_landing 463 km/h
+ Max speed 2 140 km/h at at 12 192 m
+ Turn time 26 s
+ Max altitude 16 000 m

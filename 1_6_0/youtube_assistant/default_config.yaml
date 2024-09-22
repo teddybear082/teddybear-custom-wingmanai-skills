@@ -1,0 +1,17 @@
+name: YouTubeAssistant
+module: skills.youtube_assistant.main
+category: general
+description:
+  en: Search YouTube, retrieve transcripts, and download audio or video.
+hint:
+  en: You can search videos, get transcripts, and download audio or video from YouTube.
+examples:
+  - question:
+      en: Search for "Python tutorials".
+      de: Suche nach "Python-Tutorials".
+    answer:
+      en: (returns a list of YouTube video titles and links)
+      de: (gibt eine Liste von YouTube-Video-Titeln und Links zurück)
+prompt: |
+  You can search for YouTube videos, get transcripts, and download audio or video.
+  Use 'search_videos' to search for videos, 'get_transcript' to get the transcript of a video, 'download_audio' to download audio, and 'download_video' to download video.

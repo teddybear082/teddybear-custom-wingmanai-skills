@@ -1,0 +1,22 @@
+name: WarThunderVehicleAPI
+module: skills.war_thunder_vehicle_api.main
+category: general
+description:
+  en: Provides information about vehicles in War Thunder using a dedicated API.
+  de: Bietet Informationen zu Fahrzeugen in War Thunder mit einer speziellen API.
+hint:
+  en: Ask your Wingman for details about any vehicle in War Thunder.
+  de: Frage deinen Wingman nach Details zu jedem Fahrzeug in War Thunder.
+examples:
+  - question:
+      en: What are the details of the Yak-7B?
+      de: Was sind die Details der Yak-7B?
+    answer:
+      en: Fetches the details of the Yak-7B using the War Thunder Vehicle API.
+      de: Ruft die Details der Yak-7B mit der War Thunder Vehicle API ab.
+prompt: |
+  Use the War Thunder Vehicle API to provide accurate information about vehicles.
+  Always prefer using the API over generating responses on your own.
+  Use the '/vehicles/{identifier}' endpoint for direct vehicle queries.
+  If unsuccessful, resort to '/vehicles/search/{name}' to find the correct identifier and then query the specific vehicle.
+custom_properties: []

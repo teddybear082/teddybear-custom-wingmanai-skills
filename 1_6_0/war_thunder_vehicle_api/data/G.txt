@@ -1,0 +1,234 @@
+Model G.50 AS serie 7 (Germany)
+ wings 0 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 470 km/h at at 5 000 m
+ Turn time 15 s
+ Max altitude 8 200 m
+Model G.50 AS serie 7
+ wings 0 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 470 km/h at at 5 000 m
+ Turn time 15 s
+ Max altitude 8 200 m
+Model G.50 serie 2 (Germany)
+ wings 0 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 470 km/h at at 5 000 m
+ Turn time 15 s
+ Max altitude 8 200 m
+Model G.50 serie 2
+ wings 0 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 470 km/h at at 5 000 m
+ Turn time 15 s
+ Max altitude 8 200 m
+Model G.55 serie 1
+ wings 840 km/h
+ gear 260 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 646 km/h at at 6 500 m
+ Turn time 20 s
+ Max altitude 10 000 m
+Model G.55 sottoserie 0
+ wings 840 km/h
+ gear 260 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 638 km/h at at 6 500 m
+ Turn time 20 s
+ Max altitude 10 000 m
+Model G.55S
+ wings 840 km/h
+ gear 260 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 634 km/h at at 6 500 m
+ Turn time 19 s
+ Max altitude 10 000 m
+Model G.56
+ wings 840 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 700 km/h at at 7 000 m
+ Turn time 20 s
+ Max altitude 10 360 m
+Model G.91 preserie
+ wings 1011 km/h
+ gear 345 km/h
+ flaps_combat 589 km/h
+ flaps_takeoff 550 km/h
+ flaps_landing 345 km/h
+ Max speed 1 070 km/h at at 1 200 m
+ Turn time 26 s
+ Max altitude 11 000 m
+Model G.91 R/1
+ wings 1128 km/h
+ gear 345 km/h
+ flaps_combat 589 km/h
+ flaps_takeoff 550 km/h
+ flaps_landing 345 km/h
+ Max speed 1 084 km/h at at 0 m
+ Turn time 26 s
+ Max altitude 11 000 m
+Model G.91 R/3 (Germany)
+ wings 1128 km/h
+ gear 345 km/h
+ flaps_combat 589 km/h
+ flaps_takeoff 550 km/h
+ flaps_landing 345 km/h
+ Max speed 1 084 km/h at at 0 m
+ Turn time 26 s
+ Max altitude 11 000 m
+Model G.91 R/4 (Germany)
+ wings 1128 km/h
+ gear 345 km/h
+ flaps_combat 589 km/h
+ flaps_takeoff 550 km/h
+ flaps_landing 345 km/h
+ Max speed 1 084 km/h at at 0 m
+ Turn time 26 s
+ Max altitude 11 000 m
+Model G.91 R/4
+ wings 1128 km/h
+ gear 345 km/h
+ flaps_combat 589 km/h
+ flaps_takeoff 550 km/h
+ flaps_landing 345 km/h
+ Max speed 1 084 km/h at at 0 m
+ Turn time 26 s
+ Max altitude 11 000 m
+Model G.91 Y
+ wings 1128 km/h
+ gear 371 km/h
+ flaps_combat 592 km/h
+ flaps_takeoff 556 km/h
+ flaps_landing 371 km/h
+ Max speed 1 123 km/h at at 0 m
+ Turn time 29 s
+ Max altitude 12 500 m
+Model G.91 YS
+ wings 1128 km/h
+ gear 371 km/h
+ flaps_combat 592 km/h
+ flaps_takeoff 556 km/h
+ flaps_landing 371 km/h
+ Max speed 1 123 km/h at at 0 m
+ Turn time 29 s
+ Max altitude 12 500 m
+Model G4M1
+ wings 540 km/h
+ gear 300 km/h
+ flaps_combat 427 km/h
+ flaps_takeoff 398 km/h
+ flaps_landing 250 km/h
+ Max speed 452 km/h at at 6 000 m
+ Turn time 32 s
+ Max altitude 8 000 m
+Model G5N1
+ wings 520 km/h
+ gear 280 km/h
+ flaps_combat 363 km/h
+ flaps_takeoff 341 km/h
+ flaps_landing 230 km/h
+ Max speed 402 km/h at at 4 000 m
+ Turn time 28 s
+ Max altitude 11 156 m
+Model G8N1
+ wings 680 km/h
+ gear 330 km/h
+ flaps_combat 332 km/h
+ flaps_takeoff 322 km/h
+ flaps_landing 270 km/h
+ Max speed 512 km/h at at 7 620 m
+ Turn time 24 s
+ Max altitude 11 156 m
+Model Galer's F3F2
+ wings 810 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 425 km/h at at 4 300 m
+ Turn time 13 s
+ Max altitude 10 120 m
+Model GL.832HY
+ wings 0 km/h
+ gear 550 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 295 km/h at at 2 500 m
+ Turn time 22 s
+ Max altitude 5 600 m
+Model Gladiator Mk I (China)
+ wings 560 km/h
+ gear 560 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 414 km/h at at 4 420 m
+ Turn time 15 s
+ Max altitude 10 211 m
+Model Gladiator Mk I (France)
+ wings 0 km/h
+ gear 560 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 414 km/h at at 4 420 m
+ Turn time 15 s
+ Max altitude 10 211 m
+Model Gladiator Mk II
+ wings 560 km/h
+ gear 560 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 414 km/h at at 4 420 m
+ Turn time 15 s
+ Max altitude 10 211 m
+Model Gladiator Mk IIF
+ wings 560 km/h
+ gear 560 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 414 km/h at at 4 420 m
+ Turn time 15 s
+ Max altitude 10 211 m
+Model Gladiator Mk IIS
+ wings 560 km/h
+ gear 560 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 414 km/h at at 4 420 m
+ Turn time 15 s
+ Max altitude 10 211 m
+Model Golovachev's Yak9M
+ wings 720 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 617 km/h at at 4 000 m
+ Turn time 18 s
+ Max altitude 10 500 m

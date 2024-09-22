@@ -1,0 +1,540 @@
+Model H5
+ wings 810 km/h
+ gear 400 km/h
+ flaps_combat 577 km/h
+ flaps_takeoff 548 km/h
+ flaps_landing 400 km/h
+ Max speed 905 km/h at at 4 500 m
+ Turn time 48 s
+ Max altitude 11 500 m
+Model H75A1
+ wings 681 km/h
+ gear 290 km/h
+ flaps_combat 488 km/h
+ flaps_takeoff 446 km/h
+ flaps_landing 232 km/h
+ Max speed 560 km/h at at 3 810 m
+ Turn time 21 s
+ Max altitude 9 555 m
+Model H75A4
+ wings 770 km/h
+ gear 290 km/h
+ flaps_combat 488 km/h
+ flaps_takeoff 446 km/h
+ flaps_landing 232 km/h
+ Max speed 560 km/h at at 3 810 m
+ Turn time 21 s
+ Max altitude 9 555 m
+Model H81A2
+ wings 795 km/h
+ gear 300 km/h
+ flaps_combat 595 km/h
+ flaps_takeoff 530 km/h
+ flaps_landing 245 km/h
+ Max speed 561 km/h at at 4 500 m
+ Turn time 19 s
+ Max altitude 10 760 m
+Model H6K4
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 325 km/h at at 4 100 m
+ Turn time 22 s
+ Max altitude 9 560 m
+Model H8K2
+ wings 560 km/h
+ gear 450 km/h
+ flaps_combat 402 km/h
+ flaps_takeoff 379 km/h
+ flaps_landing 260 km/h
+ Max speed 476 km/h at at 6 000 m
+ Turn time 33 s
+ Max altitude 9 500 m
+Model H8K3
+ wings 560 km/h
+ gear 450 km/h
+ flaps_combat 402 km/h
+ flaps_takeoff 379 km/h
+ flaps_landing 260 km/h
+ Max speed 541 km/h at at 6 000 m
+ Turn time 33 s
+ Max altitude 9 500 m
+Model Hagiri's A5M4
+ wings 558 km/h
+ gear 558 km/h
+ flaps_combat 398 km/h
+ flaps_takeoff 369 km/h
+ flaps_landing 220 km/h
+ Max speed 447 km/h at at 2 900 m
+ Turn time 12 s
+ Max altitude 9 800 m
+Model Halifax B Mk IIIa
+ wings 541 km/h
+ gear 260 km/h
+ flaps_combat 491 km/h
+ flaps_takeoff 454 km/h
+ flaps_landing 260 km/h
+ Max speed 454 km/h at at 4 114 m
+ Turn time 34 s
+ Max altitude 7 620 m
+Model Hampden Mk I
+ wings 506 km/h
+ gear 225 km/h
+ flaps_combat 388 km/h
+ flaps_takeoff 359 km/h
+ flaps_landing 210 km/h
+ Max speed 428 km/h at at 3 962 m
+ Turn time 26 s
+ Max altitude 8 310 m
+Model Hampden TB Mk I (USSR)
+ wings 506 km/h
+ gear 225 km/h
+ flaps_combat 388 km/h
+ flaps_takeoff 359 km/h
+ flaps_landing 210 km/h
+ Max speed 406 km/h at at 6 250 m
+ Turn time 34 s
+ Max altitude 9 400 m
+Model Hampden TB Mk I
+ wings 506 km/h
+ gear 225 km/h
+ flaps_combat 388 km/h
+ flaps_takeoff 359 km/h
+ flaps_landing 210 km/h
+ Max speed 428 km/h at at 3 962 m
+ Turn time 26 s
+ Max altitude 8 310 m
+Model Harrier GR.1
+ wings 1191 km/h
+ gear 648 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 829 km/h
+ flaps_landing 556 km/h
+ Max speed 1 133 km/h at at 0 m
+ Turn time 32 s
+ Max altitude 12 192 m
+Model Harrier GR.3
+ wings 1191 km/h
+ gear 648 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 829 km/h
+ flaps_landing 556 km/h
+ Max speed 1 159 km/h at at 0 m
+ Turn time 32 s
+ Max altitude 12 192 m
+Model Harrier GR.7
+ wings 1,137 km/h
+ gear 648 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 829 km/h
+ flaps_landing 556 km/h
+ Max speed 1 125 km/h at at 0 m
+ Turn time 30 s
+ Max altitude 12 192 m
+Model Havoc Mk I (Great Britain)
+ wings 665 km/h
+ gear 296 km/h
+ flaps_combat 428 km/h
+ flaps_takeoff 406 km/h
+ flaps_landing 296 km/h
+ Max speed 518 km/h at at 4 634 m
+ Turn time 27 s
+ Max altitude 8 000 m
+Model Hawk H75A2 (Germany)
+ wings 770 km/h
+ gear 290 km/h
+ flaps_combat 488 km/h
+ flaps_takeoff 446 km/h
+ flaps_landing 232 km/h
+ Max speed 560 km/h at at 3 810 m
+ Turn time 21 s
+ Max altitude 9 555 m
+Model Hawk III
+ wings 600 km/h
+ gear 280 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 444 km/h at at 4 850 m
+ Turn time 13 s
+ Max altitude 10 700 m
+Model He 100 D1
+ wings 820 km/h
+ gear 320 km/h
+ flaps_combat 487 km/h
+ flaps_takeoff 471 km/h
+ flaps_landing 280 km/h
+ Max speed 670 km/h at at 5 000 m
+ Turn time 20 s
+ Max altitude 9 500 m
+Model He 111 H16
+ wings 480 km/h
+ gear 300 km/h
+ flaps_combat 340 km/h
+ flaps_takeoff 327 km/h
+ flaps_landing 260 km/h
+ Max speed 432 km/h at at 6 000 m
+ Turn time 31 s
+ Max altitude 8 500 m
+Model He 111 H3
+ wings 480 km/h
+ gear 350 km/h
+ flaps_combat 402 km/h
+ flaps_takeoff 379 km/h
+ flaps_landing 260 km/h
+ Max speed 435 km/h at at 6 000 m
+ Turn time 33 s
+ Max altitude 8 500 m
+Model He 111 H6
+ wings 480 km/h
+ gear 350 km/h
+ flaps_combat 402 km/h
+ flaps_takeoff 379 km/h
+ flaps_landing 260 km/h
+ Max speed 430 km/h at at 5 700 m
+ Turn time 32 s
+ Max altitude 8 500 m
+Model He 112 A0
+ wings 680 km/h
+ gear 300 km/h
+ flaps_combat 403 km/h
+ flaps_takeoff 381 km/h
+ flaps_landing 270 km/h
+ Max speed 473 km/h at at 3 200 m
+ Turn time 17 s
+ Max altitude 7 500 m
+Model He 112 B0
+ wings 730 km/h
+ gear 300 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 502 km/h at at 2 800 m
+ Turn time 19 s
+ Max altitude 8 000 m
+Model He 112 B1/U2 (Germany)
+ wings 730 km/h
+ gear 300 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 503 km/h at at 2 800 m
+ Turn time 16 s
+ Max altitude 8 500 m
+Model He 112 B1/U2
+ wings 730 km/h
+ gear 300 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 503 km/h at at 2 800 m
+ Turn time 16 s
+ Max altitude 8 500 m
+Model He 112 B2/U2
+ wings 730 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 503 km/h at at 2 800 m
+ Turn time 16 s
+ Max altitude 8 500 m
+Model He 112 V5
+ wings 680 km/h
+ gear 300 km/h
+ flaps_combat 403 km/h
+ flaps_takeoff 381 km/h
+ flaps_landing 270 km/h
+ Max speed 483 km/h at at 3 700 m
+ Turn time 17 s
+ Max altitude 7 500 m
+Model He 115 C1
+ wings 480 km/h
+ gear 350 km/h
+ flaps_combat 402 km/h
+ flaps_takeoff 379 km/h
+ flaps_landing 260 km/h
+ Max speed 300 km/h at at 1 000 m
+ Turn time 23 s
+ Max altitude 6 000 m
+Model He 162 A1
+ wings 1040 km/h
+ gear 350 km/h
+ flaps_combat 677 km/h
+ flaps_takeoff 648 km/h
+ flaps_landing 500 km/h
+ Max speed 840 km/h at at 6 000 m
+ Turn time 30 s
+ Max altitude 12 000 m
+Model He 162 A2
+ wings 1040 km/h
+ gear 350 km/h
+ flaps_combat 677 km/h
+ flaps_takeoff 648 km/h
+ flaps_landing 500 km/h
+ Max speed 840 km/h at at 6 000 m
+ Turn time 30 s
+ Max altitude 12 000 m
+Model He 177 A5
+ wings 683 km/h
+ gear 260 km/h
+ flaps_combat 431 km/h
+ flaps_takeoff 406 km/h
+ flaps_landing 280 km/h
+ Max speed 555 km/h at at 6 500 m
+ Turn time 31 s
+ Max altitude 10 000 m
+Model He 219 A7
+ wings 787 km/h
+ gear 310 km/h
+ flaps_combat 470 km/h
+ flaps_takeoff 444 km/h
+ flaps_landing 310 km/h
+ Max speed 624 km/h at at 6 700 m
+ Turn time 30 s
+ Max altitude 10 400 m
+Model He 51 A1
+ wings 500 km/h
+ gear 500 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 305 km/h at at 4 000 m
+ Turn time 13 s
+ Max altitude 7 700 m
+Model He 51 B1
+ wings 550 km/h
+ gear 550 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 310 km/h at at 4 000 m
+ Turn time 14 s
+ Max altitude 7 700 m
+Model He 51 B2/H
+ wings 500 km/h
+ gear 500 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 315 km/h at at 0 m
+ Turn time 16 s
+ Max altitude 6 500 m
+Model He 51 C1
+ wings 550 km/h
+ gear 550 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 310 km/h at at 4 000 m
+ Turn time 15 s
+ Max altitude 8 000 m
+Model He 51 C1/L
+ wings 550 km/h
+ gear 550 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 310 km/h at at 4 000 m
+ Turn time 15 s
+ Max altitude 8 000 m
+Model Hellcat Mk II (Great Britain)
+ wings 803 km/h
+ gear 375 km/h
+ flaps_combat 487 km/h
+ flaps_takeoff 458 km/h
+ flaps_landing 310 km/h
+ Max speed 647 km/h at at 5 730 m
+ Turn time 21 s
+ Max altitude 11 000 m
+Model Ho 229 V3
+ wings 980 km/h
+ gear 450 km/h
+ flaps_combat 558 km/h
+ flaps_takeoff 529 km/h
+ flaps_landing 380 km/h
+ Max speed 910 km/h at at 8 000 m
+ Turn time 24 s
+ Max altitude 12 000 m
+Model Hornet Mk.I
+ wings 826 km/h
+ gear 324 km/h
+ flaps_combat 370 km/h
+ flaps_takeoff 356 km/h
+ flaps_landing 287 km/h
+ Max speed 756 km/h at at 5 791 m
+ Turn time 25 s
+ Max altitude 11 500 m
+Model Hornet Mk.III
+ wings 826 km/h
+ gear 324 km/h
+ flaps_combat 370 km/h
+ flaps_takeoff 356 km/h
+ flaps_landing 287 km/h
+ Max speed 756 km/h at at 5 791 m
+ Turn time 25 s
+ Max altitude 11 500 m
+Model Hs 123 A1 (China)
+ wings 577 km/h
+ gear 590 km/h
+ flaps_combat 300 km/h
+ flaps_takeoff 274 km/h
+ flaps_landing 190 km/h
+ Max speed 310 km/h at at 4 000 m
+ Turn time 15 s
+ Max altitude 8 000 m
+Model Hs 123 A1
+ wings 577 km/h
+ gear 590 km/h
+ flaps_combat 300 km/h
+ flaps_takeoff 274 km/h
+ flaps_landing 190 km/h
+ Max speed 310 km/h at at 4 000 m
+ Turn time 15 s
+ Max altitude 8 000 m
+Model Hs 129 B2 (Romania) (Italy)
+ wings 630 km/h
+ gear 295 km/h
+ flaps_combat 287 km/h
+ flaps_takeoff 252 km/h
+ flaps_landing 190 km/h
+ Max speed 439 km/h at at 3 550 m
+ Turn time 27 s
+ Max altitude 7 500 m
+Model Hs 129 B2 (Romania)
+ wings 630 km/h
+ gear 295 km/h
+ flaps_combat 287 km/h
+ flaps_takeoff 252 km/h
+ flaps_landing 190 km/h
+ Max speed 439 km/h at at 3 550 m
+ Turn time 27 s
+ Max altitude 7 500 m
+Model Hs 129 B2
+ wings 630 km/h
+ gear 295 km/h
+ flaps_combat 287 km/h
+ flaps_takeoff 252 km/h
+ flaps_landing 190 km/h
+ Max speed 439 km/h at at 3 550 m
+ Turn time 27 s
+ Max altitude 7 500 m
+Model Hs 129 B3
+ wings 630 km/h
+ gear 295 km/h
+ flaps_combat 287 km/h
+ flaps_takeoff 252 km/h
+ flaps_landing 190 km/h
+ Max speed 439 km/h at at 3 550 m
+ Turn time 27 s
+ Max altitude 7 500 m
+Model Hudson Mk V (Great Britain)
+ wings 564 km/h
+ gear 235 km/h
+ flaps_combat 328 km/h
+ flaps_takeoff 313 km/h
+ flaps_landing 235 km/h
+ Max speed 418 km/h at at 1 981 m
+ Turn time 26 s
+ Max altitude 5 029 m
+Model Hunter F.1
+ wings 1,193 km/h
+ gear 450 km/h
+ flaps_combat 603 km/h
+ flaps_takeoff 581 km/h
+ flaps_landing 465 km/h
+ Max speed 1 108 km/h at at 0 m
+ Turn time 31 s
+ Max altitude 14 000 m
+Model Hunter F.58 (Germany)
+ wings 1,225 km/h
+ gear 450 km/h
+ flaps_combat 603 km/h
+ flaps_takeoff 581 km/h
+ flaps_landing 465 km/h
+ Max speed 1 148 km/h at at 0 m
+ Turn time 25 s
+ Max altitude 15 500 m
+Model Hunter F.6 (France)
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 1 148 km/h at at 0 m
+ Turn time 25 s
+ Max altitude 15 500 m
+Model Hunter F.6
+ wings 1,193 km/h
+ gear 450 km/h
+ flaps_combat 603 km/h
+ flaps_takeoff 581 km/h
+ flaps_landing 465 km/h
+ Max speed 1 148 km/h at at 0 m
+ Turn time 25 s
+ Max altitude 15 500 m
+Model Hunter FGA.9
+ wings 1,225 km/h
+ gear 450 km/h
+ flaps_combat 603 km/h
+ flaps_takeoff 581 km/h
+ flaps_landing 465 km/h
+ Max speed 1 148 km/h at at 0 m
+ Turn time 25 s
+ Max altitude 15 500 m
+Model Hurricane Mk IIB (USSR)
+ wings 660 km/h
+ gear 320 km/h
+ flaps_combat 268 km/h
+ flaps_takeoff 246 km/h
+ flaps_landing 202 km/h
+ Max speed 565 km/h at at 5 182 m
+ Turn time 15 s
+ Max altitude 11 500 m
+Model Hurricane Mk IIB/Trop
+ wings 660 km/h
+ gear 320 km/h
+ flaps_combat 268 km/h
+ flaps_takeoff 246 km/h
+ flaps_landing 202 km/h
+ Max speed 510 km/h at at 5 182 m
+ Turn time 17 s
+ Max altitude 11 500 m
+Model Hurricane Mk IV
+ wings 660 km/h
+ gear 320 km/h
+ flaps_combat 268 km/h
+ flaps_takeoff 246 km/h
+ flaps_landing 202 km/h
+ Max speed 511 km/h at at 4 115 m
+ Turn time 15 s
+ Max altitude 10 970 m
+Model Hurricane Mk I/L (Sweden)
+ wings 660 km/h
+ gear 320 km/h
+ flaps_combat 268 km/h
+ flaps_takeoff 246 km/h
+ flaps_landing 202 km/h
+ Max speed 525 km/h at at 3 962 m
+ Turn time 15 s
+ Max altitude 10 700 m
+Model Hurricane Mk I/L
+ wings 660 km/h
+ gear 320 km/h
+ flaps_combat 268 km/h
+ flaps_takeoff 246 km/h
+ flaps_landing 202 km/h
+ Max speed 525 km/h at at 3 962 m
+ Turn time 15 s
+ Max altitude 10 700 m
+Model Hurricane Mk.I/L FAA M
+ wings 660 km/h
+ gear 320 km/h
+ flaps_combat 268 km/h
+ flaps_takeoff 246 km/h
+ flaps_landing 202 km/h
+ Max speed 525 km/h at at 3 962 m
+ Turn time 15 s
+ Max altitude 10 700 m

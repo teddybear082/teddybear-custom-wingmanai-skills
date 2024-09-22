@@ -1,0 +1,90 @@
+Model N.C.223.3
+ wings 450 km/h
+ gear 320 km/h
+ flaps_combat 491 km/h
+ flaps_takeoff 453 km/h
+ flaps_landing 260 km/h
+ Max speed 400 km/h at at 4 000 m
+ Turn time 29 s
+ Max altitude 8 000 m
+Model N1K1Ja
+ wings 780 km/h
+ gear 280 km/h
+ flaps_combat 487 km/h
+ flaps_takeoff 445 km/h
+ flaps_landing 390 km/h
+ Max speed 614 km/h at at 6 200 m
+ Turn time 18 s
+ Max altitude 10 000 m
+Model N1K1
+ wings 600 km/h
+ gear 600 km/h
+ flaps_combat 394 km/h
+ flaps_takeoff 387 km/h
+ flaps_landing 350 km/h
+ Max speed 489 km/h at at 6 000 m
+ Turn time 19 s
+ Max altitude 10 000 m
+Model N1K2J
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 650 km/h at at 6 000 m
+ Turn time 19 s
+ Max altitude 11 000 m
+Model N1K2Ja
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 650 km/h at at 6 000 m
+ Turn time 19 s
+ Max altitude 11 000 m
+Model NC.900
+ wings 912 km/h
+ gear 310 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 700 km/h
+ flaps_landing 310 km/h
+ Max speed 652 km/h at at 5 500 m
+ Turn time 22 s
+ Max altitude 10 300 m
+Model Nesher
+ wings 1,460 km/h
+ gear 426 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 2 160 km/h at at 12 000 m
+ Turn time 28 s
+ Max altitude 16 000 m
+Model Netz
+ wings 1,555 km/h
+ gear 482 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 463 km/h
+ Max speed 2 156 km/h at at 10 973 m
+ Turn time 19 s
+ Max altitude 15 240 m
+Model Nimrod Mk I
+ wings 600 km/h
+ gear 600 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 394 km/h at at 4 100 m
+ Turn time 15 s
+ Max altitude 8 100 m
+Model Nimrod Mk II
+ wings 600 km/h
+ gear 600 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 394 km/h at at 4 100 m
+ Turn time 15 s
+ Max altitude 8 100 m

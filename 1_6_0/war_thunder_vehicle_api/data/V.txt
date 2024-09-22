@@ -1,0 +1,144 @@
+Model V11
+ wings 620 km/h
+ gear 320 km/h
+ flaps_combat 330 km/h
+ flaps_takeoff 280 km/h
+ flaps_landing 280 km/h
+ Max speed 360 km/h at at 4 084 m
+ Turn time 22 s
+ Max altitude 6 800 m
+Model V12D
+ wings 680 km/h
+ gear 320 km/h
+ flaps_combat 330 km/h
+ flaps_takeoff 280 km/h
+ flaps_landing 280 km/h
+ Max speed 479 km/h at at 4 900 m
+ Turn time 22 s
+ Max altitude 8 000 m
+Model V156B1
+ wings 740 km/h
+ gear 740 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing 700 km/h
+ Max speed 360 km/h at at 4 084 m
+ Turn time 22 s
+ Max altitude 6 800 m
+Model V156F
+ wings 740 km/h
+ gear 440 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 700 km/h
+ Max speed 360 km/h at at 4 084 m
+ Turn time 22 s
+ Max altitude 6 800 m
+Model V.G.33C1
+ wings 800 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 270 km/h
+ Max speed 558 km/h at at 4 500 m
+ Turn time 19 s
+ Max altitude 9 500 m
+Model Vampire F.B.5
+ wings 888 km/h
+ gear 330 km/h
+ flaps_combat 496 km/h
+ flaps_takeoff 464 km/h
+ flaps_landing 300 km/h
+ Max speed 855 km/h at at 4 572 m
+ Turn time 24 s
+ Max altitude 10 668 m
+Model Vampire FB 52A (Sweden)
+ wings 888 km/h
+ gear 330 km/h
+ flaps_combat 496 km/h
+ flaps_takeoff 464 km/h
+ flaps_landing 300 km/h
+ Max speed 882 km/h at at 4 572 m
+ Turn time 24 s
+ Max altitude 10 668 m
+Model Vampire FB 52A
+ wings 888 km/h
+ gear 330 km/h
+ flaps_combat 496 km/h
+ flaps_takeoff 464 km/h
+ flaps_landing 300 km/h
+ Max speed 882 km/h at at 4 572 m
+ Turn time 24 s
+ Max altitude 10 668 m
+Model Vautour IIA (Israel)
+ wings 1,166 km/h
+ gear 425 km/h
+ flaps_combat 584 km/h
+ flaps_takeoff 564 km/h
+ flaps_landing 463 km/h
+ Max speed 1 100 km/h at at 0 m
+ Turn time 32 s
+ Max altitude 15 000 m
+Model Vautour IIA IDF/AF
+ wings 1,166 km/h
+ gear 425 km/h
+ flaps_combat 584 km/h
+ flaps_takeoff 564 km/h
+ flaps_landing 463 km/h
+ Max speed 1 100 km/h at at 0 m
+ Turn time 32 s
+ Max altitude 15 000 m
+Model Vautour IIN (Israel)
+ wings 1,166 km/h
+ gear 425 km/h
+ flaps_combat 584 km/h
+ flaps_takeoff 564 km/h
+ flaps_landing 463 km/h
+ Max speed 1 107 km/h at at 0 m
+ Turn time 32 s
+ Max altitude 15 000 m
+Model VB.1002
+ wings 820 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 710 km/h at at 7 000 m
+ Turn time 24 s
+ Max altitude 11 000 m
+Model VB.10C1
+ wings 820 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 710 km/h at at 7 000 m
+ Turn time 24 s
+ Max altitude 11 000 m
+Model Venom FB.4
+ wings 1,045 km/h
+ gear 420 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 1 027 km/h at at 0 m
+ Turn time 22 s
+ Max altitude 12 192 m
+Model VL Myrsky II
+ wings 650 km/h
+ gear 290 km/h
+ flaps_combat 355 km/h
+ flaps_takeoff 322 km/h
+ flaps_landing 240 km/h
+ Max speed 535 km/h at at 3 400 m
+ Turn time 18 s
+ Max altitude 9 700 m
+Model VL Pyörremyrsky
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 620 km/h at at 5 000 m
+ Turn time 18 s
+ Max altitude 11 000 m

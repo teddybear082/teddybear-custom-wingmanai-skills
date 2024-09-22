@@ -1,0 +1,828 @@
+Model B10B
+ wings 564 km/h
+ gear 235 km/h
+ flaps_combat 328 km/h
+ flaps_takeoff 313 km/h
+ flaps_landing 235 km/h
+ Max speed 343 km/h at at 2 438 m
+ Turn time 21 s
+ Max altitude 7 380 m
+Model B17E (Japan)
+ wings 516 km/h
+ gear 290 km/h
+ flaps_combat 383 km/h
+ flaps_takeoff 361 km/h
+ flaps_landing 249 km/h
+ Max speed 510 km/h at at 7 680 m
+ Turn time 36 s
+ Max altitude 11 156 m
+Model B17E
+ wings 516 km/h
+ gear 290 km/h
+ flaps_combat 383 km/h
+ flaps_takeoff 361 km/h
+ flaps_landing 249 km/h
+ Max speed 510 km/h at at 7 680 m
+ Turn time 36 s
+ Max altitude 11 156 m
+Model B17E/L
+ wings 516 km/h
+ gear 290 km/h
+ flaps_combat 383 km/h
+ flaps_takeoff 361 km/h
+ flaps_landing 249 km/h
+ Max speed 510 km/h at at 7 680 m
+ Turn time 36 s
+ Max altitude 11 156 m
+Model B17G (Israel)
+ wings 516 km/h
+ gear 290 km/h
+ flaps_combat 383 km/h
+ flaps_takeoff 361 km/h
+ flaps_landing 249 km/h
+ Max speed 510 km/h at at 7 680 m
+ Turn time 36 s
+ Max altitude 11 156 m
+Model B17G60VE
+ wings 516 km/h
+ gear 290 km/h
+ flaps_combat 383 km/h
+ flaps_takeoff 361 km/h
+ flaps_landing 249 km/h
+ Max speed 510 km/h at at 7 680 m
+ Turn time 36 s
+ Max altitude 11 156 m
+Model B18A
+ wings 580 km/h
+ gear 350 km/h
+ flaps_combat 333 km/h
+ flaps_takeoff 324 km/h
+ flaps_landing 280 km/h
+ Max speed 375 km/h at at 3 049 m
+ Turn time 21 s
+ Max altitude 7 500 m
+Model B239 (Sweden)
+ wings 761 km/h
+ gear 280 km/h
+ flaps_combat 425 km/h
+ flaps_takeoff 380 km/h
+ flaps_landing 240 km/h
+ Max speed 460 km/h at at 5 400 m
+ Turn time 16 s
+ Max altitude 9 900 m
+Model B24D25CO
+ wings 600 km/h
+ gear 263 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 357 km/h
+ flaps_landing 263 km/h
+ Max speed 494 km/h at at 7 620 m
+ Turn time 38 s
+ Max altitude 9 754 m
+Model B25J1
+ wings 591 km/h
+ gear 294 km/h
+ flaps_combat 382 km/h
+ flaps_takeoff 320 km/h
+ flaps_landing 293 km/h
+ Max speed 444 km/h at at 3 049 m
+ Turn time 31 s
+ Max altitude 7 500 m
+Model B25J20
+ wings 591 km/h
+ gear 294 km/h
+ flaps_combat 382 km/h
+ flaps_takeoff 320 km/h
+ flaps_landing 293 km/h
+ Max speed 444 km/h at at 3 049 m
+ Turn time 31 s
+ Max altitude 7 500 m
+Model B25J30 (China)
+ wings 591 km/h
+ gear 294 km/h
+ flaps_combat 382 km/h
+ flaps_takeoff 320 km/h
+ flaps_landing 293 km/h
+ Max speed 444 km/h at at 3 049 m
+ Turn time 31 s
+ Max altitude 7 500 m
+Model B25J30 (USSR)
+ wings 591 km/h
+ gear 294 km/h
+ flaps_combat 382 km/h
+ flaps_takeoff 320 km/h
+ flaps_landing 293 km/h
+ Max speed 444 km/h at at 3 049 m
+ Turn time 31 s
+ Max altitude 7 500 m
+Model B26B
+ wings 568 km/h
+ gear 265 km/h
+ flaps_combat 382 km/h
+ flaps_takeoff 320 km/h
+ flaps_landing 297 km/h
+ Max speed 491 km/h at at 3 962 m
+ Turn time 34 s
+ Max altitude 8 500 m
+Model B26C
+ wings 568 km/h
+ gear 265 km/h
+ flaps_combat 382 km/h
+ flaps_takeoff 320 km/h
+ flaps_landing 297 km/h
+ Max speed 491 km/h at at 3 962 m
+ Turn time 34 s
+ Max altitude 8 500 m
+Model B29ABN
+ wings 609 km/h
+ gear 389 km/h
+ flaps_combat 332 km/h
+ flaps_takeoff 322 km/h
+ flaps_landing 270 km/h
+ Max speed 641 km/h at at 9 100 m
+ Turn time 32 s
+ Max altitude 12 000 m
+Model B34
+ wings 633 km/h
+ gear 235 km/h
+ flaps_combat 328 km/h
+ flaps_takeoff 313 km/h
+ flaps_landing 235 km/h
+ Max speed 539 km/h at at 4 572 m
+ Turn time 27 s
+ Max altitude 9 500 m
+Model B57A
+ wings 990 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 946 km/h at at 0 m
+ Turn time 58 s
+ Max altitude 13 716 m
+Model B57B
+ wings 990 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 963 km/h at at 762 m
+ Turn time 55 s
+ Max altitude 12 192 m
+Model B.R.20DR
+ wings 675 km/h
+ gear 310 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 428 km/h
+ flaps_landing 280 km/h
+ Max speed 430 km/h at at 4 000 m
+ Turn time 31 s
+ Max altitude 7 000 m
+Model B.R.20M M1
+ wings 675 km/h
+ gear 310 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 428 km/h
+ flaps_landing 280 km/h
+ Max speed 430 km/h at at 4 000 m
+ Turn time 31 s
+ Max altitude 7 000 m
+Model B17A
+ wings 620 km/h
+ gear 320 km/h
+ flaps_combat 386 km/h
+ flaps_takeoff 369 km/h
+ flaps_landing 280 km/h
+ Max speed 435 km/h at at 4 200 m
+ Turn time 19 s
+ Max altitude 8 000 m
+Model B17B
+ wings 620 km/h
+ gear 480 km/h
+ flaps_combat 386 km/h
+ flaps_takeoff 369 km/h
+ flaps_landing 280 km/h
+ Max speed 395 km/h at at 3 900 m
+ Turn time 20 s
+ Max altitude 6 200 m
+Model B18A
+ wings 735 km/h
+ gear 320 km/h
+ flaps_combat 467 km/h
+ flaps_takeoff 438 km/h
+ flaps_landing 290 km/h
+ Max speed 465 km/h at at 4 000 m
+ Turn time 30 s
+ Max altitude 9 100 m
+Model B18B
+ wings 735 km/h
+ gear 320 km/h
+ flaps_combat 467 km/h
+ flaps_takeoff 438 km/h
+ flaps_landing 290 km/h
+ Max speed 570 km/h at at 6 000 m
+ Turn time 27 s
+ Max altitude 10 000 m
+Model B3C
+ wings 430 km/h
+ gear 350 km/h
+ flaps_combat 310 km/h
+ flaps_takeoff 297 km/h
+ flaps_landing 240 km/h
+ Max speed 395 km/h at at 5 600 m
+ Turn time 17 s
+ Max altitude 8 000 m
+Model B5N2
+ wings 555 km/h
+ gear 450 km/h
+ flaps_combat 404 km/h
+ flaps_takeoff 384 km/h
+ flaps_landing 280 km/h
+ Max speed 378 km/h at at 3 600 m
+ Turn time 19 s
+ Max altitude 8 260 m
+Model B6N1 Model 11
+ wings 650 km/h
+ gear 310 km/h
+ flaps_combat 368 km/h
+ flaps_takeoff 354 km/h
+ flaps_landing 280 km/h
+ Max speed 464 km/h at at 4 800 m
+ Turn time 21 s
+ Max altitude 9 400 m
+Model B6N2 Model 12
+ wings 650 km/h
+ gear 310 km/h
+ flaps_combat 368 km/h
+ flaps_takeoff 354 km/h
+ flaps_landing 280 km/h
+ Max speed 481 km/h at at 4 900 m
+ Turn time 21 s
+ Max altitude 9 600 m
+Model B6N2a Model 12Ko
+ wings 650 km/h
+ gear 310 km/h
+ flaps_combat 368 km/h
+ flaps_takeoff 354 km/h
+ flaps_landing 280 km/h
+ Max speed 481 km/h at at 4 900 m
+ Turn time 21 s
+ Max altitude 9 600 m
+Model B7A2 (Homare 23)
+ wings 680 km/h
+ gear 350 km/h
+ flaps_combat 457 km/h
+ flaps_takeoff 428 km/h
+ flaps_landing 280 km/h
+ Max speed 586 km/h at at 6 000 m
+ Turn time 20 s
+ Max altitude 10 000 m
+Model B7A2
+ wings 680 km/h
+ gear 350 km/h
+ flaps_combat 457 km/h
+ flaps_takeoff 428 km/h
+ flaps_landing 280 km/h
+ Max speed 565 km/h at at 6 550 m
+ Turn time 28 s
+ Max altitude 8 260 m
+Model Ba.65 (K.14) L
+ wings 590 km/h
+ gear 400 km/h
+ flaps_combat 490 km/h
+ flaps_takeoff 451 km/h
+ flaps_landing 250 km/h
+ Max speed 490 km/h at at 5 600 m
+ Turn time 29 s
+ Max altitude 9 800 m
+Model Barak II
+ wings 1,555 km/h
+ gear 482 km/h
+ flaps_combat  km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 463 km/h
+ Max speed 2 110 km/h at at 11 582 m
+ Turn time 22 s
+ Max altitude 15 240 m
+Model Baz Meshupar
+ wings 0 km/h
+ gear 700 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 2 592 km/h at at 10 668 m
+ Turn time 20 s
+ Max altitude 16 764 m
+Model Baz
+ wings 1,629 km/h
+ gear 700 km/h
+ flaps_combat  km/h
+ flaps_takeoff 548 km/h
+ flaps_landing 481 km/h
+ Max speed 2 592 km/h at at 10 668 m
+ Turn time 20 s
+ Max altitude 16 764 m
+Model BB1
+ wings 620 km/h
+ gear 350 km/h
+ flaps_combat 394 km/h
+ flaps_takeoff 340 km/h
+ flaps_landing 340 km/h
+ Max speed 467 km/h at at 6 600 m
+ Turn time 23 s
+ Max altitude 8 900 m
+Model Be6
+ wings 500 km/h
+ gear 450 km/h
+ flaps_combat 291 km/h
+ flaps_takeoff 279 km/h
+ flaps_landing 220 km/h
+ Max speed 418 km/h at at 2 135 m
+ Turn time 28 s
+ Max altitude 6 100 m
+Model Beaufighter Mk 21
+ wings 676 km/h
+ gear 242 km/h
+ flaps_combat 354 km/h
+ flaps_takeoff 242 km/h
+ flaps_landing 216 km/h
+ Max speed 520 km/h at at 5 000 m
+ Turn time 42 s
+ Max altitude 9 382 m
+Model Beaufighter Mk I (40mm)
+ wings 676 km/h
+ gear 242 km/h
+ flaps_combat 354 km/h
+ flaps_takeoff 242 km/h
+ flaps_landing 216 km/h
+ Max speed 504 km/h at at 4 878 m
+ Turn time 27 s
+ Max altitude 8 100 m
+Model Beaufighter Mk VIc
+ wings 676 km/h
+ gear 242 km/h
+ flaps_combat 354 km/h
+ flaps_takeoff 242 km/h
+ flaps_landing 216 km/h
+ Max speed 536 km/h at at 5 000 m
+ Turn time 23 s
+ Max altitude 8 100 m
+Model Beaufighter Mk X
+ wings 676 km/h
+ gear 242 km/h
+ flaps_combat 354 km/h
+ flaps_takeoff 242 km/h
+ flaps_landing 216 km/h
+ Max speed 490 km/h at at 2 600 m
+ Turn time 28 s
+ Max altitude 4 575 m
+Model Beaufort Mk VIII
+ wings 523 km/h
+ gear 242 km/h
+ flaps_combat 415 km/h
+ flaps_takeoff 383 km/h
+ flaps_landing 216 km/h
+ Max speed 437 km/h at at 1 981 m
+ Turn time 39 s
+ Max altitude 5 029 m
+Model Bf 109 B1
+ wings 790 km/h
+ gear 280 km/h
+ flaps_combat 387 km/h
+ flaps_takeoff 371 km/h
+ flaps_landing 250 km/h
+ Max speed 465 km/h at at 4 000 m
+ Turn time 22 s
+ Max altitude 9 000 m
+Model Bf 109 C1
+ wings 0 km/h
+ gear 280 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 484 km/h at at 4 000 m
+ Turn time 19 s
+ Max altitude 9 500 m
+Model Bf 109 E1
+ wings 790 km/h
+ gear 320 km/h
+ flaps_combat 477 km/h
+ flaps_takeoff 448 km/h
+ flaps_landing 300 km/h
+ Max speed 570 km/h at at 5 000 m
+ Turn time 20 s
+ Max altitude 10 000 m
+Model Bf 109 E3
+ wings 790 km/h
+ gear 320 km/h
+ flaps_combat 477 km/h
+ flaps_takeoff 448 km/h
+ flaps_landing 300 km/h
+ Max speed 570 km/h at at 5 000 m
+ Turn time 20 s
+ Max altitude 11 000 m
+Model Bf 109 E4
+ wings 790 km/h
+ gear 320 km/h
+ flaps_combat 487 km/h
+ flaps_takeoff 471 km/h
+ flaps_landing 280 km/h
+ Max speed 580 km/h at at 5 000 m
+ Turn time 21 s
+ Max altitude 11 000 m
+Model Bf 109 E7 (Japan)
+ wings 790 km/h
+ gear 320 km/h
+ flaps_combat 487 km/h
+ flaps_takeoff 471 km/h
+ flaps_landing 280 km/h
+ Max speed 570 km/h at at 5 000 m
+ Turn time 20 s
+ Max altitude 11 000 m
+Model Bf 109 E7/U2
+ wings 790 km/h
+ gear 320 km/h
+ flaps_combat 487 km/h
+ flaps_takeoff 471 km/h
+ flaps_landing 280 km/h
+ Max speed 580 km/h at at 5 000 m
+ Turn time 21 s
+ Max altitude 11 000 m
+Model Bf 109 F1
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 614 km/h at at 5 000 m
+ Turn time 18 s
+ Max altitude 10 000 m
+Model Bf 109 F2
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 614 km/h at at 5 000 m
+ Turn time 18 s
+ Max altitude 10 000 m
+Model Bf 109 F4 (Italy)
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 665 km/h at at 6 000 m
+ Turn time 19 s
+ Max altitude 11 600 m
+Model Bf 109 F4 (USA)
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 665 km/h at at 6 000 m
+ Turn time 19 s
+ Max altitude 11 600 m
+Model Bf 109 F4
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 665 km/h at at 6 000 m
+ Turn time 19 s
+ Max altitude 11 600 m
+Model Bf 109 F4/trop
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 658 km/h at at 5 800 m
+ Turn time 19 s
+ Max altitude 11 600 m
+Model Bf 109 G10
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 692 km/h at at 7 000 m
+ Turn time 19 s
+ Max altitude 12 500 m
+Model Bf 109 G14
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 674 km/h at at 5 500 m
+ Turn time 20 s
+ Max altitude 11 500 m
+Model Bf 109 G14/AS (Italy)
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 698 km/h at at 7 000 m
+ Turn time 20 s
+ Max altitude 11 500 m
+Model Bf 109 G2 (Italy)
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 696 km/h at at 6 700 m
+ Turn time 19 s
+ Max altitude 10 360 m
+Model Bf 109 G2 (Sweden)
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 406 km/h
+ flaps_landing 260 km/h
+ Max speed 682 km/h at at 6 500 m
+ Turn time 19 s
+ Max altitude 13 200 m
+Model Bf 109 G2
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 696 km/h at at 6 700 m
+ Turn time 19 s
+ Max altitude 10 360 m
+Model Bf 109 G2/trop
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 682 km/h at at 6 500 m
+ Turn time 19 s
+ Max altitude 13 200 m
+Model Bf 109 G6 (Sweden)
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 668 km/h at at 5 500 m
+ Turn time 20 s
+ Max altitude 11 500 m
+Model Bf 109 G6 Erla (Sweden)
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 668 km/h at at 5 500 m
+ Turn time 20 s
+ Max altitude 11 500 m
+Model Bf 109 G6
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 668 km/h at at 5 500 m
+ Turn time 20 s
+ Max altitude 11 500 m
+Model Bf 109 K4
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 720 km/h at at 6 000 m
+ Turn time 19 s
+ Max altitude 12 800 m
+Model Bf 109 Z1
+ wings 790 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 712 km/h at at 6 500 m
+ Turn time 23 s
+ Max altitude 12 600 m
+Model Bf 110 C6
+ wings 715 km/h
+ gear 320 km/h
+ flaps_combat 467 km/h
+ flaps_takeoff 438 km/h
+ flaps_landing 290 km/h
+ Max speed 545 km/h at at 5 300 m
+ Turn time 23 s
+ Max altitude 10 000 m
+Model Bf 110 C7
+ wings 715 km/h
+ gear 320 km/h
+ flaps_combat 467 km/h
+ flaps_takeoff 438 km/h
+ flaps_landing 290 km/h
+ Max speed 560 km/h at at 5 300 m
+ Turn time 22 s
+ Max altitude 10 000 m
+Model Bf 110 F2
+ wings 745 km/h
+ gear 320 km/h
+ flaps_combat 467 km/h
+ flaps_takeoff 438 km/h
+ flaps_landing 290 km/h
+ Max speed 570 km/h at at 5 400 m
+ Turn time 24 s
+ Max altitude 10 000 m
+Model Bf 110 G2
+ wings 745 km/h
+ gear 320 km/h
+ flaps_combat 467 km/h
+ flaps_takeoff 438 km/h
+ flaps_landing 290 km/h
+ Max speed 595 km/h at at 6 200 m
+ Turn time 24 s
+ Max altitude 11 000 m
+Model Bf 110 G4 (Italy)
+ wings 745 km/h
+ gear 320 km/h
+ flaps_combat 467 km/h
+ flaps_takeoff 438 km/h
+ flaps_landing 290 km/h
+ Max speed 591 km/h at at 6 200 m
+ Turn time 25 s
+ Max altitude 10 700 m
+Model Bf 110 G4
+ wings 745 km/h
+ gear 320 km/h
+ flaps_combat 467 km/h
+ flaps_takeoff 438 km/h
+ flaps_landing 290 km/h
+ Max speed 591 km/h at at 6 200 m
+ Turn time 25 s
+ Max altitude 10 700 m
+Model BF2C1
+ wings 600 km/h
+ gear 280 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 411 km/h at at 3 500 m
+ Turn time 13 s
+ Max altitude 10 700 m
+Model BI
+ wings 920 km/h
+ gear 420 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 320 km/h
+ Max speed 799 km/h at at 2 000 m
+ Turn time 23 s
+ Max altitude 12 000 m
+Model Blenheim Mk IV
+ wings 482 km/h
+ gear 236 km/h
+ flaps_combat 305 km/h
+ flaps_takeoff 289 km/h
+ flaps_landing 211 km/h
+ Max speed 428 km/h at at 3 962 m
+ Turn time 26 s
+ Max altitude 8 310 m
+Model Bong's P38J15
+ wings 790 km/h
+ gear 289 km/h
+ flaps_combat 565 km/h
+ flaps_takeoff 495 km/h
+ flaps_landing 250 km/h
+ Max speed 693 km/h at at 7 921 m
+ Turn time 21 s
+ Max altitude 12 192 m
+Model Boomerang Mk I (Great Britain)
+ wings 660 km/h
+ gear 320 km/h
+ flaps_combat 487 km/h
+ flaps_takeoff 445 km/h
+ flaps_landing 225 km/h
+ Max speed 491 km/h at at 5 100 m
+ Turn time 22 s
+ Max altitude 10 356 m
+Model Boomerang Mk II (Great Britain)
+ wings 660 km/h
+ gear 320 km/h
+ flaps_combat 487 km/h
+ flaps_takeoff 445 km/h
+ flaps_landing 225 km/h
+ Max speed 491 km/h at at 5 100 m
+ Turn time 22 s
+ Max altitude 10 356 m
+Model Boston Mk I (Great Britain)
+ wings 665 km/h
+ gear 296 km/h
+ flaps_combat 428 km/h
+ flaps_takeoff 406 km/h
+ flaps_landing 296 km/h
+ Max speed 518 km/h at at 4 634 m
+ Turn time 27 s
+ Max altitude 8 000 m
+Model Bostwick's P47M1RE
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 760 km/h at at 9 144 m
+ Turn time 24 s
+ Max altitude 12 200 m
+Model Br.693AB2
+ wings ~590 km/h
+ gear 295 km/h
+ flaps_combat 382 km/h
+ flaps_takeoff 320 km/h
+ flaps_landing 294 km/h
+ Max speed 495 km/h at at 4 000 m
+ Turn time 19 s
+ Max altitude 9 500 m
+Model Breda 88 (P.XI)
+ wings 712.5 km/h
+ gear 262 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 388 km/h
+ flaps_landing 283 km/h
+ Max speed 490 km/h at at 5 600 m
+ Turn time 29 s
+ Max altitude 9 800 m
+Model Brigand B 1
+ wings 680 km/h
+ gear 342 km/h
+ flaps_combat 430 km/h
+ flaps_takeoff 404 km/h
+ flaps_landing 270 km/h
+ Max speed 580 km/h at at 4 267 m
+ Turn time 26 s
+ Max altitude 10 300 m
+Model BTD1
+ wings 885 km/h
+ gear 253 km/h
+ flaps_combat 365 km/h
+ flaps_takeoff 347 km/h
+ flaps_landing 253 km/h
+ Max speed 553 km/h at at 4 907 m
+ Turn time 27 s
+ Max altitude 7 190 m
+Model Buccaneer S.1
+ wings 1181 km/h
+ gear 416 km/h
+ flaps_combat 518 km/h
+ flaps_takeoff 463 km/h
+ flaps_landing 370 km/h
+ Max speed 1 105 km/h at at 0 m
+ Turn time 32 s
+ Max altitude 12 000 m
+Model Buccaneer S.2
+ wings 1181 km/h
+ gear 416 km/h
+ flaps_combat 518 km/h
+ flaps_takeoff 463 km/h
+ flaps_landing 370 km/h
+ Max speed 1 166 km/h at at 0 m
+ Turn time 32 s
+ Max altitude 15 000 m
+Model Buccaneer S.2B
+ wings 1181 km/h
+ gear 416 km/h
+ flaps_combat 518 km/h
+ flaps_takeoff 463 km/h
+ flaps_landing 370 km/h
+ Max speed 1 166 km/h at at 0 m
+ Turn time 32 s
+ Max altitude 15 000 m
+Model BV 138 C1
+ wings 405 km/h
+ gear 450 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 405 km/h
+ flaps_landing 320 km/h
+ Max speed 283 km/h at at 0 m
+ Turn time 39 s
+ Max altitude 2 800 m
+Model BV 155 B1
+ wings 730 km/h
+ gear 360 km/h
+ flaps_combat 438 km/h
+ flaps_takeoff 409 km/h
+ flaps_landing 260 km/h
+ Max speed 695 km/h at at 15 500 m
+ Turn time 17 s
+ Max altitude 17 000 m
+Model BV 238
+ wings 546 km/h
+ gear 250 km/h
+ flaps_combat 401 km/h
+ flaps_takeoff 377 km/h
+ flaps_landing 250 km/h
+ Max speed 421 km/h at at 6 600 m
+ Turn time 30 s
+ Max altitude 9 000 m

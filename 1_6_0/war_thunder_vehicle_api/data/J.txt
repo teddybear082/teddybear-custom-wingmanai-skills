@@ -1,0 +1,603 @@
+Model J11
+ wings 1,540 km/h
+ gear 700 km/h
+ flaps_combat  km/h
+ flaps_takeoff 652 km/h
+ flaps_landing 600 km/h
+ Max speed 2 491 km/h at at 12 000 m
+ Turn time 24 s
+ Max altitude 16 000 m
+Model J11A
+ wings 0 km/h
+ gear 700 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 2 491 km/h at at 12 000 m
+ Turn time 24 s
+ Max altitude 16 000 m
+Model J2
+ wings 1,132 km/h
+ gear 450 km/h
+ flaps_combat  km/h
+ flaps_takeoff 598 km/h
+ flaps_landing 450 km/h
+ Max speed 1 076 km/h at at 0 m
+ Turn time 20 s
+ Max altitude 15 500 m
+Model J4
+ wings 1,150 km/h
+ gear 450 km/h
+ flaps_combat  km/h
+ flaps_takeoff 598 km/h
+ flaps_landing 450 km/h
+ Max speed 1 114 km/h at at 2 000 m
+ Turn time 21 s
+ Max altitude 15 500 m
+Model J6A
+ wings 1260 km/h
+ gear 577 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 500 km/h
+ flaps_landing 450 km/h
+ Max speed 1 436 km/h at at 10 000 m
+ Turn time 32 s
+ Max altitude 17 200 m
+Model J7D
+ wings 1365 km/h
+ gear 700 km/h
+ flaps_combat  km/h
+ flaps_takeoff 500 km/h
+ flaps_landing 450 km/h
+ Max speed 2 419 km/h at at 12 000 m
+ Turn time 26 s
+ Max altitude 16 000 m
+Model J7E
+ wings 1365 km/h
+ gear 500 km/h
+ flaps_combat  km/h
+ flaps_takeoff 665 km/h
+ flaps_landing 450 km/h
+ Max speed 2 387 km/h at at 12 000 m
+ Turn time 24 s
+ Max altitude 16 000 m
+Model J7II
+ wings 1365 km/h
+ gear 500 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 524 km/h
+ flaps_landing 450 km/h
+ Max speed 2 262 km/h at at 13 000 m
+ Turn time 33 s
+ Max altitude 16 000 m
+Model J8B
+ wings 1,365 km/h
+ gear 500 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 525 km/h
+ flaps_landing 450 km/h
+ Max speed 2 300 km/h at at 12 000 m
+ Turn time 27 s
+ Max altitude 16 000 m
+Model J8F
+ wings 1,365 km/h
+ gear 500 km/h
+ flaps_combat  km/h
+ flaps_takeoff 525 km/h
+ flaps_landing 450 km/h
+ Max speed 2 300 km/h at at 12 000 m
+ Turn time 27 s
+ Max altitude 16 000 m
+Model J11
+ wings 578 km/h
+ gear 580 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 429 km/h at at 5 200 m
+ Turn time 19 s
+ Max altitude 8 500 m
+Model J1N1
+ wings 712.5 km/h
+ gear 350 km/h
+ flaps_combat 432 km/h
+ flaps_takeoff 409 km/h
+ flaps_landing 290 km/h
+ Max speed 522 km/h at at 5 000 m
+ Turn time 25 s
+ Max altitude 10 000 m
+Model J20
+ wings 740 km/h
+ gear 320 km/h
+ flaps_combat 457 km/h
+ flaps_takeoff 428 km/h
+ flaps_landing 280 km/h
+ Max speed 529 km/h at at 5 300 m
+ Turn time 16 s
+ Max altitude 10 000 m
+Model J21A1
+ wings 683 km/h
+ gear 325 km/h
+ flaps_combat 445 km/h
+ flaps_takeoff 425 km/h
+ flaps_landing 325 km/h
+ Max speed 640 km/h at at 4 300 m
+ Turn time 20 s
+ Max altitude 10 800 m
+Model J21A2
+ wings 683 km/h
+ gear 325 km/h
+ flaps_combat 445 km/h
+ flaps_takeoff 425 km/h
+ flaps_landing 325 km/h
+ Max speed 640 km/h at at 4 300 m
+ Turn time 20 s
+ Max altitude 10 800 m
+Model J21RA
+ wings 787 km/h
+ gear 360 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 408 km/h
+ flaps_landing 260 km/h
+ Max speed 799 km/h at at 4 000 m
+ Turn time 24 s
+ Max altitude 12 192 m
+Model J22A
+ wings 670 km/h
+ gear 270 km/h
+ flaps_combat 487 km/h
+ flaps_takeoff 444 km/h
+ flaps_landing 225 km/h
+ Max speed 560 km/h at at 4 300 m
+ Turn time 20 s
+ Max altitude 9 200 m
+Model J22B
+ wings 670 km/h
+ gear 270 km/h
+ flaps_combat 487 km/h
+ flaps_takeoff 444 km/h
+ flaps_landing 225 km/h
+ Max speed 560 km/h at at 4 300 m
+ Turn time 21 s
+ Max altitude 9 000 m
+Model J26 David
+ wings 853 km/h
+ gear 287 km/h
+ flaps_combat 676 km/h
+ flaps_takeoff 676 km/h
+ flaps_landing 433 km/h
+ Max speed 708 km/h at at 7 300 m
+ Turn time 21 s
+ Max altitude 12 800 m
+Model J26
+ wings 901 km/h
+ gear 281 km/h
+ flaps_combat 644 km/h
+ flaps_takeoff 512 km/h
+ flaps_landing 265 km/h
+ Max speed 710 km/h at at 7 620 m
+ Turn time 22 s
+ Max altitude 12 700 m
+Model J29A
+ wings 1102 km/h
+ gear 420 km/h
+ flaps_combat 800 km/h
+ flaps_takeoff 575 km/h
+ flaps_landing 350 km/h
+ Max speed 1 015 km/h at at 0 m
+ Turn time 29 s
+ Max altitude 13 500 m
+Model J29D
+ wings 1102 km/h
+ gear 420 km/h
+ flaps_combat 800 km/h
+ flaps_takeoff 575 km/h
+ flaps_landing 350 km/h
+ Max speed 1 040 km/h at at 0 m
+ Turn time 29 s
+ Max altitude 13 500 m
+Model J29F
+ wings 1102 km/h
+ gear 420 km/h
+ flaps_combat 800 km/h
+ flaps_takeoff 575 km/h
+ flaps_landing 350 km/h
+ Max speed 1 040 km/h at at 0 m
+ Turn time 29 s
+ Max altitude 13 500 m
+Model J2M2
+ wings 820 km/h
+ gear 350 km/h
+ flaps_combat 488 km/h
+ flaps_takeoff 454 km/h
+ flaps_landing 280 km/h
+ Max speed 596 km/h at at 5 500 m
+ Turn time 19 s
+ Max altitude 11 500 m
+Model J2M3
+ wings 0 km/h
+ gear 350 km/h
+ flaps_combat 488 km/h
+ flaps_takeoff 454 km/h
+ flaps_landing 280 km/h
+ Max speed 596 km/h at at 5 500 m
+ Turn time 19 s
+ Max altitude 11 500 m
+Model J2M4 Kai
+ wings 820 km/h
+ gear 350 km/h
+ flaps_combat 488 km/h
+ flaps_takeoff 454 km/h
+ flaps_landing 280 km/h
+ Max speed 637 km/h at at 7 000 m
+ Turn time 21 s
+ Max altitude 13 000 m
+Model J2M5 30mm
+ wings 820 km/h
+ gear 350 km/h
+ flaps_combat 488 km/h
+ flaps_takeoff 454 km/h
+ flaps_landing 280 km/h
+ Max speed 615 km/h at at 6 580 m
+ Turn time 19 s
+ Max altitude 11 500 m
+Model J2M5
+ wings 0 km/h
+ gear 350 km/h
+ flaps_combat 488 km/h
+ flaps_takeoff 454 km/h
+ flaps_landing 280 km/h
+ Max speed 615 km/h at at 6 580 m
+ Turn time 19 s
+ Max altitude 11 500 m
+Model J32B
+ wings 1160 km/h
+ gear 450 km/h
+ flaps_combat 524 km/h
+ flaps_takeoff 491 km/h
+ flaps_landing 320 km/h
+ Max speed 1 140 km/h at at 0 m
+ Turn time 34 s
+ Max altitude 12 500 m
+Model J34
+ wings 1,193 km/h
+ gear 450 km/h
+ flaps_combat 603 km/h
+ flaps_takeoff 581 km/h
+ flaps_landing 465 km/h
+ Max speed 1 109 km/h at at 0 m
+ Turn time 31 s
+ Max altitude 14 000 m
+Model J35A
+ wings 1,417 km/h
+ gear 500 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing  km/h
+ Max speed 2 250 km/h at at 9 000 m
+ Turn time 25 s
+ Max altitude 12 500 m
+Model J35D
+ wings 1,417 km/h
+ gear 500 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing  km/h
+ Max speed 2 250 km/h at at 9 000 m
+ Turn time 25 s
+ Max altitude 12 500 m
+Model J5N1
+ wings 810 km/h
+ gear 320 km/h
+ flaps_combat 431 km/h
+ flaps_takeoff 406 km/h
+ flaps_landing 280 km/h
+ Max speed 663 km/h at at 6 500 m
+ Turn time 27 s
+ Max altitude 11 000 m
+Model J6B
+ wings 560 km/h
+ gear 560 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 325 km/h at at 3 000 m
+ Turn time 13 s
+ Max altitude 7 700 m
+Model J6K1
+ wings 780 km/h
+ gear 320 km/h
+ flaps_combat 460 km/h
+ flaps_takeoff 382 km/h
+ flaps_landing 280 km/h
+ Max speed 685 km/h at at 10 000 m
+ Turn time 18 s
+ Max altitude 13 000 m
+Model J7W1
+ wings 900 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 750 km/h at at 8 500 m
+ Turn time 30 s
+ Max altitude 12 500 m
+Model J8A
+ wings 600 km/h
+ gear 560 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 414 km/h at at 4 420 m
+ Turn time 15 s
+ Max altitude 10 211 m
+Model J9 Early
+ wings 770 km/h
+ gear 290 km/h
+ flaps_combat 488 km/h
+ flaps_takeoff 447 km/h
+ flaps_landing 232 km/h
+ Max speed 470 km/h at at 3 700 m
+ Turn time 18 s
+ Max altitude 9 200 m
+Model JA37C
+ wings 1,536 km/h
+ gear 620 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing 400 km/h
+ Max speed 1 998 km/h at at 11 000 m
+ Turn time 25 s
+ Max altitude 14 500 m
+Model JA37D
+ wings 1,536 km/h
+ gear 620 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing 400 km/h
+ Max speed 1 998 km/h at at 11 000 m
+ Turn time 25 s
+ Max altitude 14 500 m
+Model Jaguar A
+ wings 1,273 km/h
+ gear 481 km/h
+ flaps_combat 926 km/h
+ flaps_takeoff 525 km/h
+ flaps_landing 410 km/h
+ Max speed 1 490 km/h at at 10 668 m
+ Turn time 30 s
+ Max altitude 13 716 m
+Model Jaguar E
+ wings 1,273 km/h
+ gear 481 km/h
+ flaps_combat 1,273 km/h
+ flaps_takeoff 525 km/h
+ flaps_landing 410 km/h
+ Max speed 1 490 km/h at at 10 668 m
+ Turn time 30 s
+ Max altitude 13 716 m
+Model Jaguar GR.1
+ wings 1,273 km/h
+ gear 481 km/h
+ flaps_combat 926 km/h
+ flaps_takeoff 525 km/h
+ flaps_landing 410 km/h
+ Max speed 1 490 km/h at at 10 668 m
+ Turn time 30 s
+ Max altitude 13 716 m
+Model Jaguar GR.1A
+ wings 1,273 km/h
+ gear 481 km/h
+ flaps_combat 1,273 km/h
+ flaps_takeoff 525 km/h
+ flaps_landing 410 km/h
+ Max speed 1 591 km/h at at 10 668 m
+ Turn time 30 s
+ Max altitude 13 716 m
+Model Jaguar IS
+ wings 1,273 km/h
+ gear 481 km/h
+ flaps_combat 1,273 km/h
+ flaps_takeoff 525 km/h
+ flaps_landing 410 km/h
+ Max speed 1 609 km/h at at 10 668 m
+ Turn time 30 s
+ Max altitude 13 716 m
+Model JAS39A
+ wings 1,543 km/h
+ gear 620 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing  km/h
+ Max speed 2 240 km/h at at 11 000 m
+ Turn time 24 s
+ Max altitude 14 500 m
+Model JAS39C (Great Britain)
+ wings 1,543 km/h
+ gear 620 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing  km/h
+ Max speed 2 240 km/h at at 11 000 m
+ Turn time 24 s
+ Max altitude 14 500 m
+Model JAS39C
+ wings 0 km/h
+ gear 620 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 2 240 km/h at at 11 000 m
+ Turn time 24 s
+ Max altitude 14 500 m
+Model JAS39EBS HU C (Italy)
+ wings 0 km/h
+ gear 620 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 2 240 km/h at at 11 000 m
+ Turn time 24 s
+ Max altitude 14 500 m
+Model Javelin F.(A.W.) Mk.9
+ wings 0 km/h
+ gear 407 km/h
+ flaps_combat 521 km/h
+ flaps_takeoff 497 km/h
+ flaps_landing 370 km/h
+ Max speed 991 km/h at at 100 m
+ Turn time 24 s
+ Max altitude 15 000 m
+Model JH7A
+ wings 1,331 km/h
+ gear 450 km/h
+ flaps_combat 717 km/h
+ flaps_takeoff 673 km/h
+ flaps_landing 450 km/h
+ Max speed 1 870 km/h at at 12 000 m
+ Turn time 29 s
+ Max altitude 15 000 m
+Model Ju 188 A2
+ wings 675 km/h
+ gear 310 km/h
+ flaps_combat 457 km/h
+ flaps_takeoff 428 km/h
+ flaps_landing 280 km/h
+ Max speed 520 km/h at at 6 000 m
+ Turn time 32 s
+ Max altitude 11 200 m
+Model Ju 288 C
+ wings 675 km/h
+ gear 310 km/h
+ flaps_combat 457 km/h
+ flaps_takeoff 428 km/h
+ flaps_landing 280 km/h
+ Max speed 630 km/h at at 6 000 m
+ Turn time 30 s
+ Max altitude 11 000 m
+Model Ju 388 J
+ wings 675 km/h
+ gear 310 km/h
+ flaps_combat 457 km/h
+ flaps_takeoff 428 km/h
+ flaps_landing 280 km/h
+ Max speed 621 km/h at at 10 600 m
+ Turn time 29 s
+ Max altitude 13 000 m
+Model Ju 87 B2
+ wings 680 km/h
+ gear 680 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 383 km/h at at 4 100 m
+ Turn time 27 s
+ Max altitude 7 000 m
+Model Ju 87 D3 (Italy)
+ wings 730 km/h
+ gear 800 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 454 km/h
+ flaps_landing 320 km/h
+ Max speed 385 km/h at at 4 000 m
+ Turn time 31 s
+ Max altitude 7 500 m
+Model Ju 87 D3
+ wings 730 km/h
+ gear 800 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 454 km/h
+ flaps_landing 320 km/h
+ Max speed 385 km/h at at 4 000 m
+ Turn time 31 s
+ Max altitude 7 500 m
+Model Ju 87 D5
+ wings 730 km/h
+ gear 800 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 454 km/h
+ flaps_landing 320 km/h
+ Max speed 385 km/h at at 4 000 m
+ Turn time 31 s
+ Max altitude 7 500 m
+Model Ju 87 G1
+ wings 730 km/h
+ gear 800 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 454 km/h
+ flaps_landing 320 km/h
+ Max speed 380 km/h at at 4 000 m
+ Turn time 32 s
+ Max altitude 7 000 m
+Model Ju 87 G2
+ wings 730 km/h
+ gear 800 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 454 km/h
+ flaps_landing 320 km/h
+ Max speed 380 km/h at at 4 000 m
+ Turn time 32 s
+ Max altitude 7 000 m
+Model Ju 87 R2 (Italy)
+ wings 680 km/h
+ gear 680 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 383 km/h at at 4 100 m
+ Turn time 27 s
+ Max altitude 7 000 m
+Model Ju 87 R2 Libya
+ wings 680 km/h
+ gear 680 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 383 km/h at at 4 100 m
+ Turn time 27 s
+ Max altitude 7 000 m
+Model Ju 87 R2
+ wings 680 km/h
+ gear 680 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 383 km/h at at 4 100 m
+ Turn time 27 s
+ Max altitude 7 000 m
+Model Ju 88 A1
+ wings 675 km/h
+ gear 310 km/h
+ flaps_combat 457 km/h
+ flaps_takeoff 428 km/h
+ flaps_landing 280 km/h
+ Max speed 455 km/h at at 5 600 m
+ Turn time 30 s
+ Max altitude 9 800 m
+Model Ju 88 A4 (Sweden)
+ wings 675 km/h
+ gear 310 km/h
+ flaps_combat 457 km/h
+ flaps_takeoff 428 km/h
+ flaps_landing 280 km/h
+ Max speed 455 km/h at at 5 600 m
+ Turn time 30 s
+ Max altitude 9 800 m
+Model Ju 88 A4
+ wings 675 km/h
+ gear 310 km/h
+ flaps_combat 457 km/h
+ flaps_takeoff 428 km/h
+ flaps_landing 280 km/h
+ Max speed 455 km/h at at 5 600 m
+ Turn time 30 s
+ Max altitude 9 800 m
+Model Ju 88 C6
+ wings 675 km/h
+ gear 310 km/h
+ flaps_combat 457 km/h
+ flaps_takeoff 428 km/h
+ flaps_landing 280 km/h
+ Max speed 490 km/h at at 5 600 m
+ Turn time 29 s
+ Max altitude 9 800 m

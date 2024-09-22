@@ -1,0 +1,288 @@
+Model La11 (China)
+ wings 850 km/h
+ gear 320 km/h
+ flaps_combat 460 km/h
+ flaps_takeoff 434 km/h
+ flaps_landing 290 km/h
+ Max speed 680 km/h at at 6 200 m
+ Turn time 22 s
+ Max altitude 10 250 m
+Model La11
+ wings 850 km/h
+ gear 320 km/h
+ flaps_combat 460 km/h
+ flaps_takeoff 434 km/h
+ flaps_landing 290 km/h
+ Max speed 680 km/h at at 6 200 m
+ Turn time 22 s
+ Max altitude 10 250 m
+Model La15
+ wings 945 km/h
+ gear 450 km/h
+ flaps_combat  km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 320 km/h
+ Max speed 1 022 km/h at at 3 000 m
+ Turn time 23 s
+ Max altitude 13 500 m
+Model La174
+ wings 945 km/h
+ gear 450 km/h
+ flaps_combat  km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 320 km/h
+ Max speed 1 026 km/h at at 3 000 m
+ Turn time 21 s
+ Max altitude 13 500 m
+Model La200
+ wings 1123 km/h
+ gear 450 km/h
+ flaps_combat 627 km/h
+ flaps_takeoff 598 km/h
+ flaps_landing 450 km/h
+ Max speed 1 101 km/h at at 0 m
+ Turn time 26 s
+ Max altitude 13 500 m
+Model La5
+ wings 735 km/h
+ gear 340 km/h
+ flaps_combat 431 km/h
+ flaps_takeoff 406 km/h
+ flaps_landing 280 km/h
+ Max speed 580 km/h at at 6 200 m
+ Turn time 21 s
+ Max altitude 9 600 m
+Model La5F
+ wings 0 km/h
+ gear 310 km/h
+ flaps_combat 447 km/h
+ flaps_takeoff 418 km/h
+ flaps_landing 270 km/h
+ Max speed 593 km/h at at 5 000 m
+ Turn time 21 s
+ Max altitude 9 000 m
+Model La5FN (Germany)
+ wings 735 km/h
+ gear 310 km/h
+ flaps_combat 447 km/h
+ flaps_takeoff 418 km/h
+ flaps_landing 270 km/h
+ Max speed 620 km/h at at 6 100 m
+ Turn time 19 s
+ Max altitude 11 350 m
+Model La5FN
+ wings 735 km/h
+ gear 310 km/h
+ flaps_combat 447 km/h
+ flaps_takeoff 418 km/h
+ flaps_landing 270 km/h
+ Max speed 620 km/h at at 6 100 m
+ Turn time 19 s
+ Max altitude 11 350 m
+Model La7
+ wings 735 km/h
+ gear 320 km/h
+ flaps_combat 504 km/h
+ flaps_takeoff 471 km/h
+ flaps_landing 300 km/h
+ Max speed 677 km/h at at 6 250 m
+ Turn time 19 s
+ Max altitude 10 450 m
+Model La7B20
+ wings 735 km/h
+ gear 320 km/h
+ flaps_combat 504 km/h
+ flaps_takeoff 471 km/h
+ flaps_landing 300 km/h
+ Max speed 661 km/h at at 6 000 m
+ Turn time 20 s
+ Max altitude 10 450 m
+Model La9 (China)
+ wings 850 km/h
+ gear 320 km/h
+ flaps_combat 490 km/h
+ flaps_takeoff 451 km/h
+ flaps_landing 290 km/h
+ Max speed 690 km/h at at 6 250 m
+ Turn time 21 s
+ Max altitude 13 000 m
+Model La9
+ wings 850 km/h
+ gear 320 km/h
+ flaps_combat 490 km/h
+ flaps_takeoff 451 km/h
+ flaps_landing 290 km/h
+ Max speed 690 km/h at at 6 250 m
+ Turn time 21 s
+ Max altitude 13 000 m
+Model LaGG311
+ wings 0 km/h
+ gear 350 km/h
+ flaps_combat 440 km/h
+ flaps_takeoff 414 km/h
+ flaps_landing 280 km/h
+ Max speed 561 km/h at at 5 000 m
+ Turn time 24 s
+ Max altitude 9 000 m
+Model LaGG323
+ wings 0 km/h
+ gear 350 km/h
+ flaps_combat 440 km/h
+ flaps_takeoff 414 km/h
+ flaps_landing 280 km/h
+ Max speed 583 km/h at at 5 000 m
+ Turn time 21 s
+ Max altitude 9 000 m
+Model LaGG334
+ wings 700 km/h
+ gear 450 km/h
+ flaps_combat 440 km/h
+ flaps_takeoff 414 km/h
+ flaps_landing 280 km/h
+ Max speed 560 km/h at at 3 700 m
+ Turn time 23 s
+ Max altitude 9 200 m
+Model LaGG335
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat 440 km/h
+ flaps_takeoff 414 km/h
+ flaps_landing 280 km/h
+ Max speed 566 km/h at at 3 300 m
+ Turn time 21 s
+ Max altitude 9 500 m
+Model LaGG34
+ wings 0 km/h
+ gear 350 km/h
+ flaps_combat 440 km/h
+ flaps_takeoff 414 km/h
+ flaps_landing 280 km/h
+ Max speed 566 km/h at at 3 300 m
+ Turn time 21 s
+ Max altitude 9 500 m
+Model LaGG366
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat 440 km/h
+ flaps_takeoff 414 km/h
+ flaps_landing 280 km/h
+ Max speed 591 km/h at at 3 300 m
+ Turn time 21 s
+ Max altitude 9 800 m
+Model LaGG38
+ wings 0 km/h
+ gear 350 km/h
+ flaps_combat 440 km/h
+ flaps_takeoff 414 km/h
+ flaps_landing 280 km/h
+ Max speed 554 km/h at at 5 000 m
+ Turn time 24 s
+ Max altitude 9 000 m
+Model Lancaster B Mk I
+ wings 608 km/h
+ gear 338 km/h
+ flaps_combat 415 km/h
+ flaps_takeoff 381 km/h
+ flaps_landing 282 km/h
+ Max speed 451 km/h at at 3 048 m
+ Turn time 42 s
+ Max altitude 7 800 m
+Model Lancaster B Mk III
+ wings 608 km/h
+ gear 338 km/h
+ flaps_combat 415 km/h
+ flaps_takeoff 381 km/h
+ flaps_landing 282 km/h
+ Max speed 462 km/h at at 3 048 m
+ Turn time 48 s
+ Max altitude 7 620 m
+Model Lancaster MR.7
+ wings 608 km/h
+ gear 338 km/h
+ flaps_combat 415 km/h
+ flaps_takeoff 318 km/h
+ flaps_landing 282 km/h
+ Max speed 462 km/h at at 3 048 m
+ Turn time 48 s
+ Max altitude 7 620 m
+Model Lanovski's P47M1RE
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 760 km/h at at 9 144 m
+ Turn time 24 s
+ Max altitude 12 200 m
+Model Late 298D
+ wings 450 km/h
+ gear 550 km/h
+ flaps_combat 450 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 320 km/h
+ Max speed 295 km/h at at 2 500 m
+ Turn time 22 s
+ Max altitude 5 600 m
+Model LeO 451 early
+ wings 550 km/h
+ gear 340 km/h
+ flaps_combat 385 km/h
+ flaps_takeoff 366 km/h
+ flaps_landing 270 km/h
+ Max speed 495 km/h at at 6 250 m
+ Turn time 30 s
+ Max altitude 10 500 m
+Model LeO 451 late
+ wings 550 km/h
+ gear 340 km/h
+ flaps_combat 385 km/h
+ flaps_takeoff 366 km/h
+ flaps_landing 270 km/h
+ Max speed 490 km/h at at 6 250 m
+ Turn time 30 s
+ Max altitude 10 500 m
+Model Lightning F.53
+ wings 1361 km/h
+ gear 463 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 654 km/h
+ flaps_landing 463 km/h
+ Max speed 2 290 km/h at at 12 192 m
+ Turn time 26 s
+ Max altitude 18 288 m
+Model Lightning F.6
+ wings 1361 km/h
+ gear 463 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 654 km/h
+ flaps_landing 463 km/h
+ Max speed 2 290 km/h at at 12 192 m
+ Turn time 26 s
+ Max altitude 16 000 m
+Model Lim5P (Germany)
+ wings 1,150 km/h
+ gear 450 km/h
+ flaps_combat  km/h
+ flaps_takeoff 598 km/h
+ flaps_landing 450 km/h
+ Max speed 1 114 km/h at at 2 000 m
+ Turn time 21 s
+ Max altitude 15 500 m
+Model Lincoln B Mk II
+ wings 612.5 km/h
+ gear 341 km/h
+ flaps_combat 406 km/h
+ flaps_takeoff 388 km/h
+ flaps_landing 296 km/h
+ Max speed 513 km/h at at 5 791 m
+ Turn time 35 s
+ Max altitude 9 296 m
+Model Loire 130C
+ wings 0 km/h
+ gear 550 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 295 km/h at at 2 500 m
+ Turn time 22 s
+ Max altitude 5 600 m

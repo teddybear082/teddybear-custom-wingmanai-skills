@@ -1,0 +1,36 @@
+Model E7K2
+ wings 0 km/h
+ gear 400 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 412 km/h at at 4 000 m
+ Turn time 17 s
+ Max altitude 9 200 m
+Model E8N2
+ wings 0 km/h
+ gear 550 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 412 km/h at at 4 000 m
+ Turn time 17 s
+ Max altitude 9 200 m
+Model Eremin's Yak3(e)
+ wings 685 km/h
+ gear 320 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing 320 km/h
+ Max speed 650 km/h at at 4 100 m
+ Turn time 17 s
+ Max altitude 10 400 m
+Model Etendard IVM
+ wings 1,263 km/h
+ gear 426 km/h
+ flaps_combat 1,263 km/h
+ flaps_takeoff 389 km/h
+ flaps_landing 389 km/h
+ Max speed 1 100 km/h at at 0 m
+ Turn time 32 s
+ Max altitude 13 000 m

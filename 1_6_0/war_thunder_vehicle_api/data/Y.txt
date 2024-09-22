@@ -1,0 +1,324 @@
+Model Yak1
+ wings 675 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 577 km/h at at 5 000 m
+ Turn time 18 s
+ Max altitude 10 000 m
+Model Yak141
+ wings 1,450 km/h
+ gear 500 km/h
+ flaps_combat 750 km/h
+ flaps_takeoff 648 km/h
+ flaps_landing 500 km/h
+ Max speed 1 847 km/h at at 11 000 m
+ Turn time 25 s
+ Max altitude 15 000 m
+Model Yak15
+ wings 750 km/h
+ gear 450 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 320 km/h
+ Max speed 755 km/h at at 4 000 m
+ Turn time 18 s
+ Max altitude 13 250 m
+Model Yak15P
+ wings 750 km/h
+ gear 450 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 320 km/h
+ Max speed 755 km/h at at 4 000 m
+ Turn time 18 s
+ Max altitude 13 250 m
+Model Yak17
+ wings 765 km/h
+ gear 450 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 320 km/h
+ Max speed 755 km/h at at 4 000 m
+ Turn time 18 s
+ Max altitude 13 250 m
+Model Yak1B (Germany)
+ wings 683 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 592 km/h at at 4 000 m
+ Turn time 18 s
+ Max altitude 10 500 m
+Model Yak1B
+ wings 683 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 592 km/h at at 4 000 m
+ Turn time 18 s
+ Max altitude 10 500 m
+Model Yak2 KABB
+ wings 680 km/h
+ gear 320 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing 280 km/h
+ Max speed 520 km/h at at 4 800 m
+ Turn time 19 s
+ Max altitude 9 100 m
+Model Yak23
+ wings 1,000 km/h
+ gear 350 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 320 km/h
+ Max speed 929 km/h at at 0 m
+ Turn time 19 s
+ Max altitude 14 500 m
+Model Yak28B
+ wings 1,124 km/h
+ gear 525 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 630 km/h
+ Max speed 1 872 km/h at at 12 000 m
+ Turn time 32 s
+ Max altitude 15 000 m
+Model Yak3 (France)
+ wings 685 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 320 km/h
+ Max speed 650 km/h at at 4 100 m
+ Turn time 17 s
+ Max altitude 10 400 m
+Model Yak3 (VK107)
+ wings 720 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 715 km/h at at 5 900 m
+ Turn time 19 s
+ Max altitude 10 400 m
+Model Yak3
+ wings 685 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 320 km/h
+ Max speed 650 km/h at at 4 100 m
+ Turn time 17 s
+ Max altitude 10 400 m
+Model Yak30D
+ wings 1081 km/h
+ gear 350 km/h
+ flaps_combat 500 km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 320 km/h
+ Max speed 1 026 km/h at at 1 000 m
+ Turn time 21 s
+ Max altitude 15 500 m
+Model Yak38
+ wings 1265 km/h
+ gear 500 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing 500 km/h
+ Max speed 1 199 km/h at at 0 m
+ Turn time 38 s
+ Max altitude 12 500 m
+Model Yak38M
+ wings 1265 km/h
+ gear 500 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing 500 km/h
+ Max speed 1 199 km/h at at 0 m
+ Turn time 38 s
+ Max altitude 12 500 m
+Model Yak3P
+ wings 685 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 320 km/h
+ Max speed 639 km/h at at 4 100 m
+ Turn time 17 s
+ Max altitude 10 400 m
+Model Yak3T
+ wings 685 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 320 km/h
+ Max speed 642 km/h at at 4 200 m
+ Turn time 19 s
+ Max altitude 10 400 m
+Model Yak3U
+ wings 700 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 695 km/h at at 6 000 m
+ Turn time 18 s
+ Max altitude 10 500 m
+Model Yak4
+ wings 680 km/h
+ gear 320 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing 280 km/h
+ Max speed 533 km/h at at 4 800 m
+ Turn time 24 s
+ Max altitude 10 800 m
+Model Yak7B
+ wings 683 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 570 km/h at at 3 650 m
+ Turn time 21 s
+ Max altitude 9 900 m
+Model Yak9
+ wings 683 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 577 km/h at at 3 900 m
+ Turn time 19 s
+ Max altitude 10 500 m
+Model Yak9B
+ wings 683 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 591 km/h at at 3 700 m
+ Turn time 21 s
+ Max altitude 8 900 m
+Model Yak9K
+ wings 683 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 593 km/h at at 4 000 m
+ Turn time 18 s
+ Max altitude 10 000 m
+Model Yak9P (Italy)
+ wings 756 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 660 km/h at at 5 000 m
+ Turn time 21 s
+ Max altitude 10 500 m
+Model Yak9P
+ wings 756 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 660 km/h at at 5 000 m
+ Turn time 21 s
+ Max altitude 10 500 m
+Model Yak9T
+ wings 683 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 593 km/h at at 4 000 m
+ Turn time 18 s
+ Max altitude 10 000 m
+Model Yak9U
+ wings 720 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 672 km/h at at 5 000 m
+ Turn time 19 s
+ Max altitude 10 500 m
+Model Yak9UT
+ wings 720 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 672 km/h at at 5 000 m
+ Turn time 19 s
+ Max altitude 10 500 m
+Model Yer2 (ACh30B) (e)
+ wings 551 km/h
+ gear 300 km/h
+ flaps_combat 447 km/h
+ flaps_takeoff 418 km/h
+ flaps_landing 270 km/h
+ Max speed 415 km/h at at 6 000 m
+ Turn time 48 s
+ Max altitude 11 000 m
+Model Yer2 (ACh30B) (l)
+ wings 551 km/h
+ gear 300 km/h
+ flaps_combat 447 km/h
+ flaps_takeoff 418 km/h
+ flaps_landing 270 km/h
+ Max speed 415 km/h at at 6 000 m
+ Turn time 48 s
+ Max altitude 11 000 m
+Model Yer2 (M105) TAT
+ wings 556 km/h
+ gear 300 km/h
+ flaps_combat 447 km/h
+ flaps_takeoff 418 km/h
+ flaps_landing 270 km/h
+ Max speed 445 km/h at at 4 000 m
+ Turn time 47 s
+ Max altitude 7 200 m
+Model Yer2 (M105)
+ wings 556 km/h
+ gear 300 km/h
+ flaps_combat 447 km/h
+ flaps_takeoff 418 km/h
+ flaps_landing 270 km/h
+ Max speed 445 km/h at at 4 000 m
+ Turn time 47 s
+ Max altitude 7 200 m
+Model Yer2 (M105R) LU
+ wings 556 km/h
+ gear 300 km/h
+ flaps_combat 447 km/h
+ flaps_takeoff 418 km/h
+ flaps_landing 270 km/h
+ Max speed 445 km/h at at 4 000 m
+ Turn time 47 s
+ Max altitude 7 200 m
+Model Yer2 (M105R) TAT
+ wings 556 km/h
+ gear 300 km/h
+ flaps_combat 447 km/h
+ flaps_takeoff 418 km/h
+ flaps_landing 270 km/h
+ Max speed 445 km/h at at 4 000 m
+ Turn time 47 s
+ Max altitude 7 200 m
+Model YP38
+ wings 790 km/h
+ gear 289 km/h
+ flaps_combat 566 km/h
+ flaps_takeoff 495 km/h
+ flaps_landing 250 km/h
+ Max speed 635 km/h at at 7 012 m
+ Turn time 23 s
+ Max altitude 12 192 m

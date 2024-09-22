@@ -1,0 +1,108 @@
+Model Walrus Mk.I
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 412 km/h at at 4 000 m
+ Turn time 17 s
+ Max altitude 9 200 m
+Model Weizman's Spitfire LF Mk.IXe (Israel)
+ wings 774 km/h
+ gear 270 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 230 km/h
+ Max speed 659 km/h at at 4 878 m
+ Turn time 15 s
+ Max altitude 11 500 m
+Model Wellington Mk Ic (Germany)
+ wings 530 km/h
+ gear 264 km/h
+ flaps_combat 315 km/h
+ flaps_takeoff 264 km/h
+ flaps_landing 223 km/h
+ Max speed 378 km/h at at 4 572 m
+ Turn time 35 s
+ Max altitude 6 500 m
+Model Wellington Mk Ic
+ wings 530 km/h
+ gear 264 km/h
+ flaps_combat 315 km/h
+ flaps_takeoff 264 km/h
+ flaps_landing 223 km/h
+ Max speed 378 km/h at at 4 572 m
+ Turn time 35 s
+ Max altitude 6 500 m
+Model Wellington Mk Ic/L
+ wings 530 km/h
+ gear 264 km/h
+ flaps_combat 315 km/h
+ flaps_takeoff 264 km/h
+ flaps_landing 223 km/h
+ Max speed 378 km/h at at 4 572 m
+ Turn time 35 s
+ Max altitude 6 500 m
+Model Wellington Mk III
+ wings 530 km/h
+ gear 264 km/h
+ flaps_combat 315 km/h
+ flaps_takeoff 264 km/h
+ flaps_landing 223 km/h
+ Max speed 418 km/h at at 4 572 m
+ Turn time 30 s
+ Max altitude 7 000 m
+Model Wellington Mk X
+ wings 530 km/h
+ gear 264 km/h
+ flaps_combat 315 km/h
+ flaps_takeoff 264 km/h
+ flaps_landing 223 km/h
+ Max speed 410 km/h at at 4 053 m
+ Turn time 35 s
+ Max altitude 6 500 m
+Model Whirlwind Mk I
+ wings 676 km/h
+ gear 265 km/h
+ flaps_combat 465 km/h
+ flaps_takeoff 433 km/h
+ flaps_landing 265 km/h
+ Max speed 580 km/h at at 4 876 m
+ Turn time 23 s
+ Max altitude 9 144 m
+Model Whirlwind P.9
+ wings 676 km/h
+ gear 265 km/h
+ flaps_combat 465 km/h
+ flaps_takeoff 433 km/h
+ flaps_landing 265 km/h
+ Max speed 580 km/h at at 4 876 m
+ Turn time 23 s
+ Max altitude 9 144 m
+Model Wing Loong I
+ wings 390 km/h
+ gear 450 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 220 km/h at at 1 000 m
+ Turn time 22 s
+ Max altitude 7 500 m
+Model Wirraway (Great Britain)
+ wings 437 km/h
+ gear 280 km/h
+ flaps_combat 381 km/h
+ flaps_takeoff 353 km/h
+ flaps_landing 204 km/h
+ Max speed 338 km/h at at 4 200 m
+ Turn time 36 s
+ Max altitude 5 200 m
+Model Wyvern S4
+ wings 844 km/h
+ gear 330 km/h
+ flaps_combat 566 km/h
+ flaps_takeoff 351 km/h
+ flaps_landing 315 km/h
+ Max speed 650 km/h at at 0 m
+ Turn time 32 s
+ Max altitude 9 000 m

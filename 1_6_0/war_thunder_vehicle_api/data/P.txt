@@ -1,0 +1,933 @@
+Model P26A33
+ wings 508 km/h
+ gear 508 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 377 km/h at at 2 286 m
+ Turn time 18 s
+ Max altitude 8 500 m
+Model P26A34 M2
+ wings 508 km/h
+ gear 508 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 240 km/h
+ Max speed 377 km/h at at 2 286 m
+ Turn time 18 s
+ Max altitude 8 500 m
+Model P26A34
+ wings 508 km/h
+ gear 508 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 240 km/h
+ Max speed 377 km/h at at 2 286 m
+ Turn time 18 s
+ Max altitude 8 500 m
+Model P26B35
+ wings 508 km/h
+ gear 508 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 240 km/h
+ Max speed 377 km/h at at 2 286 m
+ Turn time 18 s
+ Max altitude 8 500 m
+Model P36A
+ wings 681 km/h
+ gear 290 km/h
+ flaps_combat 488 km/h
+ flaps_takeoff 446 km/h
+ flaps_landing 232 km/h
+ Max speed 504 km/h at at 3 048 m
+ Turn time 17 s
+ Max altitude 10 058 m
+Model P36C (TheRussianBadger)
+ wings 770 km/h
+ gear 290 km/h
+ flaps_combat 488 km/h
+ flaps_takeoff 446 km/h
+ flaps_landing 232 km/h
+ Max speed 501 km/h at at 3 048 m
+ Turn time 17 s
+ Max altitude 9 754 m
+Model P36C
+ wings 770 km/h
+ gear 290 km/h
+ flaps_combat 488 km/h
+ flaps_takeoff 446 km/h
+ flaps_landing 232 km/h
+ Max speed 501 km/h at at 3 048 m
+ Turn time 17 s
+ Max altitude 9 754 m
+Model P36G
+ wings 770 km/h
+ gear 290 km/h
+ flaps_combat 488 km/h
+ flaps_takeoff 446 km/h
+ flaps_landing 232 km/h
+ Max speed 501 km/h at at 3 048 m
+ Turn time 17 s
+ Max altitude 9 754 m
+Model P38E
+ wings 790 km/h
+ gear 289 km/h
+ flaps_combat 565 km/h
+ flaps_takeoff 495 km/h
+ flaps_landing 250 km/h
+ Max speed 635 km/h at at 7 012 m
+ Turn time 23 s
+ Max altitude 12 192 m
+Model P38G1
+ wings 790 km/h
+ gear 289 km/h
+ flaps_combat 565 km/h
+ flaps_takeoff 495 km/h
+ flaps_landing 250 km/h
+ Max speed 660 km/h at at 8 229 m
+ Turn time 22 s
+ Max altitude 12 192 m
+Model P38J15
+ wings 790 km/h
+ gear 289 km/h
+ flaps_combat 565 km/h
+ flaps_takeoff 495 km/h
+ flaps_landing 250 km/h
+ Max speed 693 km/h at at 7 921 m
+ Turn time 21 s
+ Max altitude 12 192 m
+Model P38K
+ wings 0 km/h
+ gear 289 km/h
+ flaps_combat 565 km/h
+ flaps_takeoff 495 km/h
+ flaps_landing 250 km/h
+ Max speed 724 km/h at at 6 401 m
+ Turn time 20 s
+ Max altitude 13 411 m
+Model P38L1 (China)
+ wings 790 km/h
+ gear 289 km/h
+ flaps_combat 565 km/h
+ flaps_takeoff 495 km/h
+ flaps_landing 250 km/h
+ Max speed 690 km/h at at 8 534 m
+ Turn time 22 s
+ Max altitude 12 192 m
+Model P38L5LO
+ wings 790 km/h
+ gear 289 km/h
+ flaps_combat 565 km/h
+ flaps_takeoff 495 km/h
+ flaps_landing 250 km/h
+ Max speed 690 km/h at at 8 534 m
+ Turn time 22 s
+ Max altitude 12 192 m
+Model P39K1 (USSR)
+ wings 886 km/h
+ gear 322 km/h
+ flaps_combat 400 km/h
+ flaps_takeoff 374 km/h
+ flaps_landing 233 km/h
+ Max speed 590 km/h at at 3 900 m
+ Turn time 20 s
+ Max altitude 9 500 m
+Model P39N0
+ wings 886 km/h
+ gear 322 km/h
+ flaps_combat 426 km/h
+ flaps_takeoff 396 km/h
+ flaps_landing 241 km/h
+ Max speed 641 km/h at at 3 048 m
+ Turn time 18 s
+ Max altitude 9 700 m
+Model P39Q15 (USSR)
+ wings 886 km/h
+ gear 322 km/h
+ flaps_combat 426 km/h
+ flaps_takeoff 396 km/h
+ flaps_landing 241 km/h
+ Max speed 624 km/h at at 3 048 m
+ Turn time 20 s
+ Max altitude 9 000 m
+Model P39Q25 (France)
+ wings 886 km/h
+ gear 322 km/h
+ flaps_combat 427 km/h
+ flaps_takeoff 397 km/h
+ flaps_landing 241 km/h
+ Max speed 591 km/h at at 3 049 m
+ Turn time 18 s
+ Max altitude 9 000 m
+Model P39Q5
+ wings 886 km/h
+ gear 322 km/h
+ flaps_combat 426 km/h
+ flaps_takeoff 396 km/h
+ flaps_landing 241 km/h
+ Max speed 602 km/h at at 3 048 m
+ Turn time 18 s
+ Max altitude 9 700 m
+Model P400
+ wings 886 km/h
+ gear 322 km/h
+ flaps_combat 400 km/h
+ flaps_takeoff 374 km/h
+ flaps_landing 233 km/h
+ Max speed 576 km/h at at 2 400 m
+ Turn time 22 s
+ Max altitude 9 500 m
+Model P40C
+ wings 795 km/h
+ gear 300 km/h
+ flaps_combat 595 km/h
+ flaps_takeoff 530 km/h
+ flaps_landing 245 km/h
+ Max speed 561 km/h at at 4 500 m
+ Turn time 19 s
+ Max altitude 10 760 m
+Model P40E1 (China)
+ wings 819 km/h
+ gear 300 km/h
+ flaps_combat 595 km/h
+ flaps_takeoff 530 km/h
+ flaps_landing 245 km/h
+ Max speed 560 km/h at at 3 810 m
+ Turn time 21 s
+ Max altitude 9 555 m
+Model P40E1 (USSR)
+ wings 819 km/h
+ gear 300 km/h
+ flaps_combat 595 km/h
+ flaps_takeoff 530 km/h
+ flaps_landing 245 km/h
+ Max speed 560 km/h at at 3 810 m
+ Turn time 21 s
+ Max altitude 9 555 m
+Model P40E1 TD
+ wings 819 km/h
+ gear 300 km/h
+ flaps_combat 595 km/h
+ flaps_takeoff 530 km/h
+ flaps_landing 245 km/h
+ Max speed 560 km/h at at 3 810 m
+ Turn time 21 s
+ Max altitude 9 555 m
+Model P40E1
+ wings 819 km/h
+ gear 300 km/h
+ flaps_combat 595 km/h
+ flaps_takeoff 530 km/h
+ flaps_landing 245 km/h
+ Max speed 560 km/h at at 3 810 m
+ Turn time 21 s
+ Max altitude 9 555 m
+Model P40F10
+ wings 819 km/h
+ gear 300 km/h
+ flaps_combat 595 km/h
+ flaps_takeoff 530 km/h
+ flaps_landing 245 km/h
+ Max speed 615 km/h at at 5 029 m
+ Turn time 20 s
+ Max altitude 11 000 m
+Model P40F5 Lafayette (France)
+ wings 819 km/h
+ gear 300 km/h
+ flaps_combat 595 km/h
+ flaps_takeoff 530 km/h
+ flaps_landing 245 km/h
+ Max speed 615 km/h at at 5 029 m
+ Turn time 20 s
+ Max altitude 11 000 m
+Model P43A1 (China)
+ wings 760 km/h
+ gear 281 km/h
+ flaps_combat 426 km/h
+ flaps_takeoff 396 km/h
+ flaps_landing 241 km/h
+ Max speed 566 km/h at at 7 600 m
+ Turn time 19 s
+ Max altitude 9 700 m
+Model P43A1
+ wings 760 km/h
+ gear 281 km/h
+ flaps_combat 426 km/h
+ flaps_takeoff 396 km/h
+ flaps_landing 241 km/h
+ Max speed 566 km/h at at 7 600 m
+ Turn time 19 s
+ Max altitude 9 700 m
+Model P47D (Germany)
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 700 km/h at at 9 144 m
+ Turn time 25 s
+ Max altitude 12 200 m
+Model P47D16RE (Germany)
+ wings 885 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 692 km/h at at 9 144 m
+ Turn time 25 s
+ Max altitude 12 200 m
+Model P47D22RE (France)
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 695 km/h at at 9 144 m
+ Turn time 25 s
+ Max altitude 12 200 m
+Model P47D22RE
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 695 km/h at at 9 144 m
+ Turn time 25 s
+ Max altitude 12 200 m
+Model P47D23RA (China)
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 714 km/h at at 7 071 m
+ Turn time 23 s
+ Max altitude 12 500 m
+Model P47D25
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 700 km/h at at 9 144 m
+ Turn time 25 s
+ Max altitude 12 200 m
+Model P47D27 (USSR)
+ wings 885 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 700 km/h at at 9 144 m
+ Turn time 25 s
+ Max altitude 12 200 m
+Model P47D28
+ wings 885 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 714 km/h at at 7 071 m
+ Turn time 23 s
+ Max altitude 12 500 m
+Model P47D30 (China)
+ wings 885 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 714 km/h at at 7 071 m
+ Turn time 23 s
+ Max altitude 12 500 m
+Model P47D30 (Italy)
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 714 km/h at at 7 071 m
+ Turn time 23 s
+ Max altitude 12 500 m
+Model P47N15
+ wings 950 km/h
+ gear 450 km/h
+ flaps_combat 495 km/h
+ flaps_takeoff 464 km/h
+ flaps_landing 300 km/h
+ Max speed 750 km/h at at 9 144 m
+ Turn time 30 s
+ Max altitude 13 500 m
+Model P51
+ wings 855 km/h
+ gear 287 km/h
+ flaps_combat 650 km/h
+ flaps_takeoff 520 km/h
+ flaps_landing 280 km/h
+ Max speed 631 km/h at at 5 200 m
+ Turn time 20 s
+ Max altitude 8 839 m
+Model P51A
+ wings 855 km/h
+ gear 287 km/h
+ flaps_combat 652 km/h
+ flaps_takeoff 520 km/h
+ flaps_landing 279 km/h
+ Max speed 668 km/h at at 3 169 m
+ Turn time 20 s
+ Max altitude 9 500 m
+Model P51C10
+ wings 853 km/h
+ gear 287 km/h
+ flaps_combat 676 km/h
+ flaps_takeoff 676 km/h
+ flaps_landing 433 km/h
+ Max speed 708 km/h at at 7 300 m
+ Turn time 21 s
+ Max altitude 12 800 m
+Model P51C11NT (China)
+ wings 853 km/h
+ gear 287 km/h
+ flaps_combat 676 km/h
+ flaps_takeoff 676 km/h
+ flaps_landing 433 km/h
+ Max speed 708 km/h at at 7 300 m
+ Turn time 21 s
+ Max altitude 12 800 m
+Model P51C11NT (Japan)
+ wings 853 km/h
+ gear 287 km/h
+ flaps_combat 676 km/h
+ flaps_takeoff 676 km/h
+ flaps_landing 433 km/h
+ Max speed 708 km/h at at 7 300 m
+ Turn time 21 s
+ Max altitude 12 800 m
+Model P51D10
+ wings 901 km/h
+ gear 281 km/h
+ flaps_combat 644 km/h
+ flaps_takeoff 512 km/h
+ flaps_landing 265 km/h
+ Max speed 710 km/h at at 7 620 m
+ Turn time 22 s
+ Max altitude 12 700 m
+Model P51D20 (China)
+ wings 901 km/h
+ gear 281 km/h
+ flaps_combat 644 km/h
+ flaps_takeoff 512 km/h
+ flaps_landing 265 km/h
+ Max speed 710 km/h at at 7 620 m
+ Turn time 22 s
+ Max altitude 12 700 m
+Model P51D20NA (Israel)
+ wings 901 km/h
+ gear 281 km/h
+ flaps_combat 644 km/h
+ flaps_takeoff 512 km/h
+ flaps_landing 265 km/h
+ Max speed 710 km/h at at 7 620 m
+ Turn time 22 s
+ Max altitude 12 700 m
+Model P51D20NA
+ wings 901 km/h
+ gear 281 km/h
+ flaps_combat 644 km/h
+ flaps_takeoff 512 km/h
+ flaps_landing 265 km/h
+ Max speed 710 km/h at at 7 620 m
+ Turn time 22 s
+ Max altitude 12 700 m
+Model P51D30
+ wings 910 km/h
+ gear 281 km/h
+ flaps_combat 644 km/h
+ flaps_takeoff 512 km/h
+ flaps_landing 265 km/h
+ Max speed 721 km/h at at 6 400 m
+ Turn time 20 s
+ Max altitude 12 700 m
+Model P51D5
+ wings 855 km/h
+ gear 281 km/h
+ flaps_combat 644 km/h
+ flaps_takeoff 512 km/h
+ flaps_landing 265 km/h
+ Max speed 698 km/h at at 7 620 m
+ Turn time 23 s
+ Max altitude 12 700 m
+Model P51H5NA
+ wings 887 km/h
+ gear 281 km/h
+ flaps_combat 651 km/h
+ flaps_takeoff 520 km/h
+ flaps_landing 265 km/h
+ Max speed 776 km/h at at 7 000 m
+ Turn time 19 s
+ Max altitude 13 000 m
+Model P51K (China)
+ wings 910 km/h
+ gear 281 km/h
+ flaps_combat 644 km/h
+ flaps_takeoff 512 km/h
+ flaps_landing 265 km/h
+ Max speed 721 km/h at at 6 400 m
+ Turn time 20 s
+ Max altitude 12 700 m
+Model P59A
+ wings 845 km/h
+ gear 390 km/h
+ flaps_combat 495 km/h
+ flaps_takeoff 460 km/h
+ flaps_landing 290 km/h
+ Max speed 690 km/h at at 9 144 m
+ Turn time 20 s
+ Max altitude 13 000 m
+Model P61A11
+ wings 642 km/h
+ gear 350 km/h
+ flaps_combat 340 km/h
+ flaps_takeoff 337 km/h
+ flaps_landing 280 km/h
+ Max speed 582 km/h at at 7 315 m
+ Turn time 30 s
+ Max altitude 11 000 m
+Model P61C1
+ wings 726 km/h
+ gear 350 km/h
+ flaps_combat 340 km/h
+ flaps_takeoff 337 km/h
+ flaps_landing 280 km/h
+ Max speed 692 km/h at at 7 100 m
+ Turn time 25 s
+ Max altitude 9 143 m
+Model P63A10 (USSR)
+ wings 887 km/h
+ gear 304 km/h
+ flaps_combat 378 km/h
+ flaps_takeoff 359 km/h
+ flaps_landing 262 km/h
+ Max speed 650 km/h at at 5 650 m
+ Turn time 23 s
+ Max altitude 12 200 m
+Model P63A10
+ wings 887 km/h
+ gear 304 km/h
+ flaps_combat 378 km/h
+ flaps_takeoff 359 km/h
+ flaps_landing 262 km/h
+ Max speed 650 km/h at at 5 650 m
+ Turn time 23 s
+ Max altitude 12 200 m
+Model P63A5 (USSR)
+ wings 887 km/h
+ gear 304 km/h
+ flaps_combat 378 km/h
+ flaps_takeoff 359 km/h
+ flaps_landing 262 km/h
+ Max speed 640 km/h at at 6 850 m
+ Turn time 21 s
+ Max altitude 12 200 m
+Model P63A5
+ wings 887 km/h
+ gear 304 km/h
+ flaps_combat 378 km/h
+ flaps_takeoff 359 km/h
+ flaps_landing 262 km/h
+ Max speed 640 km/h at at 6 850 m
+ Turn time 21 s
+ Max altitude 12 200 m
+Model P63C5 (France)
+ wings 887 km/h
+ gear 304 km/h
+ flaps_combat 378 km/h
+ flaps_takeoff 359 km/h
+ flaps_landing 262 km/h
+ Max speed 663 km/h at at 4 572 m
+ Turn time 23 s
+ Max altitude 12 500 m
+Model P63C5 (USSR)
+ wings 887 km/h
+ gear 304 km/h
+ flaps_combat 378 km/h
+ flaps_takeoff 359 km/h
+ flaps_landing 262 km/h
+ Max speed 663 km/h at at 4 572 m
+ Turn time 23 s
+ Max altitude 12 500 m
+Model P63C5
+ wings 887 km/h
+ gear 304 km/h
+ flaps_combat 378 km/h
+ flaps_takeoff 359 km/h
+ flaps_landing 262 km/h
+ Max speed 663 km/h at at 4 572 m
+ Turn time 23 s
+ Max altitude 12 500 m
+Model P66
+ wings 720 km/h
+ gear 280 km/h
+ flaps_combat 445 km/h
+ flaps_takeoff 399 km/h
+ flaps_landing 280 km/h
+ Max speed 547 km/h at at 4 573 m
+ Turn time 20 s
+ Max altitude 10 300 m
+Model P.108A serie 2
+ wings 515 km/h
+ gear 290 km/h
+ flaps_combat 383 km/h
+ flaps_takeoff 361 km/h
+ flaps_landing 249 km/h
+ Max speed 444 km/h at at 3 049 m
+ Turn time 31 s
+ Max altitude 7 500 m
+Model P.108B serie 1
+ wings 515 km/h
+ gear 290 km/h
+ flaps_combat 383 km/h
+ flaps_takeoff 361 km/h
+ flaps_landing 249 km/h
+ Max speed 419 km/h at at 3 900 m
+ Turn time 36 s
+ Max altitude 9 000 m
+Model P.108B serie 2
+ wings 515 km/h
+ gear 290 km/h
+ flaps_combat 383 km/h
+ flaps_takeoff 361 km/h
+ flaps_landing 249 km/h
+ Max speed 445 km/h at at 3 900 m
+ Turn time 36 s
+ Max altitude 9 000 m
+Model P1Y1 mod. 11 (China)
+ wings 0 km/h
+ gear 275 km/h
+ flaps_combat 430 km/h
+ flaps_takeoff 405 km/h
+ flaps_landing 275 km/h
+ Max speed 546 km/h at at 5 900 m
+ Turn time 26 s
+ Max altitude 9 400 m
+Model P1Y1 mod. 11
+ wings 0 km/h
+ gear 275 km/h
+ flaps_combat 431 km/h
+ flaps_takeoff 405 km/h
+ flaps_landing 275 km/h
+ Max speed 546 km/h at at 5 900 m
+ Turn time 26 s
+ Max altitude 9 400 m
+Model Pallier's D.510
+ wings 576 km/h
+ gear 577 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing  km/h
+ Max speed 394 km/h at at 3 200 m
+ Turn time 13 s
+ Max altitude 9 000 m
+Model PB4Y2 (China)
+ wings 599 km/h
+ gear 263 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 360 km/h
+ flaps_landing 263 km/h
+ Max speed 404 km/h at at 7 620 m
+ Turn time 38 s
+ Max altitude 10 000 m
+Model PB4Y2 (France)
+ wings 599 km/h
+ gear 263 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 360 km/h
+ flaps_landing 263 km/h
+ Max speed 404 km/h at at 7 620 m
+ Turn time 38 s
+ Max altitude 10 000 m
+Model PB4Y2
+ wings 599 km/h
+ gear 263 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 360 km/h
+ flaps_landing 263 km/h
+ Max speed 404 km/h at at 7 620 m
+ Turn time 38 s
+ Max altitude 10 000 m
+Model PBJ1H
+ wings 611 km/h
+ gear 294 km/h
+ flaps_combat 382 km/h
+ flaps_takeoff 320 km/h
+ flaps_landing 293 km/h
+ Max speed 451 km/h at at 4 390 m
+ Turn time 37 s
+ Max altitude 5 800 m
+Model PBJ1J
+ wings 591 km/h
+ gear 294 km/h
+ flaps_combat 382 km/h
+ flaps_takeoff 320 km/h
+ flaps_landing 293 km/h
+ Max speed 457 km/h at at 4 390 m
+ Turn time 36 s
+ Max altitude 5 800 m
+Model PBM1 "Mariner"
+ wings 388.88 km/h
+ gear 450 km/h
+ flaps_combat 498 km/h
+ flaps_takeoff 469 km/h
+ flaps_landing 320 km/h
+ Max speed 346 km/h at at 3 657 m
+ Turn time 29 s
+ Max altitude 6 200 m
+Model PBM3 "Mariner"
+ wings 405 km/h
+ gear 450 km/h
+ flaps_combat 333 km/h
+ flaps_takeoff 324 km/h
+ flaps_landing 280 km/h
+ Max speed 349 km/h at at 3 962 m
+ Turn time 34 s
+ Max altitude 6 200 m
+Model PBM5A "Mariner"
+ wings 405 km/h
+ gear 450 km/h
+ flaps_combat 405 km/h
+ flaps_takeoff 405 km/h
+ flaps_landing 320 km/h
+ Max speed 344 km/h at at 3 963 m
+ Turn time 33 s
+ Max altitude 6 500 m
+Model PBY5 Catalina
+ wings 405 km/h
+ gear 450 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing  km/h
+ Max speed 288 km/h at at 2 135 m
+ Turn time 28 s
+ Max altitude 4 480 m
+Model PBY5A Catalina (USSR)
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 282 km/h at at 2 135 m
+ Turn time 30 s
+ Max altitude 4 420 m
+Model PBY5A Catalina
+ wings 405 km/h
+ gear 450 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing  km/h
+ Max speed 282 km/h at at 2 135 m
+ Turn time 30 s
+ Max altitude 4 420 m
+Model PBY5A Late (France)
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 282 km/h at at 2 135 m
+ Turn time 30 s
+ Max altitude 4 420 m
+Model Pe21
+ wings 760 km/h
+ gear 450 km/h
+ flaps_combat 520 km/h
+ flaps_takeoff 487 km/h
+ flaps_landing 320 km/h
+ Max speed 540 km/h at at 5 100 m
+ Turn time 27 s
+ Max altitude 8 800 m
+Model Pe2110
+ wings 740 km/h
+ gear 450 km/h
+ flaps_combat 508 km/h
+ flaps_takeoff 477 km/h
+ flaps_landing 320 km/h
+ Max speed 483 km/h at at 2 950 m
+ Turn time 28 s
+ Max altitude 8 000 m
+Model Pe2205
+ wings 740 km/h
+ gear 450 km/h
+ flaps_combat 508 km/h
+ flaps_takeoff 477 km/h
+ flaps_landing 320 km/h
+ Max speed 524 km/h at at 3 700 m
+ Turn time 27 s
+ Max altitude 8 800 m
+Model Pe231
+ wings 740 km/h
+ gear 450 km/h
+ flaps_combat 508 km/h
+ flaps_takeoff 477 km/h
+ flaps_landing 320 km/h
+ Max speed 530 km/h at at 5 100 m
+ Turn time 28 s
+ Max altitude 8 400 m
+Model Pe2359
+ wings 740 km/h
+ gear 450 km/h
+ flaps_combat 508 km/h
+ flaps_takeoff 477 km/h
+ flaps_landing 320 km/h
+ Max speed 540 km/h at at 3 700 m
+ Turn time 26 s
+ Max altitude 9 000 m
+Model Pe283
+ wings 740 km/h
+ gear 450 km/h
+ flaps_combat 508 km/h
+ flaps_takeoff 477 km/h
+ flaps_landing 320 km/h
+ Max speed 510 km/h at at 5 100 m
+ Turn time 28 s
+ Max altitude 8 400 m
+Model Pe3 (e)
+ wings 740 km/h
+ gear 450 km/h
+ flaps_combat 500 km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 320 km/h
+ Max speed 535 km/h at at 5 100 m
+ Turn time 26 s
+ Max altitude 8 400 m
+Model Pe3
+ wings 740 km/h
+ gear 450 km/h
+ flaps_combat 500 km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 320 km/h
+ Max speed 504 km/h at at 5 100 m
+ Turn time 26 s
+ Max altitude 8 400 m
+Model Pe3bis
+ wings 740 km/h
+ gear 450 km/h
+ flaps_combat 500 km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 320 km/h
+ Max speed 530 km/h at at 5 100 m
+ Turn time 33 s
+ Max altitude 8 800 m
+Model Pe8
+ wings 535 km/h
+ gear 390 km/h
+ flaps_combat 437 km/h
+ flaps_takeoff 380 km/h
+ flaps_landing 310 km/h
+ Max speed 422 km/h at at 5 900 m
+ Turn time 36 s
+ Max altitude 10 500 m
+Model Phantom FG.1
+ wings 1458 km/h
+ gear 463 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 584 km/h
+ flaps_landing 463 km/h
+ Max speed 2 268 km/h at at 10 667 m
+ Turn time 26 s
+ Max altitude 16 000 m
+Model Phantom FGR.2
+ wings 1458 km/h
+ gear 463 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 584 km/h
+ flaps_landing 463 km/h
+ Max speed 2 268 km/h at at 10 667 m
+ Turn time 26 s
+ Max altitude 16 000 m
+Model Plagis' Spitfire LF Mk IXc
+ wings 774 km/h
+ gear 270 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 230 km/h
+ Max speed 659 km/h at at 4 878 m
+ Turn time 15 s
+ Max altitude 11 500 m
+Model Po2 Night Witch
+ wings 600 km/h
+ gear 500 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+Model Po2
+ wings 190 km/h
+ gear 450 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 134 km/h at at 0 m
+ Turn time 30 s
+ Max altitude 1 500 m
+Model Po2M
+ wings 190 km/h
+ gear 450 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 134 km/h at at 0 m
+ Turn time 30 s
+ Max altitude 1 500 m
+Model Pokryshkin's P39N0 (USSR)
+ wings 886 km/h
+ gear 322 km/h
+ flaps_combat 426 km/h
+ flaps_takeoff 396 km/h
+ flaps_landing 241 km/h
+ Max speed 644 km/h at at 3 048 m
+ Turn time 18 s
+ Max altitude 9 700 m
+Model Potez 630
+ wings 710 km/h
+ gear 295 km/h
+ flaps_combat 346 km/h
+ flaps_takeoff 329 km/h
+ flaps_landing 240 km/h
+ Max speed 426 km/h at at 4 000 m
+ Turn time 22 s
+ Max altitude 9 500 m
+Model Potez 631
+ wings 710 km/h
+ gear 295 km/h
+ flaps_combat 346 km/h
+ flaps_takeoff 329 km/h
+ flaps_landing 240 km/h
+ Max speed 430 km/h at at 4 000 m
+ Turn time 21 s
+ Max altitude 9 500 m
+Model Potez 633
+ wings 710 km/h
+ gear 295 km/h
+ flaps_combat 346 km/h
+ flaps_takeoff 329 km/h
+ flaps_landing 240 km/h
+ Max speed 440 km/h at at 4 000 m
+ Turn time 20 s
+ Max altitude 9 500 m
+Model Prendergast's Spitfire FR Mk XIVe
+ wings 794 km/h
+ gear 260 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 260 km/h
+ Max speed 730 km/h at at 8 077 m
+ Turn time 20 s
+ Max altitude 12 000 m
+Model PV2D
+ wings 601 km/h
+ gear 277.8 km/h
+ flaps_combat 326 km/h
+ flaps_takeoff 309 km/h
+ flaps_landing 222 km/h
+ Max speed 478 km/h at at 4 267 m
+ Turn time 28 s
+ Max altitude 9 500 m

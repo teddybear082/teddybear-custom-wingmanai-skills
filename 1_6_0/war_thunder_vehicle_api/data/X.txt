@@ -1,0 +1,45 @@
+Model XA38
+ wings 714 km/h
+ gear 350 km/h
+ flaps_combat 333 km/h
+ flaps_takeoff 325 km/h
+ flaps_landing 280 km/h
+ Max speed 616 km/h at at 4 573 m
+ Turn time 28 s
+ Max altitude 8 000 m
+Model XF5F
+ wings 722 km/h
+ gear 370 km/h
+ flaps_combat 465 km/h
+ flaps_takeoff 436 km/h
+ flaps_landing 290 km/h
+ Max speed 574 km/h at at 5 273 m
+ Turn time 21 s
+ Max altitude 9 400 m
+Model XP38G
+ wings 790 km/h
+ gear 289 km/h
+ flaps_combat 565 km/h
+ flaps_takeoff 495 km/h
+ flaps_landing 250 km/h
+ Max speed 660 km/h at at 8 229 m
+ Turn time 22 s
+ Max altitude 12 192 m
+Model XP50
+ wings 745 km/h
+ gear 370 km/h
+ flaps_combat 465 km/h
+ flaps_takeoff 436 km/h
+ flaps_landing 290 km/h
+ Max speed 680 km/h at at 6 700 m
+ Turn time 19 s
+ Max altitude 10 400 m
+Model XP55
+ wings 900 km/h
+ gear 350 km/h
+ flaps_combat 523 km/h
+ flaps_takeoff 488 km/h
+ flaps_landing 310 km/h
+ Max speed 628 km/h at at 5 000 m
+ Turn time 29 s
+ Max altitude 10 500 m

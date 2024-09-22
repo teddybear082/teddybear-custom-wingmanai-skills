@@ -1,0 +1,27 @@
+Model Q5 early
+ wings 1260 km/h
+ gear 577 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 500 km/h
+ flaps_landing 458 km/h
+ Max speed 1 314 km/h at at 7 000 m
+ Turn time 24 s
+ Max altitude 17 000 m
+Model Q5A
+ wings 1260 km/h
+ gear 577 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 500 km/h
+ flaps_landing 450 km/h
+ Max speed 1 444 km/h at at 7 000 m
+ Turn time 25 s
+ Max altitude 16 500 m
+Model Q5L
+ wings 1,260 km/h
+ gear 577 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 500 km/h
+ flaps_landing 450 km/h
+ Max speed 1 444 km/h at at 7 000 m
+ Turn time 25 s
+ Max altitude 16 500 m

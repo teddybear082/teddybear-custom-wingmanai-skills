@@ -1,0 +1,36 @@
+Model Orion
+ wings 390 km/h
+ gear 450 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing  km/h
+ Max speed 220 km/h at at 1 000 m
+ Turn time 22 s
+ Max altitude 7 500 m
+Model OS2U1
+ wings 405 km/h
+ gear 350 km/h
+ flaps_combat 337 km/h
+ flaps_takeoff 308 km/h
+ flaps_landing 160 km/h
+ Max speed 296 km/h at at 1 700 m
+ Turn time 33 s
+ Max altitude 5 950 m
+Model OS2U3
+ wings 405 km/h
+ gear 350 km/h
+ flaps_combat 337 km/h
+ flaps_takeoff 308 km/h
+ flaps_landing 160 km/h
+ Max speed 292 km/h at at 1 700 m
+ Turn time 33 s
+ Max altitude 6 130 m
+Model Osprey Mk IV
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 412 km/h at at 4 000 m
+ Turn time 17 s
+ Max altitude 9 200 m

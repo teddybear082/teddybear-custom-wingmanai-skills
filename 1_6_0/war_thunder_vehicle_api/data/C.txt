@@ -1,0 +1,234 @@
+Model C. 200 serie 3 (Germany)
+ wings 845 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 504 km/h at at 4 500 m
+ Turn time 16 s
+ Max altitude 8 900 m
+Model C. 200 serie 3
+ wings 845 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 504 km/h at at 4 500 m
+ Turn time 16 s
+ Max altitude 8 900 m
+Model C. 200 serie 7 (Germany)
+ wings 845 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 504 km/h at at 4 500 m
+ Turn time 16 s
+ Max altitude 8 900 m
+Model C. 200 serie 7
+ wings 845 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 504 km/h at at 4 500 m
+ Turn time 16 s
+ Max altitude 8 900 m
+Model C. 202 (Germany)
+ wings 845 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 602 km/h at at 5 000 m
+ Turn time 19 s
+ Max altitude 10 200 m
+Model C. 202
+ wings 845 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 602 km/h at at 5 000 m
+ Turn time 19 s
+ Max altitude 10 200 m
+Model C. 202D
+ wings 845 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 602 km/h at at 5 000 m
+ Turn time 19 s
+ Max altitude 10 200 m
+Model C. 202EC
+ wings 820 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 571 km/h at at 5 000 m
+ Turn time 20 s
+ Max altitude 11 500 m
+Model C. 205 serie 1
+ wings 845 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 683 km/h at at 7 000 m
+ Turn time 18 s
+ Max altitude 10 360 m
+Model C. 205 serie 3
+ wings 845 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 672 km/h at at 7 000 m
+ Turn time 19 s
+ Max altitude 10 360 m
+Model C. 205N2
+ wings 845 km/h
+ gear 300 km/h
+ flaps_combat 535 km/h
+ flaps_takeoff 450 km/h
+ flaps_landing 260 km/h
+ Max speed 659 km/h at at 6 700 m
+ Turn time 20 s
+ Max altitude 10 360 m
+Model C.R.714
+ wings 735 km/h
+ gear 240 km/h
+ flaps_combat 332 km/h
+ flaps_takeoff 309 km/h
+ flaps_landing 240 km/h
+ Max speed 487 km/h at at 4 500 m
+ Turn time 20 s
+ Max altitude 6 000 m
+Model Canberra B (I) Mk 6
+ wings 990 km/h
+ gear 450 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing 320 km/h
+ Max speed 880 km/h at at 3 000 m
+ Turn time 26 s
+ Max altitude 12 192 m
+Model Canberra B Mk 2
+ wings 990 km/h
+ gear 450 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing 320 km/h
+ Max speed 880 km/h at at 3 000 m
+ Turn time 26 s
+ Max altitude 12 192 m
+Model Catalina Mk IIIa (Great Britain)
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 282 km/h at at 2 135 m
+ Turn time 30 s
+ Max altitude 4 420 m
+Model Challe's Yak9T (France)
+ wings 683 km/h
+ gear 320 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing 280 km/h
+ Max speed 593 km/h at at 4 000 m
+ Turn time 18 s
+ Max altitude 10 000 m
+Model CL13 Mk.4
+ wings 1,118 km/h
+ gear 350 km/h
+ flaps_combat 590 km/h
+ flaps_takeoff 550 km/h
+ flaps_landing 350 km/h
+ Max speed 1 093 km/h at at 0 m
+ Turn time 24 s
+ Max altitude 14 000 m
+Model CL13A Mk 5 (Germany)
+ wings 1,170 km/h
+ gear 350 km/h
+ flaps_combat 590 km/h
+ flaps_takeoff 550 km/h
+ flaps_landing 350 km/h
+ Max speed 1 114 km/h at at 0 m
+ Turn time 24 s
+ Max altitude 14 700 m
+Model CL13B Mk.6 (Germany)
+ wings 1,170 km/h
+ gear 350 km/h
+ flaps_combat 590 km/h
+ flaps_takeoff 550 km/h
+ flaps_landing 350 km/h
+ Max speed 1 122 km/h at at 0 m
+ Turn time 21 s
+ Max altitude 14 800 m
+Model Corsair F Mk II (Great Britain)
+ wings 885 km/h
+ gear 730 km/h
+ flaps_combat 470 km/h
+ flaps_takeoff 278 km/h
+ flaps_landing 244 km/h
+ Max speed 660 km/h at at 7 000 m
+ Turn time 20 s
+ Max altitude 11 500 m
+Model CR.32 bis
+ wings 590 km/h
+ gear 590 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 356 km/h at at 3 100 m
+ Turn time 14 s
+ Max altitude 8 500 m
+Model CR.32 quater
+ wings 590 km/h
+ gear 590 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 350 km/h at at 3 100 m
+ Turn time 14 s
+ Max altitude 9 000 m
+Model CR.32
+ wings 590 km/h
+ gear 590 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 372 km/h at at 3 100 m
+ Turn time 14 s
+ Max altitude 9 000 m
+Model CR.42 (Germany)
+ wings 578 km/h
+ gear 580 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 429 km/h at at 5 200 m
+ Turn time 19 s
+ Max altitude 8 500 m
+Model CR.42
+ wings 578 km/h
+ gear 580 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 429 km/h at at 5 200 m
+ Turn time 19 s
+ Max altitude 8 500 m
+Model CW21
+ wings 735 km/h
+ gear 290 km/h
+ flaps_combat 355 km/h
+ flaps_takeoff 322 km/h
+ flaps_landing 240 km/h
+ Max speed 505 km/h at at 3 700 m
+ Turn time 14 s
+ Max altitude 10 800 m

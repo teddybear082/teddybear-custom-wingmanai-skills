@@ -1,0 +1,400 @@
+Model F1
+ wings 1,365 km/h
+ gear 577 km/h
+ flaps_combat 735 km/h
+ flaps_takeoff 525 km/h
+ flaps_landing 450 km/h
+ Max speed 1 710 km/h at at 10 975 m
+ Turn time 33 s
+ Max altitude 15 200 m
+Model F100A (China)
+ wings 1361 km/h
+ gear 447 km/h
+ flaps_combat  km/h
+ flaps_takeoff  km/h
+ flaps_landing  km/h
+ Max speed 1 458 km/h at at 10 671 m
+ Turn time 29 s
+ Max altitude 15 240 m
+Model F100D (France)
+ wings 1361 km/h
+ gear 447 km/h
+ flaps_combat 620 km/h
+ flaps_takeoff 590 km/h
+ flaps_landing 435 km/h
+ Max speed 1 433 km/h at at 10 667 m
+ Turn time 40 s
+ Max altitude 14 700 m
+Model F100D
+ wings 1361 km/h
+ gear 447 km/h
+ flaps_combat 620 km/h
+ flaps_takeoff 590 km/h
+ flaps_landing 435 km/h
+ Max speed 1 433 km/h at at 10 667 m
+ Turn time 40 s
+ Max altitude 14 700 m
+Model F100F (China)
+ wings 1361 km/h
+ gear 447 km/h
+ flaps_combat 620 km/h
+ flaps_takeoff 590 km/h
+ flaps_landing 435 km/h
+ Max speed 1 458 km/h at at 10 671 m
+ Turn time 29 s
+ Max altitude 15 240 m
+Model F104A (China)
+ wings 1,527 km/h
+ gear 546 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 827 km/h
+ flaps_landing 444 km/h
+ Max speed 2 149 km/h at at 10 668 m
+ Turn time 32 s
+ Max altitude 18 900 m
+Model F104A
+ wings 1,527 km/h
+ gear 546 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 827 km/h
+ flaps_landing 444 km/h
+ Max speed 2 149 km/h at at 10 668 m
+ Turn time 32 s
+ Max altitude 18 900 m
+Model F104C
+ wings 1,527 km/h
+ gear 546 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 827 km/h
+ flaps_landing 444 km/h
+ Max speed 2 142 km/h at at 10 668 m
+ Turn time 34 s
+ Max altitude 17 678 m
+Model F104G (China)
+ wings 1,555 km/h
+ gear 546 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 827 km/h
+ flaps_landing 444 km/h
+ Max speed 2 410 km/h at at 15 240 m
+ Turn time 34 s
+ Max altitude 16 000 m
+Model F104G (France)
+ wings 0 km/h
+ gear 546 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 2 387 km/h at at 15 240 m
+ Turn time 34 s
+ Max altitude 16 000 m
+Model F104G (Germany)
+ wings 1,555 km/h
+ gear 546 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 827 km/h
+ flaps_landing 444 km/h
+ Max speed 2 387 km/h at at 15 240 m
+ Turn time 34 s
+ Max altitude 16 000 m
+Model F104G (Italy)
+ wings 1,555 km/h
+ gear 546 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 827 km/h
+ flaps_landing 444 km/h
+ Max speed 2 387 km/h at at 15 240 m
+ Turn time 34 s
+ Max altitude 16 000 m
+Model F104J
+ wings 1,527 km/h
+ gear 546 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 827 km/h
+ flaps_landing 444 km/h
+ Max speed 2 387 km/h at at 15 240 m
+ Turn time 34 s
+ Max altitude 16 000 m
+Model F104S TAF (Italy)
+ wings 1,527 km/h
+ gear 546 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 827 km/h
+ flaps_landing 444 km/h
+ Max speed 2 387 km/h at at 15 240 m
+ Turn time 34 s
+ Max altitude 16 000 m
+Model F104S.ASA
+ wings 1,527 km/h
+ gear 546 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 827 km/h
+ flaps_landing 444 km/h
+ Max speed 2 387 km/h at at 15 240 m
+ Turn time 34 s
+ Max altitude 16 000 m
+Model F104S
+ wings 1,527 km/h
+ gear 546 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 827 km/h
+ flaps_landing 444 km/h
+ Max speed 2 387 km/h at at 15 240 m
+ Turn time 34 s
+ Max altitude 16 000 m
+Model F105D
+ wings 1,575 km/h
+ gear 546 km/h
+ flaps_combat 1,575 km/h
+ flaps_takeoff 827 km/h
+ flaps_landing 490 km/h
+ Max speed 2 167 km/h at at 10 668 m
+ Turn time 28 s
+ Max altitude 12 192 m
+Model F111A
+ min_sweep 1,000 km/h
+ gear ~620 km/h
+ flaps_combat 800 km/h
+ flaps_takeoff 588 km/h
+ flaps_landing 555 km/h
+ max_sweep 1600 km/h
+ Max speed 2 448 km/h at at 12 192 m
+ Turn time 33 s
+ Max altitude 12 192 m
+Model F14A Early
+ min_sweep 1,359 km/h
+ gear 518 km/h
+ flaps_combat 1,200 km/h
+ flaps_takeoff 873 km/h
+ flaps_landing 416 km/h
+ max_sweep 1,555 km/h
+ Max speed 2 221 km/h at at 12 192 m
+ Turn time 24 s
+ Max altitude 16 764 m
+Model F14A IRIAF (USA)
+ min_sweep 1,021 km/h
+ gear 518 km/h
+ flaps_combat 1,200 km/h
+ flaps_takeoff 873 km/h
+ flaps_landing 416 km/h
+ max_sweep 1,555 km/h
+ Max speed 2 221 km/h at at 12 192 m
+ Turn time 24 s
+ Max altitude 16 764 m
+Model F14B
+ min_sweep 1,359 km/h
+ gear 518 km/h
+ flaps_combat 1,200 km/h
+ flaps_takeoff 873 km/h
+ flaps_landing 416 km/h
+ max_sweep 1,555 km/h
+ Max speed 2 215 km/h at at 10 668 m
+ Turn time 24 s
+ Max altitude 16 764 m
+Model F15A
+ wings 1,629 km/h
+ gear 700 km/h
+ flaps_combat  km/h
+ flaps_takeoff 548 km/h
+ flaps_landing 481 km/h
+ Max speed 2 592 km/h at at 10 668 m
+ Turn time 20 s
+ Max altitude 16 764 m
+Model F15C MSIP II
+ wings 0 km/h
+ gear 700 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 2 610 km/h at at 10 668 m
+ Turn time 22 s
+ Max altitude 16 764 m
+Model F15J(M)
+ wings 0 km/h
+ gear 700 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 2 592 km/h at at 10 668 m
+ Turn time 21 s
+ Max altitude 16 764 m
+Model F15J
+ wings 1,629 km/h
+ gear 700 km/h
+ flaps_combat  km/h
+ flaps_takeoff 548 km/h
+ flaps_landing 481 km/h
+ Max speed 2 592 km/h at at 10 668 m
+ Turn time 21 s
+ Max altitude 16 764 m
+Model F16A (France)
+ wings 0 km/h
+ gear 482 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 2 146 km/h at at 10 973 m
+ Turn time 19 s
+ Max altitude 15 240 m
+Model F16A ADF (Italy)
+ wings 1,555 km/h
+ gear 482 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 463 km/h
+ Max speed 2 146 km/h at at 10 973 m
+ Turn time 19 s
+ Max altitude 15 240 m
+Model F16A ADF
+ wings 1,555 km/h
+ gear 482 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 463 km/h
+ Max speed 2 146 km/h at at 10 973 m
+ Turn time 19 s
+ Max altitude 15 240 m
+Model F16A MLU (China)
+ wings 1,555 km/h
+ gear 482 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 463 km/h
+ Max speed 2 146 km/h at at 10 973 m
+ Turn time 19 s
+ Max altitude 15 240 m
+Model F16A
+ wings 1,555 km/h
+ gear 482 km/h
+ flaps_combat  km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 463 km/h
+ Max speed 2 156 km/h at at 10 973 m
+ Turn time 19 s
+ Max altitude 15 240 m
+Model F16AJ
+ wings 1,555 km/h
+ gear 482 km/h
+ flaps_combat  km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 463 km/h
+ Max speed 2 156 km/h at at 10 973 m
+ Turn time 19 s
+ Max altitude 15 240 m
+Model F16AM (France)
+ wings 0 km/h
+ gear 0 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 2 146 km/h at at 10 973 m
+ Turn time 19 s
+ Max altitude 15 240 m
+Model F16C
+ wings 1,555 km/h
+ gear 482 km/h
+ flaps_combat  km/h
+ flaps_takeoff 470 km/h
+ flaps_landing 463 km/h
+ Max speed 2 170 km/h at at 10 973 m
+ Turn time 19 s
+ Max altitude 15 240 m
+Model F20A
+ wings 1,458 km/h
+ gear 482 km/h
+ flaps_combat 1,296 km/h
+ flaps_takeoff 473 km/h
+ flaps_landing 463 km/h
+ Max speed 2 200 km/h at at 11 582 m
+ Turn time 22 s
+ Max altitude 15 240 m
+Model F47N25RE (China)
+ wings 0 km/h
+ gear 450 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 735 km/h at at 7 315 m
+ Turn time 28 s
+ Max altitude 10 720 m
+Model F4C Phantom II
+ wings 1458 km/h
+ gear 463 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 584 km/h
+ flaps_landing 463 km/h
+ Max speed 2 288 km/h at at 12 192 m
+ Turn time 26 s
+ Max altitude 16 000 m
+Model F4E Phantom II
+ wings 1458 km/h
+ gear 463 km/h
+ flaps_combat 1,458 km/h
+ flaps_takeoff 625 km/h
+ flaps_landing 463 km/h
+ Max speed 2 140 km/h at at 12 192 m
+ Turn time 26 s
+ Max altitude 16 000 m
+Model F4EJ ADTW
+ wings 1458 km/h
+ gear 463 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 580 km/h
+ flaps_landing 463 km/h
+ Max speed 2 340 km/h at at 12 192 m
+ Turn time 26 s
+ Max altitude 16 000 m
+Model F4EJ Kai Phantom II
+ wings 1458 km/h
+ gear 463 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 580 km/h
+ flaps_landing 463 km/h
+ Max speed 2 340 km/h at at 12 192 m
+ Turn time 26 s
+ Max altitude 16 000 m
+Model F4EJ Phantom II
+ wings 1458 km/h
+ gear 463 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 580 km/h
+ flaps_landing 463 km/h
+ Max speed 2 340 km/h at at 12 192 m
+ Turn time 26 s
+ Max altitude 16 000 m
+Model F4F (Germany)
+ wings 1458 km/h
+ gear 463 km/h
+ flaps_combat 607 km/h
+ flaps_takeoff 583 km/h
+ flaps_landing 463 km/h
+ Max speed 2 140 km/h at at 12 192 m
+ Turn time 26 s
+ Max altitude 16 000 m
+Model F4F Early (Germany)
+ wings 1458 km/h
+ gear 463 km/h
+ flaps_combat 607 km/h
+ flaps_takeoff 580 km/h
+ flaps_landing 463 km/h
+ Max speed 2 140 km/h at at 12 192 m
+ Turn time 26 s
+ Max altitude 16 000 m
+Model F4F KWS LV (Germany)
+ wings 1458 km/h
+ gear 463 km/h
+ flaps_combat ___ km/h
+ flaps_takeoff ___ km/h
+ flaps_landing ___ km/h
+ Max speed 2 140 km/h at at 12 192 m
+ Turn time 26 s
+ Max altitude 16 000 m
+Model F4J Phantom II
+ wings 1458 km/h
+ gear 463 km/h
+ flaps_combat  km/h
+ flaps_takeoff 618 km/h
+ flaps_landing 463 km/h
+ Max speed 2 140 km/h at at 12 192 m
+ Turn time 26 s
+ Max altitude 16 000 m

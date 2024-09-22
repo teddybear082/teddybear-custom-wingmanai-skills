@@ -1,0 +1,36 @@
+Model Zhukovsky's I153M62
+ wings 580 km/h
+ gear 450 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 444 km/h at at 4 850 m
+ Turn time 13 s
+ Max altitude 10 700 m
+Model Z.1007 bis serie 3
+ wings 530 km/h
+ gear 300 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 391 km/h
+ flaps_landing 280 km/h
+ Max speed 450 km/h at at 4 500 m
+ Turn time 32 s
+ Max altitude 9 000 m
+Model Z.1007 bis serie 5
+ wings 530 km/h
+ gear 300 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff 391 km/h
+ flaps_landing 280 km/h
+ Max speed 450 km/h at at 4 500 m
+ Turn time 32 s
+ Max altitude 9 000 m
+Model Zhukovsky's I153M62
+ wings 580 km/h
+ gear 450 km/h
+ flaps_combat N/A km/h
+ flaps_takeoff N/A km/h
+ flaps_landing N/A km/h
+ Max speed 444 km/h at at 4 850 m
+ Turn time 13 s
+ Max altitude 10 700 m
