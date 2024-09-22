@@ -49,6 +49,7 @@ class YouTubeAssistant(Skill):
                             "type": "object",
                             "properties": {
                                 "youtube_url_or_id": {"type": "string", "description": "The URL or the video ID of the YouTube video."},
+                                "language_code": {"type": "string", "description": "The optional two-letter language code for the language the user desires the transcript in."},
                             },
                             "required": ["youtube_url_or_id"],
                         },
@@ -105,19 +106,23 @@ class YouTubeAssistant(Skill):
     async def search_videos(self, parameters):
         topic = parameters["topic"]
         max_results = parameters.get("max_results", 3)
-        
-        s = Search(topic)
-        results = s.results[:max_results]
-        video_data = [
-            (video.title, f"https://www.youtube.com/watch?v={video.video_id}")
-            for video in results
-        ]
-        return {"videos": video_data}
+        try:
+            s = Search(topic)
+            results = s.results[:max_results]
+            video_data = [
+                (video.title, f"https://www.youtube.com/watch?v={video.video_id}")
+                for video in results
+            ]
+            return {"videos": video_data}
+        except Exception as e:
+            return {"status": f"Something happened with the search.  Error was {e}."}
 
     async def get_transcript(self, parameters):
         video_id = self.extract_video_id(parameters["youtube_url_or_id"])
+        language_code = parameters.get("language_code", 'en')
+        languages = [language_code.lower(), 'en'] if language_code and language_code is not 'en' else ['en']
         try:
-            transcript = YouTubeTranscriptApi.get_transcript(video_id)
+            transcript = YouTubeTranscriptApi.get_transcript(video_id, languages=languages)
             transcript_text = "\n".join([text['text'] for text in transcript])
             return {"transcript": transcript_text}
         except Exception as e:
@@ -125,18 +130,23 @@ class YouTubeAssistant(Skill):
 
     async def download_audio(self, parameters):
         video_id = self.extract_video_id(parameters["youtube_url_or_id"])
-        yt = YouTube(f"https://www.youtube.com/watch?v={video_id}")
-        stream = yt.streams.filter(only_audio=True).first()
-        stream.download(parameters["file_path"], filename=f"{video_id}.mp3")
-        return {"status": "Audio downloaded."}
+        try:
+            yt = YouTube(f"https://www.youtube.com/watch?v={video_id}")
+            stream = yt.streams.filter(only_audio=True).first()
+            stream.download(parameters["file_path"], filename=f"{video_id}.mp3")
+            return {"status": "Audio downloaded."}
+        except Exception as e:
+            return {"status": f"There was a problem downloading the audio.  The error was {e}."}
 
     async def download_video(self, parameters):
         video_id = self.extract_video_id(parameters["youtube_url_or_id"])
-        yt = YouTube(f"https://www.youtube.com/watch?v={video_id}")
-        #stream = yt.streams.filter(file_extension="mp4", res="720p", progressive=True).first()
-        stream = yt.streams.filter(file_extension="mp4", progressive=True).first()
-        stream.download(output_path=parameters["file_path"], filename=f"{video_id}.mp4")
-        return {"status": "Video downloaded."}
+        try:
+            yt = YouTube(f"https://www.youtube.com/watch?v={video_id}")
+            stream = yt.streams.filter(file_extension="mp4", progressive=True).first() # could add res="720p" here
+            stream.download(output_path=parameters["file_path"], filename=f"{video_id}.mp4")
+            return {"status": "Video downloaded."}
+        except Exception as e:
+            return {"status": f"There was a problem downloading the video.  The error was {e}."}
 
     async def execute_tool(self, tool_name: str, parameters: dict):
         function_response = "There was a problem with performing this action for Youtube.  Could not perform action."
