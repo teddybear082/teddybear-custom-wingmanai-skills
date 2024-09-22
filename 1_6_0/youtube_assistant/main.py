@@ -67,9 +67,10 @@ class YouTubeAssistant(Skill):
                             "type": "object",
                             "properties": {
                                 "youtube_url_or_id": {"type": "string", "description": "The URL or the video ID of the YouTube video."},
-                                "file_path": {"type": "string", "description": "The file path to save the audio file."},
+                                "directory": {"type": "string", "description": "The directory to save the audio file in."},
+                                "file_name": {"type": "string", "description": "The name of the audio file."},
                             },
-                            "required": ["youtube_url_or_id", "file_path"],
+                            "required": ["youtube_url_or_id", "directory"],
                         },
                     },
                 },
@@ -85,9 +86,10 @@ class YouTubeAssistant(Skill):
                             "type": "object",
                             "properties": {
                                 "youtube_url_or_id": {"type": "string", "description": "The URL or the video ID of the YouTube video."},
-                                "file_path": {"type": "string", "description": "The file path to save the video file."},
+                                "directory": {"type": "string", "description": "The directory to save the video file in."},
+                                "file_name": {"type": "string", "description": "The name of the video file."},
                             },
-                            "required": ["youtube_url_or_id", "file_path"],
+                            "required": ["youtube_url_or_id", "directory"],
                         },
                     },
                 },
@@ -130,21 +132,27 @@ class YouTubeAssistant(Skill):
 
     async def download_audio(self, parameters):
         video_id = self.extract_video_id(parameters["youtube_url_or_id"])
+        file_name = parameters.get("file_name", f"{video_id}.mp3")
+        directory = parameters.get("directory", ".")
         try:
             yt = YouTube(f"https://www.youtube.com/watch?v={video_id}")
             stream = yt.streams.filter(only_audio=True).first()
-            stream.download(parameters["file_path"], filename=f"{video_id}.mp3")
-            return {"status": "Audio downloaded."}
+            stream.download(directory, filename=file_name)
+            return {"status": f"Audio downloaded to directory: {directory} with file name: {file_name}."}
         except Exception as e:
             return {"status": f"There was a problem downloading the audio.  The error was {e}."}
 
     async def download_video(self, parameters):
         video_id = self.extract_video_id(parameters["youtube_url_or_id"])
+        file_name = parameters.get("file_name", f"{video_id}.mp4")
+        directory = parameters.get("directory", ".")
         try:
             yt = YouTube(f"https://www.youtube.com/watch?v={video_id}")
-            stream = yt.streams.filter(file_extension="mp4", progressive=True).first() # could add res="720p" here
-            stream.download(output_path=parameters["file_path"], filename=f"{video_id}.mp4")
-            return {"status": "Video downloaded."}
+            stream = yt.streams.filter(file_extension="mp4", res="720p", progressive=True).first()
+            if not stream:
+                stream = yt.streams.filter(file_extension="mp4", progressive=True).first()
+            stream.download(output_path=directory, filename=file_name)
+            return {"status": f"Video downloaded to directory: {directory} with file name: {file_name}."}
         except Exception as e:
             return {"status": f"There was a problem downloading the video.  The error was {e}."}
 
