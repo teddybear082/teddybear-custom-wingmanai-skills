@@ -166,7 +166,7 @@ class YouTubeAssistant(Skill):
                 f"Executing {tool_name} function with parameters: {parameters}",
                 color=LogType.INFO,
             )
-        function_response = ""
+
         if tool_name == "search_videos":
             function_response = await self.search_videos(parameters)
         elif tool_name == "get_transcript":
