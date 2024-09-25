@@ -1,5 +1,6 @@
 import os
 import re
+from datetime import datetime, timezone, timedelta
 from typing import TYPE_CHECKING
 from pytubefix import YouTube, Search
 from youtube_transcript_api import YouTubeTranscriptApi
@@ -112,7 +113,7 @@ class YouTubeAssistant(Skill):
             s = Search(topic)
             results = s.results[:max_results]
             video_data = [
-                (video.title, f"https://www.youtube.com/watch?v={video.video_id}")
+                (video.title, f"https://www.youtube.com/watch?v={video.video_id}", video.publish_date.strftime('%B %d, %Y'))
                 for video in results
             ]
             return {"videos": video_data}
