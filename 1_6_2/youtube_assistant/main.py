@@ -111,10 +111,10 @@ class YouTubeAssistant(Skill):
         max_results = parameters.get("max_results", 3)
         try:
             s = Search(topic)
-            results = s.results[:max_results]
+            videos = s.videos[:max_results] # could also add s.shorts, channels, etc. I believe
             video_data = [
-                (video.title, f"https://www.youtube.com/watch?v={video.video_id}", video.publish_date.strftime('%B %d, %Y'))
-                for video in results
+                (video.title, video.watch_url, video.publish_date.strftime('%B %d, %Y'))
+                for video in videos
             ]
             return {"videos": video_data}
         except Exception as e:
@@ -123,7 +123,7 @@ class YouTubeAssistant(Skill):
     async def get_transcript(self, parameters):
         video_id = self.extract_video_id(parameters["youtube_url_or_id"])
         language_code = parameters.get("language_code", 'en')
-        languages = [language_code.lower(), 'en'] if language_code and language_code is not 'en' else ['en']
+        languages = [language_code.lower(), 'en'] if language_code and language_code != 'en' else ['en']
         try:
             transcript = YouTubeTranscriptApi.get_transcript(video_id, languages=languages)
             transcript_text = "\n".join([text['text'] for text in transcript])
