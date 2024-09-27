@@ -11,6 +11,7 @@ from pptx import Presentation
 from pptx.util import Inches as pptxInches
 from pptx.util import Pt as pptxPt
 from pptx.enum.shapes import MSO_SHAPE
+from pptx.enum.text import MSO_AUTO_SIZE
 from pptx.dml.color import RGBColor as pptxRGBColor
 from docx import Document
 from docx.shared import Inches as docxInches
@@ -399,14 +400,20 @@ class MSOfficeFileHandler(Skill):
                     content_left = pptxInches(0.5)
                     content_top = pptxInches(1.5)
                     content_width = pptxInches(4.5)
-                    content_height = pptxInches(3)
+                    content_height = pptxInches(6)
                     content = ppt_slide.shapes.add_textbox(content_left, content_top, content_width, content_height)
                     text_frame = content.text_frame
                     text_frame.word_wrap = True
+                    text_frame.auto_size = MSO_AUTO_SIZE.TEXT_TO_FIT_SHAPE
                     text_frame.text = slide.get("content", "")
+                    
                 else:
                     content = ppt_slide.placeholders[1]
-                    content.text = slide.get("content", "")
+                    text_frame = content.text_frame
+                    text_frame.word_wrap = True
+                    text_frame.auto_size = MSO_AUTO_SIZE.TEXT_TO_FIT_SHAPE
+                    text_frame.text = slide.get("content", "")
+
                 if slide.get("shape_type"):
                     left = pptxInches(1)
                     top = pptxInches(1)
@@ -442,6 +449,7 @@ class MSOfficeFileHandler(Skill):
                             if possible_font_color and len(possible_font_color) == 3:
                                 r, g, b = possible_font_color
                                 run.font.color.rgb = pptxRGBColor(r, g, b)
+
 
         # Save the presentation
         prs.save(file_path)
