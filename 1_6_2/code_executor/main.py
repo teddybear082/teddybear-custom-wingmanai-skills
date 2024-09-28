@@ -1,3 +1,4 @@
+import builtins
 import subprocess
 import io
 import sys
@@ -173,26 +174,40 @@ class CodeExecutor(Skill):
             function_response = f"Generated Python script:\n\n{code}"
 
             if execute_code:
-                try:
-                    # Redirect stdout and stderr to capture the output
-                    old_stdout = sys.stdout
-                    old_stderr = sys.stderr
-                    new_stdout, new_stderr = io.StringIO(), io.StringIO()
-                    sys.stdout, sys.stderr = new_stdout, new_stderr
+                internal_modules_only = True
 
-                    exec(code)
+                for line in code.splitlines():
+                    if line.startswith("import") or line.startswith("from"):
+                        parts = line.split()
+                        module_name = parts[1].split('.')[0]  # get the first part of the module name
+                        internal_modules_only = await self.is_builtin_module(module_name)
+                        if not internal_modules_only:
+                            break
 
-                    # Reset stdout and stderr
-                    sys.stdout = old_stdout
-                    sys.stderr = old_stderr
+                if internal_modules_only:
+                    try:
+                        # Redirect stdout and stderr to capture the output
+                        old_stdout = sys.stdout
+                        old_stderr = sys.stderr
+                        new_stdout, new_stderr = io.StringIO(), io.StringIO()
+                        sys.stdout, sys.stderr = new_stdout, new_stderr
 
-                    stdout_output = new_stdout.getvalue()
-                    stderr_output = new_stderr.getvalue() if new_stderr.getvalue() else "There were no errors and the code or command was executed successfully."
+                        exec(code)
 
-                    function_response += f"\n\nExecution Result:\nStdout:{stdout_output}\nStderr:{stderr_output}."
-                except Exception as e:
-                    error_trace = traceback.format_exc()
-                    function_response += f"\n\nError executing the script: {str(e)}\n{error_trace}."
+                        # Reset stdout and stderr
+                        sys.stdout = old_stdout
+                        sys.stderr = old_stderr
+
+                        stdout_output = new_stdout.getvalue()
+                        stderr_output = new_stderr.getvalue() if new_stderr.getvalue() else "There were no errors and the code or command was executed successfully."
+
+                        function_response += f"\n\nExecution Result:\nStdout:{stdout_output}\nStderr:{stderr_output}."
+                    except Exception as e:
+                        error_trace = traceback.format_exc()
+                        function_response += f"\n\nError executing the script: {str(e)}\n{error_trace}."
+
+                else:
+                    function_response += "\n\nCannot execute this code in exec() because it contains external modules. Suggest saving this code to a python script file and executing as a python file."
 
             if self.settings.debug_mode:
                 await self.printr.print_async(
@@ -302,6 +317,9 @@ class CodeExecutor(Skill):
 
     async def is_waiting_response_needed(self, tool_name: str) -> bool:
         return True
+
+    async def is_builtin_module(self, module_name):
+        return module_name in sys.builtin_module_names or module_name in builtins.__dict__
 
     # Restore virtual environment back to original if any packages were installed
     def restore_environment(self):
