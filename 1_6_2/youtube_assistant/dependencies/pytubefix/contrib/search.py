@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 class Search:
     def __init__(
             self, query: str,
+            params: Optional[Dict[str, str]] = None,
             client: str = 'WEB',
             proxies: Optional[Dict[str, str]] = None,
             use_oauth: bool = False,
@@ -27,6 +28,8 @@ class Search:
 
         :param str query:
             Search query provided by the user.
+        :param dict params:
+            (Optional) A dict mapping query parameters to their values.
         :param dict proxies:
             (Optional) A dict mapping protocol to proxy address which will be used by pytube.
         :param bool use_oauth:
@@ -53,6 +56,7 @@ class Search:
             (if passed, else default verifier will be used)
         """
         self.query = query
+        self.params = params
         self.client = client
         self.use_oauth = use_oauth
         self.allow_oauth_cache = allow_oauth_cache
@@ -349,7 +353,7 @@ class Search:
         :returns:
             The raw json object returned by the innertube API.
         """
-        query_results = self._innertube_client.search(self.query, continuation)
+        query_results = self._innertube_client.search(self.query, continuation, data=self.params)
         if not self._initial_results:
             self._initial_results = query_results
         return query_results  # noqa:R504

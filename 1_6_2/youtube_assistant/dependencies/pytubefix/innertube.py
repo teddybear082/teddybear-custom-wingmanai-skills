@@ -49,7 +49,8 @@ _default_clients = {
             'X-Youtube-Client-Version': '2.20240709.01.00'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': True
+        'require_js_player': True,
+        'require_po_token': True
     },
 
     'WEB_EMBED': {
@@ -69,7 +70,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '56'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': True
+        'require_js_player': True,
+        'require_po_token': False
     },
 
     'WEB_MUSIC': {
@@ -86,7 +88,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '67'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': True
+        'require_js_player': True,
+        'require_po_token': False
     },
 
     'WEB_CREATOR': {
@@ -103,7 +106,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '62'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': True
+        'require_js_player': True,
+        'require_po_token': False
     },
 
     'WEB_SAFARI': {
@@ -120,7 +124,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '1'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': True
+        'require_js_player': True,
+        'require_po_token': True
     },
 
     'MWEB': {
@@ -137,7 +142,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '2'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': True
+        'require_js_player': True,
+        'require_po_token': False
     },
 
     'ANDROID': {
@@ -158,7 +164,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '3'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': False
+        'require_js_player': False,
+        'require_po_token': True
     },
 
     # Deprecated
@@ -201,7 +208,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '28'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': False
+        'require_js_player': False,
+        'require_po_token': False
     },
 
     'ANDROID_MUSIC': {
@@ -221,7 +229,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '21'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': False
+        'require_js_player': False,
+        'require_po_token': False
     },
 
     'ANDROID_CREATOR': {
@@ -241,7 +250,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '14'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': False
+        'require_js_player': False,
+        'require_po_token': False
     },
 
     'ANDROID_TESTSUITE': {
@@ -263,7 +273,8 @@ _default_clients = {
             'X-Youtube-Client-Version': '1.9'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': False
+        'require_js_player': False,
+        'require_po_token': False
     },
 
     'ANDROID_PRODUCER': {
@@ -283,7 +294,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '91'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': False
+        'require_js_player': False,
+        'require_po_token': False
     },
 
     'IOS': {
@@ -305,7 +317,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '5'
         },
         'api_key': 'AIzaSyB-63vPrdThhKuerbB2N_l7Kwwcxj6yUAc',
-        'require_js_player': False
+        'require_js_player': False,
+        'require_po_token': False
     },
 
     # Deprecated
@@ -350,7 +363,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '26'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': False
+        'require_js_player': False,
+        'require_po_token': False
     },
 
     'IOS_CREATOR': {
@@ -371,7 +385,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '15'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': False
+        'require_js_player': False,
+        'require_po_token': False
     },
 
     'TV_EMBED': {
@@ -390,7 +405,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '85'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': True
+        'require_js_player': True,
+        'require_po_token': False
     },
 
     'MEDIA_CONNECT': {
@@ -407,7 +423,8 @@ _default_clients = {
             'X-Youtube-Client-Name': '95'
         },
         'api_key': 'AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8',
-        'require_js_player': False
+        'require_js_player': False,
+        'require_po_token': False
     }
 }
 _token_timeout = 1800
@@ -436,7 +453,7 @@ class InnerTube:
 
     def __init__(
             self,
-            client='ANDROID_TESTSUITE',
+            client='ANDROID_VR',
             use_oauth=False,
             allow_cache=True,
             token_file=None,
@@ -471,10 +488,12 @@ class InnerTube:
             The verifier will return the visitorData and po_token respectively.
             (if passed, else default verifier will be used)
         """
+        self.client_name = client
         self.innertube_context = _default_clients[client]['innertube_context']
         self.header = _default_clients[client]['header']
         self.api_key = _default_clients[client]['api_key']
         self.require_js_player = _default_clients[client]['require_js_player']
+        self.require_po_token = _default_clients[client]['require_po_token']
         self.access_token = None
         self.refresh_token = None
 
@@ -727,14 +746,28 @@ class InnerTube:
         ...
         # return self._call_api(endpoint, query, self.base_data)  # noqa:E800
 
-    def next(self):
+    def next(self, video_id: str = None, continuation: str = None):
         """Make a request to the next endpoint.
 
-        TODO: Figure out how we can use this
+        :param str video_id:
+            The video id to get player details for.
+        :param str continuation:
+            Continuation token if there is pagination
+        :rtype: dict
+        :returns:
+            Raw player details results.
         """
-        # endpoint = f'{self.base_url}/next'  # noqa:E800
-        ...
-        # return self._call_api(endpoint, query, self.base_data)  # noqa:E800
+
+        if continuation:
+            self.base_data.update({"continuation": continuation})
+
+        if video_id:
+            self.base_data.update({'videoId': video_id, 'contentCheckOk': "true"})
+
+        endpoint = f'{self.base_url}/next'
+        query = self.base_params
+
+        return self._call_api(endpoint, query, self.base_data)
 
     def player(self, video_id):
         """Make a request to the player endpoint.
@@ -751,18 +784,23 @@ class InnerTube:
         self.base_data.update({'videoId': video_id, 'contentCheckOk': "true"})
         return self._call_api(endpoint, query, self.base_data)
 
-    def search(self, search_query, continuation=None):
+    def search(self, search_query, continuation=None, data=None):
         """Make a request to the search endpoint.
 
         :param str search_query:
             The query to search.
+        :param str continuation:
+            Continuation token if there is pagination
+        :param dict data:
+            Additional data to send with the request.
         :rtype: dict
         :returns:
             Raw search query results.
         """
         endpoint = f'{self.base_url}/search'
         query = self.base_params
-        data = {}
+        data = data if data else {}
+   
         self.base_data.update({'query': search_query})
         if continuation:
             data['continuation'] = continuation
