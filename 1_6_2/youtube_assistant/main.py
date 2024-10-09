@@ -2,7 +2,7 @@ import os
 import re
 from datetime import datetime, timezone, timedelta
 from typing import TYPE_CHECKING
-from pytubefix import YouTube, Search
+from pytubefix.contrib.search import Search, Filter
 from youtube_transcript_api import YouTubeTranscriptApi
 from api.enums import LogType
 from api.interface import SettingsConfig, SkillConfig, WingmanInitializationError
@@ -27,12 +27,17 @@ class YouTubeAssistant(Skill):
                     "type": "function",
                     "function": {
                         "name": "search_videos",
-                        "description": "Search videos on YouTube for a given topic.",
+                        "description": "Search videos on YouTube for a given topic with optional filters.",
                         "parameters": {
                             "type": "object",
                             "properties": {
                                 "topic": {"type": "string", "description": "The topic to search for."},
-                                "max_results": {"type": "integer", "description": "The number of search results to return (default 3).", "minimum": 1}
+                                "max_results": {"type": "integer", "description": "The number of search results to return (default 3)."},
+                                "upload_date": {"type": "string", "description": "Filter by upload date.", "enum": ["Last Hour", "Today", "This Week", "This Month", "This Year"]},
+                                "type": {"type": "string", "description": "Filter by type.", "enum": ["Video", "Channel", "Playlist", "Movie"]},
+                                "duration": {"type": "string", "description": "Filter by duration.", "enum": ["Under 4 minutes", "Over 20 minutes", "4 - 20 minutes"]},
+                                "features": {"type": "array", "description": "Filter by features.", "items": {"type": "string", "enum": ["Live", "4K", "HD", "Subtitles/CC", "Creative Commons", "360", "VR180", "3D", "HDR", "Location", "Purchased"]}},
+                                "sort_by": {"type": "string", "description": "Sort by criteria.", "enum": ["Relevance", "Upload date", "View count", "Rating"]}
                             },
                             "required": ["topic"],
                         },
@@ -109,8 +114,19 @@ class YouTubeAssistant(Skill):
     async def search_videos(self, parameters):
         topic = parameters["topic"]
         max_results = parameters.get("max_results", 3)
+        filters = {}
+        if "upload_date" in parameters:
+            filters['upload_date'] = Filter.get_upload_data(parameters["upload_date"])
+        if "type" in parameters:
+            filters['type'] = Filter.get_type(parameters["type"])
+        if "duration" in parameters:
+            filters['duration'] = Filter.get_duration(parameters["duration"])
+        if "features" in parameters:
+            filters['features'] = [Filter.get_features(feature) for feature in parameters["features"]]
+        if "sort_by" in parameters:
+            filters['sort_by'] = Filter.get_sort_by(parameters["sort_by"])
         try:
-            s = Search(topic)
+            s = Search(topic, filters=filters)
             videos = s.videos[:max_results] # could also add s.shorts, channels, etc. I believe
             video_data = [
                 (video.title, video.watch_url, video.publish_date.strftime('%B %d, %Y'))
@@ -118,7 +134,7 @@ class YouTubeAssistant(Skill):
             ]
             return {"videos": video_data}
         except Exception as e:
-            return {"status": f"Something happened with the search.  Error was {e}."}
+            return {"status": f"Something happened with the search. Error was {e}."}
 
     async def get_transcript(self, parameters):
         video_id = self.extract_video_id(parameters["youtube_url_or_id"])
@@ -141,7 +157,7 @@ class YouTubeAssistant(Skill):
             stream.download(directory, filename=file_name)
             return {"status": f"Audio downloaded to directory: {directory} with file name: {file_name}."}
         except Exception as e:
-            return {"status": f"There was a problem downloading the audio.  The error was {e}."}
+            return {"status": f"There was a problem downloading the audio. The error was {e}."}
 
     async def download_video(self, parameters):
         video_id = self.extract_video_id(parameters["youtube_url_or_id"])
@@ -155,10 +171,10 @@ class YouTubeAssistant(Skill):
             stream.download(output_path=directory, filename=file_name)
             return {"status": f"Video downloaded to directory: {directory} with file name: {file_name}."}
         except Exception as e:
-            return {"status": f"There was a problem downloading the video.  The error was {e}."}
+            return {"status": f"There was a problem downloading the video. The error was {e}."}
 
     async def execute_tool(self, tool_name: str, parameters: dict):
-        function_response = "There was a problem with performing this action for Youtube.  Could not perform action."
+        function_response = "There was a problem with performing this action for YouTube. Could not perform action."
         instant_response = ""
         if self.settings.debug_mode:
             self.start_execution_benchmark()
@@ -166,7 +182,6 @@ class YouTubeAssistant(Skill):
                 f"Executing {tool_name} function with parameters: {parameters}",
                 color=LogType.INFO,
             )
-
         if tool_name == "search_videos":
             function_response = await self.search_videos(parameters)
         elif tool_name == "get_transcript":
