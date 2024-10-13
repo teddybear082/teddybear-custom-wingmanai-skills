@@ -1,0 +1,1 @@
+copy the SQLite files from this folder to the _internal folder that comes with the WingmanAI install (you will find the folder where your Wingman.exe is)

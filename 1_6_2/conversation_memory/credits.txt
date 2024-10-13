@@ -1,0 +1,1 @@
+DB Browser software is from: https://sqlitebrowser.org/blog/version-3-13-0-released/
