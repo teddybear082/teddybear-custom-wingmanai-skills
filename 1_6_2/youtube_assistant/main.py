@@ -3,10 +3,13 @@ import re
 from datetime import datetime, timezone, timedelta
 from typing import TYPE_CHECKING
 from pytubefix.contrib.search import Search, Filter
+from pytubefix import YouTube
 from youtube_transcript_api import YouTubeTranscriptApi
 from api.enums import LogType
 from api.interface import SettingsConfig, SkillConfig, WingmanInitializationError
 from skills.skill_base import Skill
+from services.file import get_writable_dir
+
 if TYPE_CHECKING:
     from wingmen.open_ai_wingman import OpenAiWingman
 
@@ -18,6 +21,7 @@ class YouTubeAssistant(Skill):
         wingman: "OpenAiWingman",
     ) -> None:
         super().__init__(config, settings, wingman)
+        self.downloads_directory = get_writable_dir(os.path.join("skills", "youtube_assistant", "downloads"))
 
     def get_tools(self) -> list[tuple[str, dict]]:
         tools = [
@@ -150,7 +154,9 @@ class YouTubeAssistant(Skill):
     async def download_audio(self, parameters):
         video_id = self.extract_video_id(parameters["youtube_url_or_id"])
         file_name = parameters.get("file_name", f"{video_id}.mp3")
-        directory = parameters.get("directory", ".")
+        directory = parameters.get("directory", self.downloads_directory)
+        if directory == "." or directory == "./":
+            directory = self.downloads_directory
         try:
             yt = YouTube(f"https://www.youtube.com/watch?v={video_id}")
             stream = yt.streams.filter(only_audio=True).first()
@@ -162,7 +168,9 @@ class YouTubeAssistant(Skill):
     async def download_video(self, parameters):
         video_id = self.extract_video_id(parameters["youtube_url_or_id"])
         file_name = parameters.get("file_name", f"{video_id}.mp4")
-        directory = parameters.get("directory", ".")
+        directory = parameters.get("directory", self.downloads_directory)
+        if directory == "." or directory == "./":
+            directory = self.downloads_directory
         try:
             yt = YouTube(f"https://www.youtube.com/watch?v={video_id}")
             stream = yt.streams.filter(file_extension="mp4", res="720p", progressive=True).first()
