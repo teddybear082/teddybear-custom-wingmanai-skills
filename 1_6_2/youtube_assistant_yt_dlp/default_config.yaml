@@ -1,0 +1,43 @@
+name: YouTubeAssistantDLP
+module: skills.youtube_assistant_yt_dlp.main
+category: general
+description:
+  en: Assist with searching, downloading, and retrieving transcripts from YouTube videos.
+  de: Hilfe bei der Suche, dem Herunterladen und dem Abrufen von Transkripten von YouTube-Videos.
+hint:
+  en: Use this skill to search for videos, download audio or video, and retrieve transcripts from YouTube.
+  de: Verwende diesen Skill, um Videos zu suchen, Audios oder Videos herunterzuladen und Transkripte von YouTube abzurufen.
+examples:
+  - question:
+      en: Search for Python programming tutorials on YouTube.
+      de: Suche nach Python-Programmierungs-Tutorials auf YouTube.
+    answer:
+      en: (returns a list of YouTube videos related to Python programming tutorials)
+      de: (gibt eine Liste von YouTube-Videos zu Python-Programmierungs-Tutorials zurück)
+  - question:
+      en: |
+        Get the transcript of this video: https://www.youtube.com/watch?v=example
+      de: |
+        Hole das Transkript dieses Videos: https://www.youtube.com/watch?v=example
+    answer:
+      en: (provides the plain text transcript of the specified YouTube video)
+      de: (liefert das einfache Texttranskript des angegebenen YouTube-Videos)
+  - question:
+      en: |
+        Download the audio of this video: https://www.youtube.com/watch?v=example to C:\Downloads
+      de: |
+        Lade das Audio dieses Videos: https://www.youtube.com/watch?v=example nach C:\Downloads herunter
+    answer:
+      en: (downloads the audio file of the specified YouTube video to the given path)
+      de: (lädt die Audiodatei des angegebenen YouTube-Videos in den angegebenen Pfad herunter)
+  - question:
+      en: |
+        Download the video of this URL: https://www.youtube.com/watch?v=example to C:\Downloads
+      de: |
+        Lade das Video dieser URL herunter: https://www.youtube.com/watch?v=example nach C:\Downloads
+    answer:
+      en: (downloads the video file of the specified YouTube video to the given path)
+      de: (lädt die Videodatei des angegebenen YouTube-Videos in den angegebenen Pfad herunter)
+prompt: |
+  You can help the user with various tasks related to YouTube. 
+  You can search for videos on a given topic, retrieve transcripts, and download audio or video from YouTube given a URL or video ID.
