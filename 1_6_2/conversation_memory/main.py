@@ -9,7 +9,6 @@ from skills.skill_base import Skill
 from services.file import get_writable_dir
 if TYPE_CHECKING:
     from wingmen.open_ai_wingman import OpenAiWingman
-
 class ConversationMemory(Skill):
     def __init__(
         self,
@@ -28,7 +27,7 @@ class ConversationMemory(Skill):
         c.execute('''CREATE TABLE IF NOT EXISTS memories
                      (id INTEGER PRIMARY KEY, wingman_name TEXT, date TEXT, summary TEXT, tags TEXT)''')
         c.execute('''CREATE TABLE IF NOT EXISTS tags
-                     (id INTEGER PRIMARY KEY, tag TEXT)''')
+                     (id INTEGER PRIMARY KEY, wingman_name TEXT, tag TEXT)''')
         conn.commit()
         conn.close()
 
@@ -151,6 +150,7 @@ class ConversationMemory(Skill):
             tags = self.fuzzy_match_tags(tags)
             self.store_summary(summary, tags)
             function_response = f"Conversation summary stored successfully, with tags: {tags}."
+
         elif tool_name == "retrieve_conversation_memories":
             wingman_name = self.wingman.name
             start_date = parameters.get("start_date")
@@ -163,8 +163,8 @@ class ConversationMemory(Skill):
                     color=LogType.INFO,
                 )
             results = self.retrieve_memories(wingman_name, start_date, end_date, tags, custom_query)
-            #function_response = "Retrieved conversations: " + "\n".join([f"ID: {mem_id}, {date} - {summary}" for mem_id, date, summary in results])
             function_response = f"Retrieved memories (id, date, memory content): \n\n {results}"
+
         elif tool_name == "delete_conversation_memory":
             mem_id = parameters.get("id")
             self.delete_memory(mem_id)
@@ -175,7 +175,6 @@ class ConversationMemory(Skill):
         elif tool_name == "get_all_dates":
             dates = self.get_all_dates()
             function_response = "Dates found for existing memories: " + ", ".join(dates)
-
         if self.settings.debug_mode:
             await self.printr.print_async(
                 f"Executed {tool_name}, response: {function_response}.",
@@ -198,18 +197,18 @@ class ConversationMemory(Skill):
         c = conn.cursor()
         for tag in tags:
             if not self.tag_exists(tag, c):
-                c.execute("INSERT INTO tags (tag) VALUES (?)", (tag,))
+                c.execute("INSERT INTO tags (wingman_name, tag) VALUES (?, ?)", (self.wingman.name, tag))
         conn.commit()
         conn.close()
 
     def tag_exists(self, tag: str, cursor) -> bool:
-        cursor.execute("SELECT id FROM tags WHERE tag = ?", (tag,))
+        cursor.execute("SELECT id FROM tags WHERE wingman_name = ? AND tag = ?", (self.wingman.name, tag))
         return cursor.fetchone() is not None
 
     def fuzzy_match_tags(self, tags: list) -> list:
         conn = sqlite3.connect(self.db_path)
         c = conn.cursor()
-        c.execute("SELECT tag FROM tags")
+        c.execute("SELECT tag FROM tags WHERE wingman_name = ?", (self.wingman.name,))
         existing_tags = [row[0] for row in c.fetchall()]
         matched_tags = []
         for tag in tags:
@@ -229,12 +228,8 @@ class ConversationMemory(Skill):
             query = custom_query
             params = []
         else:
-            query = "SELECT id, date, summary FROM memories WHERE 1=1"
-            params = []
-            
-            if wingman_name:
-                query += " AND wingman_name = ?"
-                params.append(wingman_name)
+            query = "SELECT id, date, summary FROM memories WHERE wingman_name = ?"
+            params = [wingman_name]
             if start_date:
                 query += " AND DATE(date) >= ?"
                 params.append(start_date)
@@ -247,7 +242,6 @@ class ConversationMemory(Skill):
                 tag_conditions = " OR ".join(["tags LIKE ?"] * len(tag_list))
                 query += f" AND ({tag_conditions})"
                 params.extend([f"%{tag.strip()}%" for tag in tag_list])
-                
         conn = sqlite3.connect(self.db_path)
         c = conn.cursor()
         c.execute(query, params)
@@ -265,7 +259,7 @@ class ConversationMemory(Skill):
     def get_all_tags(self) -> list:
         conn = sqlite3.connect(self.db_path)
         c = conn.cursor()
-        c.execute("SELECT DISTINCT tag FROM tags")
+        c.execute("SELECT DISTINCT tag FROM tags WHERE wingman_name = ?", (self.wingman.name,))
         tags = [row[0] for row in c.fetchall()]
         conn.close()
         return tags
@@ -273,7 +267,7 @@ class ConversationMemory(Skill):
     def get_all_dates(self) -> list:
         conn = sqlite3.connect(self.db_path)
         c = conn.cursor()
-        c.execute("SELECT DISTINCT date FROM memories")
+        c.execute("SELECT DISTINCT date FROM memories WHERE wingman_name = ?", (self.wingman.name,))
         dates = [row[0] for row in c.fetchall()]
         conn.close()
         return dates
