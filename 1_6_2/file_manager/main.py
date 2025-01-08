@@ -1,5 +1,6 @@
 import os
 import json
+import zipfile
 from typing import TYPE_CHECKING
 from api.interface import SettingsConfig, SkillConfig, WingmanInitializationError
 from api.enums import LogType
@@ -13,14 +14,19 @@ if TYPE_CHECKING:
 DEFAULT_MAX_TEXT_SIZE = 24000
 SUPPORTED_FILE_EXTENSIONS = [
     "adoc",
+    "android",
     "asc",
+    "ascii",
     "bat",
     "bib",
     "cfg",
+    "cmake",
+    "cmd",
     "conf",
     "cpp",
     "c",
     "cs",
+    "csproj",
     "css",
     "csv",
     "dockerfile",
@@ -31,6 +37,7 @@ SUPPORTED_FILE_EXTENSIONS = [
     "gitconfig",
     "gitignore",
     "go",
+    "gradle",
     "graphql",
     "h",
     "htaccess",
@@ -52,6 +59,7 @@ SUPPORTED_FILE_EXTENSIONS = [
     "plist",
     "pl",
     "po",
+    "properties",
     "ps1",
     "pxd",
     "py",
@@ -79,20 +87,15 @@ SUPPORTED_FILE_EXTENSIONS = [
     "wsgi",
     "xlf",
     "xml",
+    "yml",
     "yaml",
 ]
 
 
 class FileManager(Skill):
 
-    def __init__(
-        self,
-        config: SkillConfig,
-        settings: SettingsConfig,
-        wingman: "OpenAiWingman",
-    ) -> None:
+    def __init__(self, config: SkillConfig, settings: SettingsConfig, wingman: "OpenAiWingman") -> None:
         super().__init__(config=config, settings=settings, wingman=wingman)
-
         self.allowed_file_extensions = SUPPORTED_FILE_EXTENSIONS
         self.default_file_extension = "txt"
         self.max_text_size = DEFAULT_MAX_TEXT_SIZE
@@ -101,13 +104,11 @@ class FileManager(Skill):
 
     async def validate(self) -> list[WingmanInitializationError]:
         errors = await super().validate()
-
         self.default_directory = self.retrieve_custom_property_value(
             "default_directory", errors
         )
         if not self.default_directory or self.default_directory == "":
             self.default_directory = self.get_default_directory()
-
         self.allow_overwrite_existing = self.retrieve_custom_property_value(
             "allow_overwrite_existing", errors
         )
@@ -177,7 +178,7 @@ class FileManager(Skill):
                                 },
                                 "add_to_existing_file": {
                                     "type": "boolean",
-                                    "description": "Boolean True/False indicator of whether the user wants to add text to an already existing file.  Defaults to False unless user expresses clear intent to add to existing file.",
+                                    "description": "Boolean True/False indicator of whether the user wants to add text to an already existing file. Defaults to False unless user expresses clear intent to add to existing file.",
                                 },
                             },
                             "required": [
@@ -265,22 +266,115 @@ class FileManager(Skill):
                     },
                 },
             ),
+            (
+                "load_folder_contents",
+                {
+                    "type": "function",
+                    "function": {
+                        "name": "load_folder_contents",
+                        "description": "Reads the contents of supported files in a folder and loads it into memory.",
+                        "parameters": {
+                            "type": "object",
+                            "properties": {
+                                "folder_path": {
+                                    "type": "string",
+                                    "description": "The absolute path of the folder to read contents from.",
+                                },
+                            },
+                            "required": ["folder_path"],
+                        },
+                    },
+                },
+            ),
+            (
+                "create_zip_file",
+                {
+                    "type": "function",
+                    "function": {
+                        "name": "create_zip_file",
+                        "description": "Combines and compresses specified files into a .zip file.",
+                        "parameters": {
+                            "type": "object",
+                            "properties": {
+                                "zip_file_name": {
+                                    "type": "string",
+                                    "description": "The name of the zip file to create.",
+                                },
+                                "files_to_compress": {
+                                    "type": "array",
+                                    "items": {"type": "string"},
+                                    "description": "List of files to compress into the zip.",
+                                },
+                            },
+                            "required": ["zip_file_name", "files_to_compress"],
+                        },
+                    },
+                },
+            ),
+            (
+                "add_to_zip_file",
+                {
+                    "type": "function",
+                    "function": {
+                        "name": "add_to_zip_file",
+                        "description": "Adds more files to an existing .zip file.",
+                        "parameters": {
+                            "type": "object",
+                            "properties": {
+                                "zip_file_name": {
+                                    "type": "string",
+                                    "description": "The name of the zip file to add files to.",
+                                },
+                                "files_to_add": {
+                                    "type": "array",
+                                    "items": {"type": "string"},
+                                    "description": "List of files to add to the existing zip.",
+                                },
+                            },
+                            "required": ["zip_file_name", "files_to_add"],
+                        },
+                    },
+                },
+            ),
+            (
+                "extract_zip",
+                {
+                    "type": "function",
+                    "function": {
+                        "name": "extract_zip",
+                        "description": "Extracts all files contained in a specified .zip file to the specified target directory",
+                        "parameters": {
+                            "type": "object",
+                            "properties": {
+                                "zip_file_path": {
+                                    "type": "string",
+                                    "description": "The absolute path (including full name) of the zip file to extract.",
+                                },
+                                "target_directory": {
+                                    "type": "string",
+                                    "description": "The absolute path of the target directory to extract the contents to.",
+                                },
+                            },
+                            "required": ["zip_file_path", "target_directory"],
+                        },
+                    },
+                },
+            )
         ]
         return tools
-
-    async def execute_tool(
-        self, tool_name: str, parameters: dict[str, any]
-    ) -> tuple[str, str]:
+        
+    async def execute_tool(self, tool_name: str, parameters: dict[str, any]) -> tuple[str, str]:
         function_response = "Operation not completed."
         instant_response = ""
 
+        if self.settings.debug_mode and tool_name in ["load_text_from_file", "save_text_to_file", "create_folder", "open_folder", "read_file_aloud", "load_folder_contents", "create_zip_file", "add_to_zip_file", "extract_zip"]:
+            self.start_execution_benchmark()
+            await self.printr.print_async(
+                f"Executing {tool_name} with parameters: {parameters}",
+                color=LogType.INFO,
+            )
+
         if tool_name == "load_text_from_file":
-            if self.settings.debug_mode:
-                self.start_execution_benchmark()
-                await self.printr.print_async(
-                    f"Executing load_text_from_file with parameters: {parameters}",
-                    color=LogType.INFO,
-                )
             file_name = parameters.get("file_name")
             directory = parameters.get("directory_path", self.default_directory)
             pdf_page_number = parameters.get("pdf_page_number_to_load")
@@ -298,7 +392,7 @@ class FileManager(Skill):
                         # if PDF, use pdfminer.six's extract text to read (optionally passing the specific page to read - zero-indexed so subtract 1), otherwise open and parse file
                         file_content = self.get_text_from_file(file_path, file_extension, pdf_page_number)
                         if len(file_content) < 3 or not file_content:
-                            function_response = f"File at {file_path} appears not to have any content.  If file is a .pdf it may be an image format that cannot be read."
+                            function_response = f"File at {file_path} appears not to have any content. If file is a .pdf it may be an image format that cannot be read."
                         elif len(file_content) > self.max_text_size:
                             function_response = f"File content at {file_path} exceeds the maximum allowed size."
                         else:
@@ -309,12 +403,6 @@ class FileManager(Skill):
                         function_response = f"Failed to read file '{file_name}': {str(e)}"
 
         elif tool_name == "save_text_to_file":
-            if self.settings.debug_mode:
-                self.start_execution_benchmark()
-                await self.printr.print_async(
-                    f"Executing save_text_to_file with parameters: {parameters}",
-                    color=LogType.INFO,
-                )
             file_name = parameters.get("file_name")
             text_content = parameters.get("text_content")
             add_to_existing_file = parameters.get("add_to_existing_file", False)
@@ -339,7 +427,6 @@ class FileManager(Skill):
                             return function_response, instant_response
                     os.makedirs(directory, exist_ok=True)
                     file_path = os.path.join(directory, file_name)
-
                     # If file already exists, and user does not have overwrite option on, and LLM did not detect an intent to add to the existing file, stop
                     if (
                         os.path.isfile(file_path)
@@ -347,7 +434,6 @@ class FileManager(Skill):
                         and not add_to_existing_file
                     ):
                         function_response = f"File '{file_name}' already exists at {directory} and overwrite is not allowed."
-
                     # Otherwise, if file exists but LLM detected user wanted to add to existing file, do that.
                     elif os.path.isfile(file_path) and add_to_existing_file:
                         try:
@@ -360,7 +446,6 @@ class FileManager(Skill):
                             function_response = (
                                 f"Failed to append text to {file_path}: {str(e)}"
                             )
-
                     # We are either fine with completely overwriting the file or it does not exist already
                     else:
                         try:
@@ -371,12 +456,6 @@ class FileManager(Skill):
                             function_response = f"Failed to save text to {file_path}: {str(e)}"
 
         elif tool_name == "create_folder":
-            if self.settings.debug_mode:
-                self.start_execution_benchmark()
-                await self.printr.print_async(
-                    f"Executing create_folder with parameters: {parameters}",
-                    color=LogType.INFO,
-                )
             folder_name = parameters.get("folder_name")
             directory_path = parameters.get("directory_path", self.default_directory)
             if directory_path == "":
@@ -394,12 +473,6 @@ class FileManager(Skill):
                     )
 
         elif tool_name == "open_folder":
-            if self.settings.debug_mode:
-                self.start_execution_benchmark()
-                await self.printr.print_async(
-                    f"Executing open_folder with parameters: {parameters}",
-                    color=LogType.INFO,
-                )
             folder_name = parameters.get("folder_name")
             directory_path = parameters.get("directory_path", self.default_directory)
             if directory_path == "":
@@ -419,39 +492,129 @@ class FileManager(Skill):
                     )
 
         elif tool_name == "read_file_aloud":
-            if self.settings.debug_mode:
-                self.start_execution_benchmark()
-                await self.printr.print_async(
-                    f"Executing read file aloud function with parameters: {parameters}",
-                    color=LogType.INFO,
-                )
             file_name = parameters.get("file_name")
             directory = parameters.get("directory_path", self.default_directory)
             pdf_page_number = parameters.get("pdf_page_number_to_load")
-
             if directory == "":
                 directory = self.default_directory
             if not file_name:
                 function_response = "File name not provided."
             else:
-                file_extension = file_name.split(".")[-1]
-                if file_extension.lower() not in self.allowed_file_extensions:
-                    function_response = f"Unsupported file extension: {file_extension}"
+                file_path = os.path.join(directory, file_name)
+                if os.path.isfile(file_path):
+                    file_extension = file_name.split(".")[-1]
+                    if file_extension.lower() not in self.allowed_file_extensions:
+                        function_response = f"Unsupported file extension: {file_extension}"
+                    else:
+                        try:
+                            file_content = self.get_text_from_file(file_path, file_extension, pdf_page_number)
+                            if len(file_content) < 3 or not file_content:
+                                function_response = f"File at {file_path} appears not to have any content so could not read it aloud. If file is a .pdf it may be an image format that cannot be read."
+                            elif len(file_content) > self.max_text_size:
+                                function_response = f"File content at {file_path} exceeds the maximum allowed size so could not read it aloud."
+                            else:
+                                await self.wingman.play_to_user(file_content)
+                                function_response = f"File content from {file_path} read aloud."
+                        except FileNotFoundError:
+                            function_response = f"File '{file_name}' not found in '{directory}'."
+                        except IOError as e:
+                            function_response = str(e)
                 else:
-                    file_path = os.path.join(directory, file_name)
-                    try:
-                        file_content = self.get_text_from_file(file_path, file_extension, pdf_page_number)
-                        if len(file_content) < 3 or not file_content:
-                            function_response = f"File at {file_path} appears not to have any content so could not read it aloud.  If file is a .pdf it may be an image format that cannot be read."
-                        elif len(file_content) > self.max_text_size:
-                            function_response = f"File content at {file_path} exceeds the maximum allowed size so could not read it aloud."
+                    await self.wingman.play_to_user(file_name)
+                    function_response = "Provided text read aloud."
+
+        elif tool_name == "load_folder_contents":
+            folder_path = parameters.get("folder_path")
+            skipped_files = []
+            try:
+                absolute_paths = []
+                contents_of_files = ""
+
+                for root, _, files in os.walk(folder_path):
+                    for file in files:
+                        absolute_path = os.path.abspath(os.path.join(root, file))
+                        absolute_paths.append(absolute_path)
+
+                for file_path in absolute_paths:
+                    file_extension = file_path.split(".")[-1]
+                    if file_extension.lower() not in self.allowed_file_extensions:
+                        skipped_files.append(f"Unsupported file extension: {file_path}")
+                    else:
+                        file_contents = self.get_text_from_file(file_path, file_extension)
+                        if len(file_contents) > self.max_text_size:
+                            skipped_files.append(f"File content exceeds max size: {file_path}")
                         else:
-                            await self.wingman.play_to_user(file_content)
-                            function_response = f"File content from {file_path} read aloud."
-                    except FileNotFoundError:
-                        function_response = f"File '{file_name}' not found in '{directory}'."
-                    except IOError as e:
-                        function_response = str(e)
+                            contents_of_files += f"\n\n##File path: {file_path}##\n{file_contents}\n\n"
+
+                if skipped_files:
+                    function_response = f"Some files were skipped: {', '.join(skipped_files)}\nLoaded content: {contents_of_files}"
+                else:
+                    function_response = f"Loaded content: {contents_of_files}"
+
+            except Exception as e:
+                function_response = f"Error in reading folder contents in '{folder_path}': {str(e)}"
+
+        elif tool_name == "create_zip_file":
+            zip_file_name = parameters.get("zip_file_name")
+            files_to_compress = parameters.get("files_to_compress")
+            try:
+                if not isinstance(files_to_compress, list):
+                    files_to_compress = [files_to_compress]
+                
+                with zipfile.ZipFile(zip_file_name, 'w') as zip_ref:
+                    for file in files_to_compress:
+                        if os.path.isdir(file):
+                            for root, dirs, files in os.walk(file):
+                                for filename in files:
+                                    file_path = os.path.join(root, filename)
+                                    arcname = os.path.relpath(file_path, start=os.path.dirname(file))
+                                    zip_ref.write(file_path, arcname=arcname)
+                        elif os.path.isfile(file):
+                            arcname = os.path.basename(file)
+                            zip_ref.write(file, arcname=arcname)
+                        else:
+                            raise ValueError(f"Invalid path: {file}")
+                
+                function_response = f"Created zip file '{zip_file_name}' with specified files."
+            except Exception as e:
+                function_response = f"Failed to create zip file '{zip_file_name}': {str(e)}"
+
+        elif tool_name == "add_to_zip_file":
+            zip_file_name = parameters.get("zip_file_name")
+            files_to_add = parameters.get("files_to_add")
+            try:
+                if not isinstance(files_to_add, list):
+                    files_to_add = [files_to_add]
+
+                with zipfile.ZipFile(zip_file_name, 'a') as zip_ref:
+                    for file in files_to_add:
+                        if os.path.isdir(file):
+                            for root, dirs, files in os.walk(file):
+                                for filename in files:
+                                    file_path = os.path.join(root, filename)
+                                    arcname = os.path.relpath(file_path, start=os.path.dirname(file))
+                                    zip_ref.write(file_path, arcname=arcname)
+                        elif os.path.isfile(file):
+                            arcname = os.path.basename(file)
+                            zip_ref.write(file, arcname=arcname)
+                        else:
+                            raise ValueError(f"Invalid path: {file}")
+
+                function_response = f"Added specified files to zip file '{zip_file_name}'."
+            except Exception as e:
+                function_response = f"Failed to add files to zip file '{zip_file_name}': {str(e)}"
+
+
+        elif tool_name == "extract_zip":
+            zip_file_path = parameters.get("zip_file_path")
+            target_directory = parameters.get("target_directory")
+            try:
+                with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+                    zip_ref.extractall(path=target_directory)
+                    function_response = f"Extracted {zip_file_path} contents to {target_directory}"
+
+            except Exception as e:
+                function_response = f"Failed to extract contents of {zip_file_path}, error was {e}."
 
         if self.settings.debug_mode:
             await self.printr.print_async(
