@@ -142,7 +142,7 @@ class FileManager(Skill):
                                 },
                                 "directory_path": {
                                     "type": "string",
-                                    "description": "The directory from where the file should be loaded. Defaults to the configured directory.",
+                                    "description": "The path of the directory from where the file should be loaded. Defaults to the configured directory.",
                                 },
                                 "pdf_page_number_to_load": {
                                     "type": "number",
@@ -174,7 +174,7 @@ class FileManager(Skill):
                                 },
                                 "directory_path": {
                                     "type": "string",
-                                    "description": "The directory where the file should be saved. Defaults to the configured directory.",
+                                    "description": "The path of the directory where the file should be saved. Defaults to the configured directory.",
                                 },
                                 "add_to_existing_file": {
                                     "type": "boolean",
@@ -239,12 +239,12 @@ class FileManager(Skill):
                 },
             ),
             (
-                "read_file_aloud",
+                "read_file_or_text_content_aloud",
                 {
                     "type": "function",
                     "function": {
-                        "name": "read_file_aloud",
-                        "description": "Reads aloud the content of a specified text file.",
+                        "name": "read_file_or_text_content_aloud",
+                        "description": "Reads aloud the content of a specified text file or or other text content provided by the user.",
                         "parameters": {
                             "type": "object",
                             "properties": {
@@ -254,14 +254,17 @@ class FileManager(Skill):
                                 },
                                 "directory_path": {
                                     "type": "string",
-                                    "description": "The directory from where the file should be loaded. Defaults to the configured directory.",
+                                    "description": "The path of the directory from where the file should be loaded. Defaults to the configured directory.",
                                 },
                                 "pdf_page_number_to_load": {
                                     "type": "number",
                                     "description": "The page number of a PDF to read aloud, if specified.",
                                 },
+                                "text_content": {
+                                    "type": "string",
+                                    "description": "The content to read aloud, if specified"
+                                }
                             },
-                            "required": ["file_name"],
                         },
                     },
                 },
@@ -292,7 +295,7 @@ class FileManager(Skill):
                     "type": "function",
                     "function": {
                         "name": "create_zip_file",
-                        "description": "Combines and compresses specified files into a .zip file.",
+                        "description": "Combines and compresses specified folders or files into a .zip file.",
                         "parameters": {
                             "type": "object",
                             "properties": {
@@ -300,10 +303,14 @@ class FileManager(Skill):
                                     "type": "string",
                                     "description": "The name of the zip file to create.",
                                 },
+                                "directory_path": {
+                                    "type": "string",
+                                    "description": "The path of the directory where the zip file should be created. Defaults to the configured directory.",
+                                },
                                 "files_to_compress": {
                                     "type": "array",
                                     "items": {"type": "string"},
-                                    "description": "List of files to compress into the zip.",
+                                    "description": "List of absolute file or folder paths to compress into the zip.",
                                 },
                             },
                             "required": ["zip_file_name", "files_to_compress"],
@@ -324,6 +331,10 @@ class FileManager(Skill):
                                 "zip_file_name": {
                                     "type": "string",
                                     "description": "The name of the zip file to add files to.",
+                                },
+                                "directory_path": {
+                                    "type": "string",
+                                    "description": "The path of the directory where the zip file is located. Defaults to the configured directory.",
                                 },
                                 "files_to_add": {
                                     "type": "array",
@@ -374,12 +385,23 @@ class FileManager(Skill):
                 color=LogType.INFO,
             )
 
+        # Get all possible parameters once to avoid duplicate work
+        file_name = parameters.get("file_name")
+        directory_path = parameters.get("directory_path", self.default_directory)
+        if directory_path == "" or directory_path == ".":
+            directory_path = self.default_directory
+        pdf_page_number = parameters.get("pdf_page_number_to_load")
+        text_content = parameters.get("text_content")
+        add_to_existing_file = parameters.get("add_to_existing_file")
+        folder_name = parameters.get("folder_name")
+        folder_path = parameters.get("folder_path")
+        zip_file_name = parameters.get("zip_file_name")
+        files_to_add = parameters.get("files_to_add")
+        zip_file_path = parameters.get("zip_file_path")
+        target_directory = parameters.get("target_directory")
+        files_to_compress = parameters.get("files_to_compress")
+        
         if tool_name == "load_text_from_file":
-            file_name = parameters.get("file_name")
-            directory = parameters.get("directory_path", self.default_directory)
-            pdf_page_number = parameters.get("pdf_page_number_to_load")
-            if directory == "":
-                directory = self.default_directory
             if not file_name or file_name == "":
                 function_response = "File name not provided."
             else:
@@ -387,7 +409,7 @@ class FileManager(Skill):
                 if file_extension.lower() not in self.allowed_file_extensions:
                     function_response = f"Unsupported file extension: {file_extension}"
                 else:
-                    file_path = os.path.join(directory, file_name)
+                    file_path = os.path.join(directory_path, file_name)
                     try:
                         # if PDF, use pdfminer.six's extract text to read (optionally passing the specific page to read - zero-indexed so subtract 1), otherwise open and parse file
                         file_content = self.get_text_from_file(file_path, file_extension, pdf_page_number)
@@ -398,17 +420,11 @@ class FileManager(Skill):
                         else:
                             function_response = f"File content loaded from {file_path}:\n{file_content}"
                     except FileNotFoundError:
-                        function_response = f"File '{file_name}' not found in '{directory}'."
+                        function_response = f"File '{file_name}' not found in '{directory_path}'."
                     except Exception as e:
                         function_response = f"Failed to read file '{file_name}': {str(e)}"
 
         elif tool_name == "save_text_to_file":
-            file_name = parameters.get("file_name")
-            text_content = parameters.get("text_content")
-            add_to_existing_file = parameters.get("add_to_existing_file", False)
-            directory = parameters.get("directory_path", self.default_directory)
-            if directory == "":
-                directory = self.default_directory
             if not file_name or not text_content or file_name == "":
                 function_response = "File name or text content not provided."
             else:
@@ -425,15 +441,15 @@ class FileManager(Skill):
                         except json.JSONDecodeError as e:
                             function_response = f"Invalid JSON content: {str(e)}"
                             return function_response, instant_response
-                    os.makedirs(directory, exist_ok=True)
-                    file_path = os.path.join(directory, file_name)
+                    os.makedirs(directory_path, exist_ok=True)
+                    file_path = os.path.join(directory_path, file_name)
                     # If file already exists, and user does not have overwrite option on, and LLM did not detect an intent to add to the existing file, stop
                     if (
                         os.path.isfile(file_path)
                         and not self.allow_overwrite_existing
                         and not add_to_existing_file
                     ):
-                        function_response = f"File '{file_name}' already exists at {directory} and overwrite is not allowed."
+                        function_response = f"File '{file_name}' already exists at {directory_path} and overwrite is not allowed."
                     # Otherwise, if file exists but LLM detected user wanted to add to existing file, do that.
                     elif os.path.isfile(file_path) and add_to_existing_file:
                         try:
@@ -456,10 +472,6 @@ class FileManager(Skill):
                             function_response = f"Failed to save text to {file_path}: {str(e)}"
 
         elif tool_name == "create_folder":
-            folder_name = parameters.get("folder_name")
-            directory_path = parameters.get("directory_path", self.default_directory)
-            if directory_path == "":
-                directory_path = self.default_directory
             if not folder_name or folder_name == "":
                 function_response = "Folder name not provided."
             else:
@@ -473,10 +485,6 @@ class FileManager(Skill):
                     )
 
         elif tool_name == "open_folder":
-            folder_name = parameters.get("folder_name")
-            directory_path = parameters.get("directory_path", self.default_directory)
-            if directory_path == "":
-                directory_path = self.default_directory
             if not folder_name or folder_name == "":
                 function_response = "Folder name not provided."
             else:
@@ -491,40 +499,41 @@ class FileManager(Skill):
                         f"Failed to open folder '{folder_name}': {str(e)}"
                     )
 
-        elif tool_name == "read_file_aloud":
-            file_name = parameters.get("file_name")
-            directory = parameters.get("directory_path", self.default_directory)
-            pdf_page_number = parameters.get("pdf_page_number_to_load")
-            if directory == "":
-                directory = self.default_directory
-            if not file_name:
-                function_response = "File name not provided."
+        elif tool_name == "read_file_or_text_content_aloud":
+            # First check if there's text content, if so, just play that as the user just wants the AI to say something in its TTS voice
+            if text_content:
+                await self.wingman.play_to_user(text_content)
+                function_response = "Provided text read aloud."
+            # Otherwise, check to see if a valid file has been passed, if so, read its text as long as it does not exceed max content length
+            # If not a valid file location, double check whether the AI accidentally put text content in file name and play that
             else:
-                file_path = os.path.join(directory, file_name)
-                if os.path.isfile(file_path):
-                    file_extension = file_name.split(".")[-1]
-                    if file_extension.lower() not in self.allowed_file_extensions:
-                        function_response = f"Unsupported file extension: {file_extension}"
-                    else:
-                        try:
-                            file_content = self.get_text_from_file(file_path, file_extension, pdf_page_number)
-                            if len(file_content) < 3 or not file_content:
-                                function_response = f"File at {file_path} appears not to have any content so could not read it aloud. If file is a .pdf it may be an image format that cannot be read."
-                            elif len(file_content) > self.max_text_size:
-                                function_response = f"File content at {file_path} exceeds the maximum allowed size so could not read it aloud."
-                            else:
-                                await self.wingman.play_to_user(file_content)
-                                function_response = f"File content from {file_path} read aloud."
-                        except FileNotFoundError:
-                            function_response = f"File '{file_name}' not found in '{directory}'."
-                        except IOError as e:
-                            function_response = str(e)
+                if directory_path == "" or directory_path == ".":
+                    directory_path = self.default_directory
+                if not file_name:
+                    function_response = "File name not provided."
                 else:
-                    await self.wingman.play_to_user(file_name)
-                    function_response = "Provided text read aloud."
-
+                    file_path = os.path.join(directory_path, file_name)
+                    if not os.path.isfile(file_path):
+                        await self.wingman.play_to_user(file_path)
+                        function_response = "Provided text read aloud."
+                    else:
+                        file_extension = file_name.split(".")[-1]
+                        if file_extension.lower() not in self.allowed_file_extensions:
+                            function_response = f"Unsupported file extension: {file_extension}"
+                        else:
+                            try:
+                                file_content = self.get_text_from_file(file_path, file_extension, pdf_page_number)
+                                if len(file_content) < 3 or not file_content:
+                                    function_response = f"File at {file_path} appears not to have any content so could not read it aloud. If file is a .pdf it may be an image format that cannot be read."
+                                elif len(file_content) > self.max_text_size:
+                                    function_response = f"File content at {file_path} exceeds the maximum allowed size so could not read it aloud."
+                                else:
+                                    await self.wingman.play_to_user(file_content)
+                                    function_response = f"File content from {file_path} read aloud."
+                            except Exception as e:
+                                function_response = f"There was an error trying to read aloud '{file_name}' in '{directory_path}'.  The error was {str(e)}."
+                        
         elif tool_name == "load_folder_contents":
-            folder_path = parameters.get("folder_path")
             skipped_files = []
             try:
                 absolute_paths = []
@@ -555,13 +564,12 @@ class FileManager(Skill):
                 function_response = f"Error in reading folder contents in '{folder_path}': {str(e)}"
 
         elif tool_name == "create_zip_file":
-            zip_file_name = parameters.get("zip_file_name")
-            files_to_compress = parameters.get("files_to_compress")
+            full_zip_path = os.path.join(directory_path, zip_file_name)
             try:
                 if not isinstance(files_to_compress, list):
                     files_to_compress = [files_to_compress]
                 
-                with zipfile.ZipFile(zip_file_name, 'w') as zip_ref:
+                with zipfile.ZipFile(full_zip_path, 'w', zipfile.ZIP_DEFLATED) as zip_ref:
                     for file in files_to_compress:
                         if os.path.isdir(file):
                             for root, dirs, files in os.walk(file):
@@ -575,18 +583,17 @@ class FileManager(Skill):
                         else:
                             raise ValueError(f"Invalid path: {file}")
                 
-                function_response = f"Created zip file '{zip_file_name}' with specified files."
+                function_response = f"Created zip file '{full_zip_path}' with specified files."
             except Exception as e:
                 function_response = f"Failed to create zip file '{zip_file_name}': {str(e)}"
 
         elif tool_name == "add_to_zip_file":
-            zip_file_name = parameters.get("zip_file_name")
-            files_to_add = parameters.get("files_to_add")
+            full_zip_path = os.path.join(directory_path, zip_file_name)
             try:
                 if not isinstance(files_to_add, list):
                     files_to_add = [files_to_add]
 
-                with zipfile.ZipFile(zip_file_name, 'a') as zip_ref:
+                with zipfile.ZipFile(full_zip_path, 'a', zipfile.ZIP_DEFLATED) as zip_ref:
                     for file in files_to_add:
                         if os.path.isdir(file):
                             for root, dirs, files in os.walk(file):
@@ -600,14 +607,12 @@ class FileManager(Skill):
                         else:
                             raise ValueError(f"Invalid path: {file}")
 
-                function_response = f"Added specified files to zip file '{zip_file_name}'."
+                function_response = f"Added specified files to zip file '{full_zip_path}'."
             except Exception as e:
-                function_response = f"Failed to add files to zip file '{zip_file_name}': {str(e)}"
+                function_response = f"Failed to add files to zip file '{full_zip_path}': {str(e)}"
 
 
         elif tool_name == "extract_zip":
-            zip_file_path = parameters.get("zip_file_path")
-            target_directory = parameters.get("target_directory")
             try:
                 with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
                     zip_ref.extractall(path=target_directory)
