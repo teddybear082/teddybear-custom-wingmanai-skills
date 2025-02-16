@@ -1,0 +1,22 @@
+name: ConversationLogger
+module: skills.conversation_logger.main
+category: general
+description:
+  en: Automatically log all user prompts and wingman responses to a file.
+  de: Protokolliere automatisch alle Benutzeranfragen und Wingman-Antworten in einer Datei.
+hint:
+  en: Turn on enable logging in custom properties to automatically log the conversation with your wingman.
+  de: Schalte loggingenabled in den benutzerdefinierten Einstellungen ein, um das Gespräch mit deinem Wingman automatisch zu protokollieren.
+custom_properties:
+  - hint: Enables or disables conversation logging.
+    id: logging_enabled
+    name: Logging Enabled
+    property_type: boolean
+    required: true
+    value: true
+  - hint: Name for user used in logs
+    id: user_name
+    name: User Name For Logging
+    property_type: string
+    required: true
+    value: USER

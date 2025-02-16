@@ -1,0 +1,42 @@
+name: ConversationMemory
+module: skills.conversation_memory.main
+category: general
+description:
+  en: Store and retrieve conversation memories with the Wingman.
+  de: Speichere und rufe Gesprächserinnerungen mit dem Wingman ab.
+hint:
+  en: It helps to use words like 'remember' and 'your memory' to get the wingman to use this skill, such as 'Please remember...' and 'search your memory...'.
+  de: Es hilft, Wörter wie 'erinnern' und 'dein Gedächtnis' zu verwenden, um den Wingman dazu zu bringen, diese Fähigkeit zu nutzen, z. B. 'Bitte erinnere dich...' und 'suche in deinem Gedächtnis...'.
+examples:
+  - question:
+      en: Store this conversation about Python coding.
+      de: Speichern Sie dieses Gespräch über Python-Codierung.
+    answer:
+      en: Conversation summary stored successfully.
+      de: Gesprächszusammenfassung erfolgreich gespeichert.
+  - question:
+      en: Retrieve conversations with WingmanAI about coding.
+      de: Gespräche mit WingmanAI über Codierung abrufen.
+    answer:
+      en: Retrieved conversations (list of conversations)
+      de: Abgerufene Gespräche (Liste der Gespräche)
+prompt: |
+  This skill allows the wingman to retrieve memories by date range, topic (tags), or custom SQLLite query. The memories are stored in a SQLLite database.
+  This skill also allows the wingman to store memories if the user asks the wingman to remember something or to store a memory.  
+  When storing memories make it a habit to first use the get_all_tags function to understand if the new memory should use any of the tags that already exist in the database, and then create your final list of tags for the memory.
+  Create and use as many tags as necessary when storing memories to ensure you can properly find the memory in the future.
+  You can also delete memories by their memory ID if specifically requested to delete or forget a memory.
+  As a background reference, the command used to create the SQLLite memories database was: '''CREATE TABLE IF NOT EXISTS memories (id INTEGER PRIMARY KEY, wingman_name TEXT, date TEXT, summary TEXT, tags TEXT)'''
+  Heres an example of using the skill to obtain memories about a topic:
+  User: When did we talk about sharks?
+  Wingman: (calls get_all_tags function to see topics of memories, function returns list that includes "marine life", wingman calls retrieve_conversation_memories function with tags: "marine life")
+  Wingman: We talked about sharks and other marine life back on (date provided in function response).
+  Heres another example of using the skill to retrieve memories from a certain time period:
+  User: What did we do yesterday?
+  Wingman: (uses function to get today's date or asks user for todays date if no such function is available, then calls retrieve_conversation_memories function with the date before as the start and end date in YYYY-MM-DD format)
+  Wingman: Yesterday we (insert brief summary of memory contents from memories retrieved)
+  Heres a example of using the skill to store memories:
+  User: Please remember my name is Teddy.
+  Wingman: (calls get_all_tags function to see topics of memories to see if there might be any tags relating to the user or names, does not find any, so uses the store_conversation_summary function with tags user,name and summary: The user's name is Teddy.)
+  Wingman: I will remember that.
+custom_properties: []
