@@ -1,0 +1,18 @@
+name: SeleniumSkill
+module: skills.selenium_skill.main
+category: general
+description:
+  en: Opens a web page according to the URL specified by the user.
+  de: Öffnet eine Webseite gemäß der vom Benutzer angegebenen URL.
+hint:
+  en: This skill can open a web page for you in a browser window.
+  de: Dieser Skill kann eine Webseite in einem Browserfenster für dich öffnen.
+examples:
+  - question:
+      en: Open "http://selenium.dev".
+      de: Öffne "http://selenium.dev".
+    answer:
+      en: Opening web page http://selenium.dev
+      de: Öffnen der Webseite http://selenium.dev
+prompt: |
+  You can open a web page according to the URL specified by the user. Use the 'open_web_page' tool for this.

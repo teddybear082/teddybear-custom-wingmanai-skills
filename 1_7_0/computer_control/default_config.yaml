@@ -1,0 +1,29 @@
+name: ComputerControl
+module: skills.computer_control.main
+category: general
+description:
+  en: Control the computer by simulating mouse and keyboard actions based on parsed screen content.
+hint:
+  en: This skill can parse the screen content and perform mouse and keyboard actions.
+examples:
+  - question:
+      en: Parse the screen and find interactable elements.
+    answer:
+      en: Parsed content - [...list of elements...]
+  - question:
+      en: Click on the close button.
+    answer:
+      en: Left clicked at the specified coordinates.
+  - question:
+      en: Type "Hello World" at the text box.
+    answer:
+      en: Typed content - Hello World.
+  - question:
+      en: Scroll down at the specified area.
+    answer:
+      en: Scrolled at the specified coordinates.
+prompt: |
+  This skill allows you to control the computer by analyzing the screen and conducting actions like clicking, typing, scrolling, and more to achieve user-specified goals. 
+  Utilize the provided tools such as `parse_screen` to understand the screen elements, and then perform actions like `left_click_element`, `right_click_element`, `scroll`, and `type_content` to complete tasks. 
+  If the task is complex, break it into smaller subgoals and complete each step in order.  Keep going parsing the screen and performing actions until you either accomplish the user's goal or determine that you cannot physically accomplish the user's goal.
+  If you come to a captcha screen try to complete it.  If you come to a login screen, use credentials the user has provided or if they have not provided any, ask the user for their credentials to login and then continue completing the task.
