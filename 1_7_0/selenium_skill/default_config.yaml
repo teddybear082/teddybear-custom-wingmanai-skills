@@ -2,11 +2,11 @@ name: SeleniumSkill
 module: skills.selenium_skill.main
 category: general
 description:
-  en: Opens a web page according to the URL specified by the user.
-  de: Öffnet eine Webseite gemäß der vom Benutzer angegebenen URL.
+  en: Controls the user's web browser.
+  de: kontrolliert den Webbrowser des Nutzers
 hint:
-  en: This skill can open a web page for you in a browser window.
-  de: Dieser Skill kann eine Webseite in einem Browserfenster für dich öffnen.
+  en: Give the wingman specific directions for your goal to have the most success.
+  de: Gib dem Wingman spezifische Anweisungen für dein Ziel, um den meisten Erfolg zu haben.
 examples:
   - question:
       en: Open "http://selenium.dev".
@@ -15,4 +15,5 @@ examples:
       en: Opening web page http://selenium.dev
       de: Öffnen der Webseite http://selenium.dev
 prompt: |
-  You can open a web page according to the URL specified by the user. Use the 'open_web_page' tool for this.
+  You can control the user's web browser, navigating to the page they want you to control, analyzing interactable elements and the browser state, and clicking and typing in the browser.
+  After opening the browser, favor using the get next recommended step tool to determine the next action to take (repeatedly if necessary) to accomplish the user's goal, as this allows an expert AI to review the browser state and give you recommendations on what to do.
