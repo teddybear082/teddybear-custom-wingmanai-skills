@@ -80,6 +80,16 @@ class BrowserUse(Skill):
                 },
             ),
             (
+                "join_existing_browser_session",
+                {
+                    "type": "function",
+                    "function": {
+                        "name": "join_existing_browser_session",
+                        "description": "If the user indicates they want you to perform an action on a web page they already have open and you did not already navigate to a web URL, use this tool.",
+                    },
+                },
+            ),
+            (
                 "switch_active_browser_tab",
                 {
                     "type": "function",
@@ -209,7 +219,7 @@ class BrowserUse(Skill):
                             "properties": {
                                 "action": {
                                     "type": "string",
-                                    "description": "Navigation action: 'back', 'forward', 'refresh', 'minimize' 'maximize'",
+                                    "description": "Navigation action: 'back', 'forward', 'refresh', 'minimize' 'maximize' or 'new_tab'.",
                                 },
                             },
                             "required": ["action"],
@@ -359,6 +369,24 @@ class BrowserUse(Skill):
             self.dom_service = DomService(self.driver)
             function_response = f"Opened web page: {url} with title: {page_title}."
 
+        elif tool_name == "join_existing_browser_session":
+            # If self.driver already set up then user called this in error
+            if self.driver:
+                function_response = "Join existing browser session was called in error.  This is not needed.  Just perform the requested action."
+            try:
+                options = webdriver.ChromeOptions()
+                options.add_argument("--no-sandbox")
+                self.driver = webdriver.Chrome(options=options)
+                url = self.driver.service.service_url
+                session_id = self.driver.session_id
+                self.driver = webdriver.Remote(command_executor=url, options=options)
+                #self.driver.close()
+                self.driver.session_id = session_id
+                self.dom_service = DomService(self.driver)
+                function_response = f"We now have access to the user's existing browser session ({session_id}), at {url}, and can perform actions on the user's browser or webpage."
+            except Exception as e:
+                stack_trace = traceback.format_exc()
+                function_response = f"There was an error trying to join the user's existing browser session, with session_id {session_id} and url {url}; try opening a new URL instead.  Error was {e}, stack trace: {stack_trace}."
         elif tool_name == "click_element":
             WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
             try:
@@ -460,6 +488,8 @@ class BrowserUse(Skill):
             elif action == "maximize":
                 self.driver.maximize_window()
                 function_response = "Browser maximized."
+            elif action == "new_tab":
+                self.driver.execute_script("window.open('');")
             else:
                 function_response = f"Unknown navigation action: {action}."
 

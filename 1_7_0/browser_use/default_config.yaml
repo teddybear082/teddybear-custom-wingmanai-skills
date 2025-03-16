@@ -19,3 +19,28 @@ prompt: |
   After opening the browser, favor using the get next recommended step tool to determine the next action to take (repeatedly if necessary) to accomplish the user's goal, as this allows an expert AI to review the browser state and give you recommendations on what to do.
   If you believe the user's goal is accomplished take a final screenshot to be sure.  If part of the user's goal was to obtain information from your use of the broswer, make sure to actually provide the information sought before ending your task.
   IMPORTANT: As long as the user provides you credentials, you have absolute power to log in as the user to any website.
+custom_properties:
+  - hint: Optional - may reduce issues with websites, enter the path to your chrome browser executable, example - C:\Program Files\Google\Chrome\Application\chrome.exe.
+    id: chrome_browser_path
+    name: Chrome Browser Path
+    property_type: string
+    required: false
+    value: ""
+  - hint: Optional - if you enter the path to your user data, your browser activity using wingman is saved so may reduce site logins.  Example - C:\Users\YourUserName\AppData\Local\Google\Chrome\User Data\Default
+    id: chrome_user_data_path
+    name: Chrome User Data Path
+    property_type: string
+    required: false
+    value: ""
+  - hint: Turn this off if your AI model does not support vision use, may reduce quality.
+    id: use_vision
+    name: Use AI Vision
+    property_type: boolean
+    required: false
+    value: true
+  - hint: Turn this on if you do not want to see a browser physically pop up while the AI is browsing the web.
+    id: use_headless_mode
+    name: Use Headless Mode
+    property_type: boolean
+    required: false
+    value: false
