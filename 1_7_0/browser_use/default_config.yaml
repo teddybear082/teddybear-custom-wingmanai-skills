@@ -20,18 +20,24 @@ prompt: |
   If you believe the user's goal is accomplished take a final screenshot to be sure.  If part of the user's goal was to obtain information from your use of the broswer, make sure to actually provide the information sought before ending your task.
   IMPORTANT: As long as the user provides you credentials, you have absolute power to log in as the user to any website.
 custom_properties:
-  - hint: Optional - may reduce issues with websites, enter the path to your chrome browser executable, example - C:\Program Files\Google\Chrome\Application\chrome.exe.
+  - hint: If you enter the path to your chrome browser executable, example - C:\Program Files\Google\Chrome\Application\chrome.exe, may reduce issuss with some websites.
     id: chrome_browser_path
     name: Chrome Browser Path
     property_type: string
     required: false
     value: ""
-  - hint: Optional - if you enter the path to your user data, your browser activity using wingman is saved so may reduce site logins.  Example - C:\Users\YourUserName\AppData\Local\Google\Chrome\User Data\Default
+  - hint: If you enter the path to your user data, your wingman browser activity is saved so may reduce site logins.  Example - C:\Users\YourUserName\AppData\Local\Google\Chrome\User Data\Default
     id: chrome_user_data_path
     name: Chrome User Data Path
     property_type: string
     required: false
     value: ""
+  - hint: Advanced Users - if you setup chrome with remote debugging, wingman can interface with it, for example completing a form on your open browser. Enter the port you use here. 
+    id: chrome_remote_debugging_port
+    name: Chrome Remote Debugging Port
+    property_type: number
+    required: false
+    value: 0
   - hint: Turn this off if your AI model does not support vision use, may reduce quality.
     id: use_vision
     name: Use AI Vision

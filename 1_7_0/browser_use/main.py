@@ -1,6 +1,7 @@
 import traceback
 import os
 import time
+import requests
 from typing import TYPE_CHECKING, Optional, Tuple, Dict, List
 from api.interface import SettingsConfig, SkillConfig, WingmanInitializationError
 from services.benchmark import Benchmark
@@ -29,8 +30,11 @@ class BrowserUse(Skill):
         # User config variables
         self.chrome_browser_path = None # Attempt to use user's own browser executable
         self.chrome_user_data_path = None # Attempt to use user's own chrome user data to reduce logins
+        self.chrome_remote_debugging_port = None # If user wants to enable remote debugging on their browser then we may be able to interact with it midstream, e.g. "I have my browser up, complete this form for me."
         self.use_vision = True # Whether to run a vision pass in getting next recommended steps
         self.use_headless_mode = False # Whether to physically display the chrome browser on the user's computer
+
+        # To set chrome to launch in remote debugging mode, create a shortcut and add this to the target: --remote-debugging-port=9222 --user-data-dir="C:\Users\YOURUSERNAME\AppData\Local\Google\Chrome\User Data\Default"
 
     async def validate(self) -> list[WingmanInitializationError]:
         errors = await super().validate()
@@ -39,6 +43,9 @@ class BrowserUse(Skill):
         )
         self.chrome_user_data_path = self.retrieve_custom_property_value(
             "chrome_user_data_path", errors
+        )
+        self.chrome_remote_debugging_port = self.retrieve_custom_property_value(
+            "chrome_remote_debugging_port", errors
         )
         self.use_vision = self.retrieve_custom_property_value(
             "use_vision", errors
@@ -54,8 +61,65 @@ class BrowserUse(Skill):
                 self.chrome_user_data_path = None
             else:
                 self.chrome_user_data_path = os.path.normpath(self.chrome_user_data_path)
-
+        # Test debugging port here to see if it is open?
         return errors
+
+    async def setup_browser(self):
+        # If a driver is already running, close it as we're starting fresh
+        if self.driver:
+            self.driver.quit()
+        
+        options = webdriver.ChromeOptions()
+        if self.chrome_browser_path:
+            options.binary_location = self.chrome_browser_path #"C:\Program Files\Google\Chrome\Application\chrome.exe"
+            if self.settings.debug_mode:
+                message = "Running browser use skill using user's own Chrome.exe file."
+                await self.printr.print_async(text=message, color=LogType.INFO)
+        if self.chrome_user_data_path:
+            options.add_argument(f"--user-data-dir={self.chrome_user_data_path}") #"--user-data-dir=C:\\Users\\YOURUSERNAME\\AppData\\Local\\Google\\Chrome\\User Data\\Default")
+            if self.settings.debug_mode:
+                message = "Running browser use skill using user's own browser user data"
+                await self.printr.print_async(text=message, color=LogType.INFO)
+        if self.use_headless_mode:
+            options.headless = True # This did not work, old way of doing it
+            options.add_argument("--headless=new")
+            if self.settings.debug_mode:
+                message = "Running browser use skill in headless mode so browser window will not open."
+                await self.printr.print_async(text=message, color=LogType.INFO)
+        # Add same options to avoid bot detection as used in browser-use
+        options.add_argument('--no-sandbox') # This works
+        options.add_argument('--disable-blink-features=AutomationControlled')
+        options.add_argument('--disable-infobars') # This works but doesn't eliminate the "controlled by automation" message it is supposed to
+        options.add_argument('--disable-background-timer-throttling')
+        options.add_argument('--disable-popup-blocking')
+        options.add_argument('--disable-backgrounding-occluded-windows')
+        options.add_argument('--disable-renderer-backgrounding')
+        options.add_argument('--no-first-run')
+        options.add_argument('--no-default-browser-check')
+        #options.add_argument('--no-startup-window') # This does NOT work, causes chrome to freeze for some reason
+        options.add_argument('--window-position=0,0')
+        options.add_argument('--disable-web-security')
+        options.add_argument('--disable-site-isolation-trials')
+        options.add_argument('--disable-features=IsolateOrigins,site-per-process')
+        # If remote debugging port is set make sure it is valid before using it
+        if self.chrome_remote_debugging_port and self.chrome_remote_debugging_port != 0 and self.chrome_remote_debugging_port != "0":
+            try:
+                response = requests.get(f"http://127.0.0.1:{self.chrome_remote_debugging_port}/json", timeout=2)
+                if response.status_code == 200:
+                    options.add_argument(f'--remote-debugging-port={self.chrome_remote_debugging_port}')
+                    if self.settings.debug_mode:
+                        message = "Running browser use skill with remote debugging port so chrome must already be open."
+                        await self.printr.print_async(text=message, color=LogType.INFO)
+                else:
+                    if self.settings.debug_mode:
+                        message = f"Remote debugging port set to {self.chrome_remote_debugging_port} but cannot connect so using default mode of browser use."
+                        await self.printr.print_async(text=message, color=LogType.INFO)
+            except:
+                if self.settings.debug_mode:
+                    message = f"Remote debugging port set to {self.chrome_remote_debugging_port} cannot connect so using default mode of browser use."
+                    await self.printr.print_async(text=message, color=LogType.INFO)
+        self.driver = webdriver.Chrome(options=options)
+        self.dom_service = DomService(self.driver)
 
     def get_tools(self) -> list[tuple[str, dict]]:
         tools = [
@@ -91,7 +155,7 @@ class BrowserUse(Skill):
                             "properties": {
                                 "target_browser_tab": {
                                     "type": "string",
-                                    "description": "The name of the tartet browser tab to change to.",
+                                    "description": "The identifier of the browser tab to change to, it will be a long string of letters and numbers.",
                                 },
                             },
                             "required": ["target_browser_tab"],
@@ -203,13 +267,13 @@ class BrowserUse(Skill):
                     "type": "function",
                     "function": {
                         "name": "navigate_page",
-                        "description": "Navigate the page. Accepts actions: back, forward, refresh, minimize, maximize, and new_tab.",
+                        "description": "Navigate the page. Accepts actions: back, forward, refresh, minimize, maximize, new_tab, and get_list_of_browser_tabs.",
                         "parameters": {
                             "type": "object",
                             "properties": {
                                 "action": {
                                     "type": "string",
-                                    "description": "Navigation action: 'back', 'forward', 'refresh', 'minimize' 'maximize'",
+                                    "description": "Navigation action: 'back', 'forward', 'refresh', 'minimize' 'maximize', 'new_tab', 'get_list_of_browser_tabs'",
                                 },
                             },
                             "required": ["action"],
@@ -315,48 +379,15 @@ class BrowserUse(Skill):
         Box_ID = parameters.get("Box_ID")
         text_to_type = parameters.get("text_to_type")
 
+        # Before calling browser use tool make sure our driver is set up
+        if tool_name != "close_browser":
+            if not self.driver:
+                await self.setup_browser()
+
         if tool_name == "open_web_page":
-            # If a driver is already running, close it as we're starting fresh
-            if self.driver:
-                self.driver.quit()
             url = parameters.get("url")
-            options = webdriver.ChromeOptions()
-            if self.chrome_browser_path:
-                options.binary_location = self.chrome_browser_path #"C:\Program Files\Google\Chrome\Application\chrome.exe"
-                if self.settings.debug_mode:
-                    message = "Running browser use skill using user's own Chrome.exe file."
-                    await self.printr.print_async(text=message, color=LogType.INFO)
-            if self.chrome_user_data_path:
-                options.add_argument(f"--user-data-dir={self.chrome_user_data_path}") #"--user-data-dir=C:\\Users\\Willi\\AppData\\Local\\Google\\Chrome\\User Data\\Default")
-                if self.settings.debug_mode:
-                    message = "Running browser use skill using user's own browser user data"
-                    await self.printr.print_async(text=message, color=LogType.INFO)
-            if self.use_headless_mode:
-                #options.headless = True # This did not work, old way of doing it
-                options.add_argument("--headless=new")
-                if self.settings.debug_mode:
-                    message = "Running browser use skill in headless mode so browser window will not open."
-                    await self.printr.print_async(text=message, color=LogType.INFO)
-            # Add same options to avoid bot detection as used in browser-use
-            options.add_argument('--no-sandbox') # This works
-            options.add_argument('--disable-blink-features=AutomationControlled')
-            options.add_argument('--disable-infobars') # This works but doesn't eliminate the "controlled by automation" message it is supposed to
-            options.add_argument('--disable-background-timer-throttling')
-            options.add_argument('--disable-popup-blocking')
-            options.add_argument('--disable-backgrounding-occluded-windows')
-            options.add_argument('--disable-renderer-backgrounding')
-            options.add_argument('--no-first-run')
-            options.add_argument('--no-default-browser-check')
-            #options.add_argument('--no-startup-window') # This does NOT work, causes chrome to freeze for some reason
-            options.add_argument('--window-position=0,0')
-            options.add_argument('--disable-web-security')
-            options.add_argument('--disable-site-isolation-trials')
-            options.add_argument('--disable-features=IsolateOrigins,site-per-process')
-            
-            self.driver = webdriver.Chrome(options=options)
             self.driver.get(url)
             page_title = self.driver.title
-            self.dom_service = DomService(self.driver)
             function_response = f"Opened web page: {url} with title: {page_title}."
 
         elif tool_name == "click_element":
@@ -460,6 +491,12 @@ class BrowserUse(Skill):
             elif action == "maximize":
                 self.driver.maximize_window()
                 function_response = "Browser maximized."
+            elif action == "new_tab":
+                self.driver.switch_to.new_window()
+                function_response = "New browser tab opened."
+            elif action == "get_list_of_browser_tabs":
+                browser_tabs = self.driver.window_handles
+                function_response = f"List of current browser tabs: {browser_tabs}, the current active browser tab is: {self.driver.current_window_handle}."
             else:
                 function_response = f"Unknown navigation action: {action}."
 
@@ -512,12 +549,14 @@ class BrowserUse(Skill):
             if self.driver:
                 self.driver.quit()
                 self.driver = None
+                self.cached_selector_map = {}
+                self.dom_service = None
                 function_response = "Browser closed."
             else:
                 function_response = "No browser instance to close."
 
         elif tool_name == "switch_active_browser_tab":
-            target_tab = parameters.get("target_browser_tab")
+            target_browser_tab = parameters.get("target_browser_tab")
             try:
                 self.driver.switch_to.window(target_browser_tab)
                 function_response = f"Active tab switched to {target_browser_tab}"
@@ -551,7 +590,7 @@ class BrowserUse(Skill):
             system_prompt = """
                 You are a helpful computer control assistant and have access to the user's browser to perform actions in it.
                 Your role is to recommend the next step to accomplish the user's goal.
-                Provide details about the next interactable element that should be interacted with.
+                Provide details about the next interactable element that should be interacted with, starting with its Box ID (the number of the box its surrounded by).
                 If the user's goal is already met, state that and provide any necessary details.
             """
 
