@@ -171,7 +171,12 @@ class DomService:
 
 		return element_node, children_ids
 
-
+# Compiled from 
+# https://github.com/browser-use/browser-use/tree/main/browser_use/dom
+# https://github.com/nanobrowser/nanobrowser/blob/master/chrome-extension/public/buildDomTree.js
+# https://github.com/browser-use/browser-use/pull/1031
+# https://github.com/browser-use/browser-use/pull/928/files
+# https://github.com/browser-use/browser-use/pull/1078/files
 DOM_SCRIPT = """
 window.buildDomTree = (
   args = {
@@ -394,7 +399,9 @@ window.buildDomTree = (
       "menu",
       "menuitem",
       "object",
+      "pre",
       "select",
+      "span",
       "summary",
       "textarea",
     ]);
