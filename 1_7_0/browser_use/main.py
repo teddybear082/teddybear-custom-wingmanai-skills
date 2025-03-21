@@ -27,6 +27,7 @@ class BrowserUse(Skill):
         self.driver = None
         self.cached_selector_map = {}
         self.dom_service = None
+        self.user_message_count = 0
         # User config variables
         self.chrome_browser_path = None # Attempt to use user's own browser executable
         self.chrome_user_data_path = None # Attempt to use user's own chrome user data to reduce logins
@@ -89,7 +90,7 @@ class BrowserUse(Skill):
         # Add same options to avoid bot detection as used in browser-use
         options.add_argument('--no-sandbox') # This works
         options.add_argument('--disable-blink-features=AutomationControlled')
-        options.add_argument('--disable-infobars') # This works but doesn't eliminate the "controlled by automation" message it is supposed to
+        options.add_argument('--disable-infobars') # This does not crash but doesn't eliminate the "controlled by automation" message it is supposed to
         options.add_argument('--disable-background-timer-throttling')
         options.add_argument('--disable-popup-blocking')
         options.add_argument('--disable-backgrounding-occluded-windows')
@@ -98,6 +99,7 @@ class BrowserUse(Skill):
         options.add_argument('--no-default-browser-check')
         #options.add_argument('--no-startup-window') # This does NOT work, causes chrome to freeze for some reason
         options.add_argument('--window-position=0,0')
+        options.add_argument("--window-size=1920,1080")
         options.add_argument('--disable-web-security')
         options.add_argument('--disable-site-isolation-trials')
         options.add_argument('--disable-features=IsolateOrigins,site-per-process')
@@ -373,7 +375,7 @@ class BrowserUse(Skill):
         instant_response = ""
         benchmark.start_snapshot(f"BrowserUse: {tool_name}")
         if self.settings.debug_mode:
-            message = f"BrowserUse: executing tool '{tool_name}' with params: {parameters}"
+            message = f"BrowserUse: executing tool '{tool_name}' with params: {parameters}. Waiting one second in between actions."
             await self.printr.print_async(text=message, color=LogType.INFO)
 
         Box_ID = parameters.get("Box_ID")
@@ -383,6 +385,8 @@ class BrowserUse(Skill):
         if tool_name != "close_browser":
             if not self.driver:
                 await self.setup_browser()
+            # Adding latency of half second for all tool calls but closing the browser, this skill is intended for long running actions and this delay may help with overruns.
+            time.sleep(0.5)
 
         if tool_name == "open_web_page":
             url = parameters.get("url")
@@ -575,8 +579,8 @@ class BrowserUse(Skill):
             self.driver.switch_to.window(self.driver.current_window_handle)
             user_goal = parameters.get("user_goal")
             interactable_elements = await self.get_clickable_elements(self.dom_service)
-            if self.settings.debug_mode:
-                await self.printr.print_async(f"Found interactable elements: {interactable_elements}", LogType.INFO)
+            #if self.settings.debug_mode:
+                #await self.printr.print_async(f"Found interactable elements: {interactable_elements}", LogType.INFO)
             screenshot_base64 = self.driver.get_screenshot_as_base64()
             await self.printr.print_async(
                 "Current state of browser:",
@@ -678,6 +682,25 @@ class BrowserUse(Skill):
             if self.settings.debug_mode:
                 await self.printr.print_async(f'Failed to remove highlights: {str(e)}', LogType.INFO)
             pass
+
+    # Clean up some potentially long and unnecessary context to increase speed
+    async def on_add_user_message(self, message: str) -> None:
+        self.user_message_count += 1
+
+        # Check every five user messages
+        if self.user_message_count % 5 == 0:
+            # Check messages older than ten messages ago to ensure context was used
+            for msg in self.wingman.messages[:-10]:
+                # Some entries in messages will be ChatCompletions objects, not dictionaries, so skip those
+                if isinstance(msg, dict):
+                    if msg.get("role") == "tool" and "Attempted to obtain text content of browser page" in msg.get("content", ""):
+                        msg.update({"content": "(Assistant provided the text content of the browser page.)"})
+                        if self.settings.debug_mode:
+                            await self.printr.print_async(f"Found and deleted an outdated text content of browser page message.", LogType.INFO)
+                        # If we updated a message, reset user message count to ensure at least five user messages pass before another cleanup
+                        self.user_message_count = 0
+
+
 
     async def unload(self) -> None:
         """Unload the skill."""
