@@ -15,6 +15,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import StaleElementReferenceException
+from markdownify import markdownify
 from dom.service import DomService
 
 if TYPE_CHECKING:
@@ -566,7 +567,8 @@ class BrowserUse(Skill):
                     else ""
                 )
             try:
-                result = self.driver.execute_script("return document.body.textContent;")
+                #result = self.driver.execute_script("return document.body.textContent;")
+                result = markdownify(self.driver.page_source)
                 function_response = f"Attempted to obtain full text content of browser page. Result: {result}"
             except Exception as e:
                 function_response = f"Error attempting to get text content of browser page: {e}"
