@@ -399,9 +399,9 @@ window.buildDomTree = (
       "menu",
       "menuitem",
       "object",
-      "pre",
+      //"pre",   // Was a PR to browser use, creates too much clutter
       "select",
-      "span",
+      //"span",  // Was a PR to browser use, creates too much clutter
       "summary",
       "textarea",
     ]);

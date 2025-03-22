@@ -230,16 +230,6 @@ class BrowserUse(Skill):
                 },
             ),
             (
-                "take_browser_screenshot",
-                {
-                    "type": "function",
-                    "function": {
-                        "name": "take_browser_screenshot",
-                        "description": "Takes a screenshot of the current browser page.",
-                    },
-                },
-            ),
-            (
                 "scroll_by_amount",
                 {
                     "type": "function",
@@ -364,6 +354,15 @@ class BrowserUse(Skill):
                     "function": {
                         "name": "get_browser_window_text_content",
                         "description": "Try to get the text content of a browser window or tab if available.",
+                        "parameters": {
+                            "type": "object",
+                            "properties": {
+                                "user_query": {
+                                    "type": "string",
+                                    "description": "If applicable, the information the user wants.",
+                                },
+                            },
+                        },
                     },
                 },
             ),
@@ -385,8 +384,14 @@ class BrowserUse(Skill):
         if tool_name != "close_browser":
             if not self.driver:
                 await self.setup_browser()
-            # Adding latency of half second for all tool calls but closing the browser, this skill is intended for long running actions and this delay may help with overruns.
-            time.sleep(0.5)
+            # If we have a driver make sure its still active by running a simple function
+            else:
+                try:
+                    test = self.driver.title
+                except:
+                    await self.setup_browser()
+            # Adding latency of second for all tool calls but closing the browser, this skill is intended for long running actions and this delay may help with overruns.
+            time.sleep(1.0)
 
         if tool_name == "open_web_page":
             url = parameters.get("url")
@@ -427,48 +432,6 @@ class BrowserUse(Skill):
                 function_response = "Could not type into element, reference to element was stale."
             except Exception as e:
                 function_response = f"There was an unexpected error in trying to type into the element: {e}"
-
-        elif tool_name == "take_browser_screenshot":
-            # If not using vision, can't use this feature, so immediately return
-            if not self.use_vision:
-                function_response = "The user has vision capabilities disabled so cannot use the browser screenshot analysis feature."
-                benchmark.finish_snapshot()
-                if self.settings.debug_mode:
-                    await self.printr.print_async(f"Full function response was: {function_response}", LogType.INFO)
-                return function_response, instant_response 
-
-            # Else, process as normal
-            screenshot_base64 = self.driver.get_screenshot_as_base64()
-            await self.printr.print_async(
-                "Analyzing screenshot of browser:",
-                color=LogType.INFO,
-                source=LogSource.WINGMAN,
-                source_name=self.wingman.name,
-                skill_name=self.name,
-                additional_data={"image_base64": screenshot_base64},
-            )
-            messages = [
-                {
-                    "role": "user",
-                    "content": [
-                        {"type": "text", "text": f"Summarize any content you see in the browser screen."},
-                        {
-                            "type": "image_url",
-                            "image_url": {
-                                "url": f"data:image/jpeg;base64,{screenshot_base64}",
-                                "detail": "high",
-                            },
-                        },
-                    ],
-                },
-            ]
-            completion = await self.llm_call(messages)
-            llm_response = (
-                completion.choices[0].message.content
-                if completion and completion.choices
-                else ""
-            )
-            function_response = f"Screenshot of current browser state was shown to the user.  A summary of what the browser shows is: {llm_response}"
 
         elif tool_name == "scroll_by_amount":
             # Scroll by x and y offsets
@@ -569,11 +532,46 @@ class BrowserUse(Skill):
 
         elif tool_name == "get_browser_window_text_content":
             self.driver.switch_to.window(self.driver.current_window_handle)
+            user_query = parameters.get("user_query")
+            llm_response = None
+            if self.use_vision:
+                screenshot_base64 = self.driver.get_screenshot_as_base64()
+                await self.printr.print_async(
+                    "Analyzing screenshot of browser:",
+                    color=LogType.INFO,
+                    source=LogSource.WINGMAN,
+                    source_name=self.wingman.name,
+                    skill_name=self.name,
+                    additional_data={"image_base64": screenshot_base64},
+                )
+                messages = [
+                    {
+                        "role": "user",
+                        "content": [
+                            {"type": "text", "text": f"Summarize any text content you see in the browser screen. If applicable, pay particular attention to and try to provide information in response to the user's query which was: {user_query}"},
+                            {
+                                "type": "image_url",
+                                "image_url": {
+                                    "url": f"data:image/jpeg;base64,{screenshot_base64}",
+                                    "detail": "high",
+                                },
+                            },
+                        ],
+                    },
+                ]
+                completion = await self.llm_call(messages)
+                llm_response = (
+                    completion.choices[0].message.content
+                    if completion and completion.choices
+                    else ""
+                )
             try:
                 result = self.driver.execute_script("return document.body.textContent;")
-                function_response = f"Attempted to obtain text content of browser page. Result: {result}"
+                function_response = f"Attempted to obtain full text content of browser page. Result: {result}"
             except Exception as e:
                 function_response = f"Error attempting to get text content of browser page: {e}"
+            if llm_response:
+                function_response += f"\n\n IMPORTANT: In addition, visual analysis of the browser window provided the following information: {llm_response}"
 
         elif tool_name == "get_recommended_action_from_browser_state":
             self.driver.switch_to.window(self.driver.current_window_handle)

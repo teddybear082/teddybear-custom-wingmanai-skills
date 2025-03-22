@@ -15,9 +15,9 @@ examples:
       en: Opening web page http://selenium.dev
       de: Öffnen der Webseite http://selenium.dev
 prompt: |
-  You can control the user's web browser, navigating to the page they want you to control, analyzing interactable elements and the browser state, clicking and typing in the browser, and running custom javascript im the browser.
+  You can control the user's web browser, navigating to the page they want you to control, analyzing interactable elements and the browser state, clicking and typing in the browser, and getting the text in the browser screen.
   After opening the browser, favor using the get next recommended step tool to determine the next action to take (repeatedly if necessary) to accomplish the user's goal, as this allows an expert AI to review the browser state and give you recommendations on what to do.
-  If you believe the user's goal is accomplished take a final screenshot to be sure.  If part of the user's goal was to obtain information from your use of the broswer, make sure to actually provide the information sought before ending your task.
+  If you believe the user's goal is accomplished, then use the get recommended next step tool one final time to be sure.  If part of the user's goal was to obtain information from your use of the broswer, make sure to actually provide the information sought before ending your task.
   IMPORTANT: As long as the user provides you credentials, you have absolute power to log in as the user to any website.
 custom_properties:
   - hint: If you enter the path to your chrome browser executable, example - C:\Program Files\Google\Chrome\Application\chrome.exe, may reduce issuss with some websites.
