@@ -442,7 +442,9 @@ class BrowserUse(Skill):
                     self.scroll_to_element(element_to_type_into)
                     self.click_element(element_to_type_into)
                     element_to_type_into.clear()
+                    time.sleep(0.3)
                     element_to_type_into.send_keys(text_to_type)
+                    time.sleep(0.3)
                     element_to_type_into.send_keys(Keys.ENTER)
                     function_response = f"Typed text {text_to_type} into element."
                 else:
@@ -619,8 +621,6 @@ class BrowserUse(Skill):
             current_tab = self.driver.current_window_handle
             tab_dictionary_array = self.get_browser_tabs()
             self.driver.switch_to.window(current_tab)
-            if self.settings.debug_mode:
-                await self.printr.print_async(f"Analyzing web page found browser tabs: {tab_dictionary_array}", LogType.INFO)
             system_prompt = f"""
                 You are a helpful computer control assistant and have access to the user's browser to perform actions in it.
                 The current website the user is on is: {self.driver.current_url}.  The tabs in the browser are: {tab_dictionary_array} and the current browser tab is: {current_tab}.
@@ -687,9 +687,15 @@ class BrowserUse(Skill):
             # Clear highlights before next action, and that way if there is no further action, highlights are gone.
             await self.remove_highlights()
 
+        # Add some general browser info unless we closed the browser
+        if tool_name != "close_browser":
+            function_response += self.get_current_browser_state()
         benchmark.finish_snapshot()
         if self.settings.debug_mode:
-            await self.printr.print_async(f"Full function response was: {function_response}", LogType.INFO)
+            if tool_name != "get_recommended_action_from_browser_state":
+                await self.printr.print_async(f"Full function response was: {function_response}", LogType.INFO)
+            else:
+                await self.printr.print_async("Got recommended action from browser state.", LogType.INFO)
         return function_response, instant_response
 
     # Not presently used
@@ -719,6 +725,14 @@ class BrowserUse(Skill):
         except:
             tab_dictionary_array = []
         return tab_dictionary_array
+    
+    def get_current_browser_state(self):
+        return f"""
+        General browser info:
+        List of current browser tabs: {self.get_browser_tabs()}
+        Active browser tab: {self.driver.current_window_handle}
+        Active browser URL: {self.driver.current_url}
+        """
 
     async def get_clickable_elements(self, dom_service):
         # Make sure highlights are clear before getting new elements
