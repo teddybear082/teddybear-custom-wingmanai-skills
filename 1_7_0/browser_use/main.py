@@ -29,6 +29,7 @@ class BrowserUse(Skill):
         self.cached_selector_map = {}
         self.dom_service = None
         self.user_message_count = 0
+        self.num_browser_tabs = 0
         # User config variables
         self.chrome_browser_path = None # Attempt to use user's own browser executable
         self.chrome_user_data_path = None # Attempt to use user's own chrome user data to reduce logins
@@ -71,6 +72,12 @@ class BrowserUse(Skill):
         if self.driver:
             self.driver.quit()
         
+        # Clear previous caches
+        self.cached_selector_map = {}
+        self.dom_service = None
+        self.num_browser_tabs = 0
+        
+        # Set up new browser
         options = webdriver.ChromeOptions()
         if self.chrome_browser_path:
             options.binary_location = self.chrome_browser_path #"C:\Program Files\Google\Chrome\Application\chrome.exe"
@@ -391,8 +398,15 @@ class BrowserUse(Skill):
                     test = self.driver.title
                 except:
                     await self.setup_browser()
+            # Check whether a tab was opened since last action, if so, assume we want that tab to be active
+            current_tab_count = len(self.driver.window_handles)
+            if current_tab_count > self.num_browser_tabs:
+                self.num_browser_tabs = current_tab_count
+                self.driver.switch_to.window(self.driver.window_handles[-1])
             # Adding latency of second for all tool calls but closing the browser, this skill is intended for long running actions and this delay may help with overruns.
             time.sleep(1.0)
+            
+                
 
         if tool_name == "open_web_page":
             url = parameters.get("url")
