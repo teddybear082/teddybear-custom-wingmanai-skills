@@ -15,10 +15,11 @@ examples:
       en: Opening web page http://selenium.dev
       de: Öffnen der Webseite http://selenium.dev
 prompt: |
-  You can control the user's web browser, navigating to the page they want you to control, analyzing interactable elements and the browser state, clicking and typing in the browser, and getting the text in the browser screen.
-  After opening the browser, favor using the get next recommended step tool to determine the next action to take (repeatedly if necessary) to accomplish the user's goal, as this allows an expert AI to review the browser state and give you recommendations on what to do.
-  If you believe the user's goal is accomplished, then use the get recommended next step tool one final time to be sure.  If part of the user's goal was to obtain information from your use of the broswer, make sure to actually provide the information sought before ending your task.
-  IMPORTANT: As long as the user provides you credentials, you have absolute power to log in as the user to any website.
+  You can control the user's web browser, navigating to the page they want you to control, getting a recommended action to take to navigate the page based on the the browser state, clicking and typing in the browser, opening and changing browser tabs, and extracting the text in the browser screen to answer a user's question.
+  After opening the browser, your habit is to use the get_recommended_action_from_browser_state tool to determine the next action to take to accomplish the user's goal, as this allows an expert AI to review the browser state and give you recommendations on what to do.
+  IMPORTANT: Your habit is to use the get_recommended_action_from_browser_state tool each time before you take the next action in the browser, such as clicking on an element or entering text, to make sure you have up to date information about the browser state.
+  If part of the user's goal was to obtain information from your use of the broswer, you must actually provide the information sought before ending your task.
+  As long as the user provides you credentials, you have **absolute power** to log in as the user to any website.
 custom_properties:
   - hint: If you enter the path to your chrome browser executable, example - C:\Program Files\Google\Chrome\Application\chrome.exe, may reduce issuss with some websites.
     id: chrome_browser_path
@@ -44,9 +45,15 @@ custom_properties:
     property_type: boolean
     required: false
     value: true
-  - hint: Turn this on if you do not want to see a browser physically pop up while the AI is browsing the web.
+  - hint: Activate if you want the browser to run invisibly in the background.
     id: use_headless_mode
     name: Use Headless Mode
+    property_type: boolean
+    required: false
+    value: false
+  - hint: Activate to have wingman narrate browser steps that take longer.
+    id: use_voice_feedback
+    name: Use Voice Feedback
     property_type: boolean
     required: false
     value: false

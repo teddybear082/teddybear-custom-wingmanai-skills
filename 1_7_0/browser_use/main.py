@@ -21,6 +21,8 @@ from dom.service import DomService
 if TYPE_CHECKING:
     from wingmen.open_ai_wingman import OpenAiWingman
 
+WAIT_TIME_BETWEEN_STEPS : float = 1.0
+
 class BrowserUse(Skill):
     def __init__(self, config: SkillConfig, settings: SettingsConfig, wingman: "OpenAiWingman") -> None:
         super().__init__(config=config, settings=settings, wingman=wingman)
@@ -55,6 +57,9 @@ class BrowserUse(Skill):
         )
         self.use_headless_mode = self.retrieve_custom_property_value(
             "use_headless_mode", errors
+        )
+        self.use_voice_feedback = self.retrieve_custom_property_value(
+            "use_voice_feedback", errors
         )
         if self.chrome_browser_path and self.chrome_browser_path != " ":
             if not os.path.isfile(self.chrome_browser_path):
@@ -388,7 +393,7 @@ class BrowserUse(Skill):
         Box_ID = parameters.get("Box_ID")
         text_to_type = parameters.get("text_to_type")
 
-        # Before calling browser use tool make sure our driver is set up
+        # Before calling browser use tool make sure our driver is set up, and then wait designated time before next action
         if tool_name != "close_browser":
             if not self.driver:
                 await self.setup_browser()
@@ -403,10 +408,9 @@ class BrowserUse(Skill):
             if current_tab_count > self.num_browser_tabs:
                 self.num_browser_tabs = current_tab_count
                 self.driver.switch_to.window(self.driver.window_handles[-1])
+
             # Adding latency of second for all tool calls but closing the browser, this skill is intended for long running actions and this delay may help with overruns.
-            time.sleep(1.0)
-            
-                
+            time.sleep(WAIT_TIME_BETWEEN_STEPS)
 
         if tool_name == "open_web_page":
             url = parameters.get("url")
@@ -477,8 +481,9 @@ class BrowserUse(Skill):
                 self.driver.switch_to.new_window()
                 function_response = "New browser tab opened."
             elif action == "get_list_of_browser_tabs":
-                browser_tabs = self.driver.window_handles
-                function_response = f"List of current browser tabs: {browser_tabs}, the current active browser tab is: {self.driver.current_window_handle}."
+                current_tab = self.driver.current_window_handle
+                browser_tabs = self.get_browser_tabs()
+                function_response = f"List of current browser tabs: {browser_tabs}, the current active browser tab is: {current_tab}."
             else:
                 function_response = f"Unknown navigation action: {action}."
 
@@ -546,6 +551,10 @@ class BrowserUse(Skill):
                 function_response = f"There was a problem switching the active tab: {e}"
 
         elif tool_name == "get_browser_window_text_content":
+            # Add audio feedback at longer steps,if enabled by the user
+            if self.use_voice_feedback:
+                announcement = "Getting text from web page."
+                self.threaded_execution(self.wingman.play_to_user, announcement, True, self.wingman.config.sound)
             self.driver.switch_to.window(self.driver.current_window_handle)
             user_query = parameters.get("user_query")
             llm_response = None
@@ -590,6 +599,9 @@ class BrowserUse(Skill):
                 function_response += f"\n\n IMPORTANT: In addition, visual analysis of the browser window provided the following information: {llm_response}"
 
         elif tool_name == "get_recommended_action_from_browser_state":
+            if self.use_voice_feedback:
+                announcement = "Analyzing web page."
+                self.threaded_execution(self.wingman.play_to_user, announcement, True, self.wingman.config.sound)
             self.driver.switch_to.window(self.driver.current_window_handle)
             user_goal = parameters.get("user_goal")
             interactable_elements = await self.get_clickable_elements(self.dom_service)
@@ -604,12 +616,31 @@ class BrowserUse(Skill):
                 skill_name=self.name,
                 additional_data={"image_base64": screenshot_base64},
             )
-
-            system_prompt = """
+            current_tab = self.driver.current_window_handle
+            tab_dictionary_array = self.get_browser_tabs()
+            self.driver.switch_to.window(current_tab)
+            if self.settings.debug_mode:
+                await self.printr.print_async(f"Analyzing web page found browser tabs: {tab_dictionary_array}", LogType.INFO)
+            system_prompt = f"""
                 You are a helpful computer control assistant and have access to the user's browser to perform actions in it.
-                Your role is to recommend the next step to accomplish the user's goal.
-                Provide details about the next interactable element that should be interacted with, starting with its Box ID (the number of the box its surrounded by).
-                If the user's goal is already met, state that and provide any necessary details.
+                The current website the user is on is: {self.driver.current_url}.  The tabs in the browser are: {tab_dictionary_array} and the current browser tab is: {current_tab}.
+                Your PRIME OBJECTIVE is to recommend the next browser step to accomplish the user's goal. Your blueprint to accomplish your PRIME OBJECTIVE is as follows:
+                (1) Restate the user's goal, if any: {user_goal}.
+                (2) EITHER provide details about the next interactable browser element that should be interacted with, starting with its Box ID (the number of the box its surrounded by) OR the other browser action that should be performed, for example:
+                        (a) click / double click / right click the element at BOX_ID: (number), which is (brief explanation)
+                        (b) open web page to URL: (url)
+                        (c) get the list of available browser tabs so we can determine which we need next
+                        (d) open a new browser tab and then go to URL: (url)
+                        (e) switch browser tab to: (browser tab numeric identifier)
+                        (f) refresh the page
+                        (g) go back a page
+                        (h) go forward a page
+                        (i) scroll up / down / left / right by (units)
+                        (j) type into the element at BOX_ID: (number) the following text: (text to type)
+                        (k) drag from the element at BOX_ID: (number) and drop to the element at BOX_ID: (number)
+                        (l) extract the text from the browser page to try to answer the user's question which is: (user question)
+                (3) If the user's goal is already met, state that and provide any necessary details or information in response to the user's goal if the user wanted information.
+                (4) If you hit a roadblock and cannot accomplish the user's goal, explain the problem and give a recommendation how an AI might try to fix the problem.
             """
 
             if self.use_vision:
@@ -621,7 +652,7 @@ class BrowserUse(Skill):
                     {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": f"Keeping in mind the user's goal '{user_goal}', which element should be acted upon next? If none, and the user asked for information be sure to provide it.  Here are the interactable elements: {interactable_elements}.  If it matters, the available browser tabs are: {self.driver.window_handles}"},
+                            {"type": "text", "text": f"Keeping in mind the user's goal '{user_goal}', which element should be acted upon next or which action should be performed? If none, and the user asked for information be sure to provide it.  Here are the interactable elements: {interactable_elements}.  \n\nIf it matters, the available browser tabs are: {self.driver.window_handles}, and the current active browser tab is: {self.driver.current_window_handle}"},
                             {
                                 "type": "image_url",
                                 "image_url": {
@@ -642,7 +673,7 @@ class BrowserUse(Skill):
                     {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": f"Keeping in mind the user's goal '{user_goal}', which element should be acted upon next? If none, and the user asked for information be sure to provide it.  Here are the interactable elements: {interactable_elements}.  If it matters, the available browser tabs are: {self.driver.window_handles}"},
+                            {"type": "text", "text": f"Keeping in mind the user's goal '{user_goal}', which element should be acted upon next? If none, and the user asked for information be sure to provide it.  Here are the interactable elements: {interactable_elements}.  \n\nIf it matters, the available browser tabs are: {self.driver.window_handles} and the current active browser tab is: {self.driver.current_window_handle}."},
                         ],
                     },
                 ]
@@ -675,6 +706,19 @@ class BrowserUse(Skill):
 
     def click_element(self, element):
         self.driver.execute_script("arguments[0].click();", element)
+    
+    def get_browser_tabs(self):
+        try:
+            tab_dictionary_array = []
+            current_tab = self.driver.current_window_handle
+            for tab in self.driver.window_handles:
+                self.driver.switch_to.window(tab)
+                tab_dictionary = {f"{self.driver.title[:30]}": f"{tab}"}
+                tab_dictionary_array.append(tab_dictionary)
+            self.driver.switch_to.window(current_tab)
+        except:
+            tab_dictionary_array = []
+        return tab_dictionary_array
 
     async def get_clickable_elements(self, dom_service):
         # Make sure highlights are clear before getting new elements
