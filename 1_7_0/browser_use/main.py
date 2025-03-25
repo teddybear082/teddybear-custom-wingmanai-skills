@@ -1,6 +1,9 @@
 import traceback
 import os
 import time
+import base64
+from io import BytesIO
+from datetime import datetime
 import requests
 from typing import TYPE_CHECKING, Optional, Tuple, Dict, List
 from api.interface import SettingsConfig, SkillConfig, WingmanInitializationError
@@ -17,6 +20,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import StaleElementReferenceException
 from markdownify import markdownify
 from dom.service import DomService
+from PIL import Image, ImageDraw, ImageFont
 
 if TYPE_CHECKING:
     from wingmen.open_ai_wingman import OpenAiWingman
@@ -32,13 +36,17 @@ class BrowserUse(Skill):
         self.dom_service = None
         self.user_message_count = 0
         self.num_browser_tabs = 0
+        self.images_cache = []
+        self.reasoning_cache = []
+        self.gif_prompt = ""
+        self.last_assistant_message_for_gif = ""
         # User config variables
         self.chrome_browser_path = None # Attempt to use user's own browser executable
         self.chrome_user_data_path = None # Attempt to use user's own chrome user data to reduce logins
         self.chrome_remote_debugging_port = None # If user wants to enable remote debugging on their browser then we may be able to interact with it midstream, e.g. "I have my browser up, complete this form for me."
         self.use_vision = True # Whether to run a vision pass in getting next recommended steps
         self.use_headless_mode = False # Whether to physically display the chrome browser on the user's computer
-
+        self.create_gifs = False # Whether to auto generate gifs after a browser use session
         # To set chrome to launch in remote debugging mode, create a shortcut and add this to the target: --remote-debugging-port=9222 --user-data-dir="C:\Users\YOURUSERNAME\AppData\Local\Google\Chrome\User Data\Default"
 
     async def validate(self) -> list[WingmanInitializationError]:
@@ -61,6 +69,9 @@ class BrowserUse(Skill):
         self.use_voice_feedback = self.retrieve_custom_property_value(
             "use_voice_feedback", errors
         )
+        self.create_gifs= self.retrieve_custom_property_value(
+            "create_gifs", errors
+        )
         if self.chrome_browser_path and self.chrome_browser_path != " ":
             if not os.path.isfile(self.chrome_browser_path):
                 self.chrome_browser_path = None
@@ -81,6 +92,8 @@ class BrowserUse(Skill):
         self.cached_selector_map = {}
         self.dom_service = None
         self.num_browser_tabs = 0
+        self.images_cache = []
+        self.reasoning_cache = []
         
         # Set up new browser
         options = webdriver.ChromeOptions()
@@ -417,6 +430,7 @@ class BrowserUse(Skill):
             self.driver.get(url)
             page_title = self.driver.title
             function_response = f"Opened web page: {url} with title: {page_title}."
+                            
 
         elif tool_name == "click_element":
             WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
@@ -684,6 +698,10 @@ class BrowserUse(Skill):
                 else ""
             )
             function_response = f"The recommended action is: {llm_response}"
+            
+            # Handle gif tasks
+            self.reasoning_cache.append(llm_response)
+            self.images_cache.append(screenshot_base64)
             # Clear highlights before next action, and that way if there is no further action, highlights are gone.
             await self.remove_highlights()
 
@@ -757,6 +775,18 @@ class BrowserUse(Skill):
 
     # Clean up some potentially long and unnecessary context to increase speed
     async def on_add_user_message(self, message: str) -> None:
+        # Generate GIF if it makes sense
+        if self.images_cache and self.gif_prompt and self.create_gifs:
+            # take a final screenshot to ensure we capture task completion
+            screenshot = self.driver.get_screenshot_as_base64()
+            self.images_cache.append(screenshot)
+            created_gif_path = await self.create_gif(self.gif_prompt, self.images_cache, self.reasoning_cache)
+            if self.settings.debug_mode:
+                message = f"Gif created of task completed with BrowserUse skill.  The file is at: {created_gif_path}."
+                await self.printr.print_async(text=message, color=LogType.INFO)
+        # Cache prompt for possible gif future generation if other conditions met
+        self.gif_prompt = message
+        # Now perform context minimization steps
         self.user_message_count += 1
 
         # Check every five user messages
@@ -772,7 +802,102 @@ class BrowserUse(Skill):
                         # If we updated a message, reset user message count to ensure at least five user messages pass before another cleanup
                         self.user_message_count = 0
 
+    async def on_add_assistant_message(self, message: str, tool_calls: list) -> None:
+        self.last_assistant_message_for_gif = message
 
+    async def create_gif(self, prompt: str, images: list, reasoning_list: list) -> str:
+        # Create the name for the GIF file
+        date_str = datetime.now().strftime("%m%d%y")
+        gif_name = f"BrowserUse_{date_str}_{'_'.join(prompt.split()[:3])}.gif"
+        
+        # Get the writable directory and prepare the full path
+        directory_path = get_writable_dir("files")
+        gif_path = os.path.join(directory_path, gif_name)
+        # Create the first image based on the prompt
+        prompt_image = Image.new("RGB", (640, 480), "black")
+        draw = ImageDraw.Draw(prompt_image)
+        
+        # Load a font
+        font_size = 32
+        font = ImageFont.truetype("arial.ttf", font_size)
+        
+        # Split prompt for frame
+        multiline_prompt = self.split_prompt_for_gif("User Request: " + prompt)
+
+        # Check text size and resize font if necessary
+        while True:
+            bbox = draw.textbbox((0, 0), multiline_prompt, font=font)
+            text_size = (bbox[2] - bbox[0], bbox[3] - bbox[1])
+            if text_size[0] <= 620 and text_size[1] <= 460:  # Adjust these values if needed
+                break
+            font_size -= 1
+            font = ImageFont.truetype("arial.ttf", font_size)
+
+        draw.text((10, 10), multiline_prompt, fill=(255, 255, 255), font=font)
+
+        image_list = [prompt_image]
+        image_index = 1
+        # Decode base64 images and append to list with reasoning slides in between
+        for img_b64 in images:
+            image_data = base64.b64decode(img_b64)
+            img = Image.open(BytesIO(image_data))
+            img.thumbnail((640, 480))
+            image_list.append(img)
+            image_index += 1
+            # Create next reasoning image based on reasoning cache
+            if image_index-2 < len(reasoning_list):
+                reasoning_image = Image.new("RGB", (640, 480), "black")
+                draw = ImageDraw.Draw(reasoning_image)
+                font_size = 32
+                font = ImageFont.truetype("arial.ttf", font_size)
+                reasoning = reasoning_list[image_index-2]
+                multiline_prompt = self.split_prompt_for_gif(reasoning_list[image_index - 2])
+
+                # Check text size and resize font if necessary
+                while True:
+                    bbox = draw.textbbox((0, 0), multiline_prompt, font=font)
+                    text_size = (bbox[2] - bbox[0], bbox[3] - bbox[1])
+                    if text_size[0] <= 620 and text_size[1] <= 460:  # Adjust these values if needed
+                        break
+                    font_size -= 1
+                    font = ImageFont.truetype("arial.ttf", font_size)
+
+                draw.text((10, 10), multiline_prompt, fill=(255, 255, 255), font=font)
+                image_list.append(reasoning_image)
+        # Now add last assistant message to the end to show result of browser use
+        assistant_message_image = Image.new("RGB", (640, 480), "black")
+        draw = ImageDraw.Draw(assistant_message_image)
+        font_size = 32
+        font = ImageFont.truetype("arial.ttf", font_size)
+        multiline_prompt = self.split_prompt_for_gif(self.last_assistant_message_for_gif)
+        while True:
+            bbox = draw.textbbox((0, 0), multiline_prompt, font=font)
+            text_size = (bbox[2] - bbox[0], bbox[3] - bbox[1])
+            if text_size[0] <= 620 and text_size[1] <= 460:  # Adjust these values if needed
+                break
+            font_size -= 1
+            font = ImageFont.truetype("arial.ttf", font_size)
+
+        draw.text((10, 10), multiline_prompt, fill=(255, 255, 255), font=font)
+        image_list.append(assistant_message_image)
+        # Save as GIF
+        image_list[0].save(gif_path, save_all=True, append_images=image_list[1:], loop=0, duration=6000)
+        # Clear previous caches related to gifs
+        self.images_cache = []
+        self.reasoning_cache = []
+        self.gif_prompt = ""
+        return gif_path
+
+    def split_prompt_for_gif(self, prompt, max_words=7):
+        words = prompt.split()
+        lines = []
+
+        for i in range(0, len(words), max_words):
+            line = ' '.join(words[i:i + max_words])
+            lines.append(line)
+
+        multiline_string = '\n'.join(lines)
+        return multiline_string
 
     async def unload(self) -> None:
         """Unload the skill."""
@@ -781,8 +906,13 @@ class BrowserUse(Skill):
             if self.driver:
                 self.driver.quit()
                 self.driver = None
-                self.cached_selector_map = {}
-                self.dom_service = None
+        self.cached_selector_map = {}
+        self.dom_service = None
+        self.user_message_count = 0
+        self.num_browser_tabs = 0
+        self.images_cache = []
+        self.reasoning_cache = []
+        self.gif_prompt = ""
 
 HIGHLIGHT_REMOVAL_SCRIPT = """
 (function removeHighlights() {

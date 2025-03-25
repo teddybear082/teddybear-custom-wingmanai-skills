@@ -57,3 +57,9 @@ custom_properties:
     property_type: boolean
     required: false
     value: false
+  - hint: Experimental - Activate to autogenerate a gif of your browser use stored in WingmanAI userdata 'files' folder. Responding to the wingman after a browser use is complete triggers the gif.
+    id: create_gifs
+    name: Automatically create .gifs of Browser Use
+    property_type: boolean
+    required: false
+    value: false
