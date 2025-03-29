@@ -805,99 +805,85 @@ class BrowserUse(Skill):
     async def on_add_assistant_message(self, message: str, tool_calls: list) -> None:
         self.last_assistant_message_for_gif = message
 
+    def create_text_slide(self, text, size=(640, 360), font_path="arial.ttf", initial_font_size=32, margin=10):
+        """Create an image slide with centered text that auto-scales to fit.  Use 16:9 ratio to match browser screenshots."""
+        img = Image.new("RGB", size, "black")
+        draw = ImageDraw.Draw(img)
+        # Wrap text into multiple lines (using your original word-splitting)
+        def split_text(text, max_words=7):
+            words = text.split()
+            lines = []
+            for i in range(0, len(words), max_words):
+                line = ' '.join(words[i:i + max_words])
+                lines.append(line)
+            return "\n".join(lines)
+
+        multiline_text = split_text(text)
+        
+        font_size = initial_font_size
+        font = ImageFont.truetype(font_path, font_size)
+        max_width = size[0] - 2 * margin
+        max_height = size[1] - 2 * margin
+        
+        # Adjust font size until text fits within the area
+        while True:
+            bbox = draw.multiline_textbbox((0, 0), multiline_text, font=font)
+            text_width = bbox[2] - bbox[0]
+            text_height = bbox[3] - bbox[1]
+            if text_width <= max_width and text_height <= max_height:
+                break
+            font_size -= 1
+            if font_size <= 5:  # Prevent font size from becoming too small
+                break
+            font = ImageFont.truetype(font_path, font_size)
+        
+        # Center the text in the image
+        x = (size[0] - text_width) / 2
+        y = (size[1] - text_height) / 2
+        
+        draw.multiline_text((x, y), multiline_text, fill=(255, 255, 255), font=font, align="center")
+        return img
+
+    # Revised create_gif function that uses the helper above
     async def create_gif(self, prompt: str, images: list, reasoning_list: list) -> str:
         # Create the name for the GIF file
         date_str = datetime.now().strftime("%m%d%y")
         gif_name = f"BrowserUse_{date_str}_{'_'.join(prompt.split()[:3])}.gif"
-        
-        # Get the writable directory and prepare the full path
         directory_path = get_writable_dir("files")
         gif_path = os.path.join(directory_path, gif_name)
-        # Create the first image based on the prompt
-        prompt_image = Image.new("RGB", (640, 480), "black")
-        draw = ImageDraw.Draw(prompt_image)
         
-        # Load a font
-        font_size = 32
-        font = ImageFont.truetype("arial.ttf", font_size)
+        image_list = []
+        # Create the initial slide with the prompt
+        prompt_slide = self.create_text_slide("User Request: " + prompt)
+        image_list.append(prompt_slide)
         
-        # Split prompt for frame
-        multiline_prompt = self.split_prompt_for_gif("User Request: " + prompt)
-
-        # Check text size and resize font if necessary
-        while True:
-            bbox = draw.textbbox((0, 0), multiline_prompt, font=font)
-            text_size = (bbox[2] - bbox[0], bbox[3] - bbox[1])
-            if text_size[0] <= 620 and text_size[1] <= 460:  # Adjust these values if needed
-                break
-            font_size -= 1
-            font = ImageFont.truetype("arial.ttf", font_size)
-
-        draw.text((10, 10), multiline_prompt, fill=(255, 255, 255), font=font)
-
-        image_list = [prompt_image]
-        image_index = 1
-        # Decode base64 images and append to list with reasoning slides in between
-        for img_b64 in images:
+        # Process each image and corresponding reasoning text slide
+        for i, img_b64 in enumerate(images):
+            # Decode and prepare the image slide
             image_data = base64.b64decode(img_b64)
             img = Image.open(BytesIO(image_data))
             img.thumbnail((640, 480))
             image_list.append(img)
-            image_index += 1
-            # Create next reasoning image based on reasoning cache
-            if image_index-2 < len(reasoning_list):
-                reasoning_image = Image.new("RGB", (640, 480), "black")
-                draw = ImageDraw.Draw(reasoning_image)
-                font_size = 32
-                font = ImageFont.truetype("arial.ttf", font_size)
-                reasoning = reasoning_list[image_index-2]
-                multiline_prompt = self.split_prompt_for_gif(reasoning_list[image_index - 2])
-
-                # Check text size and resize font if necessary
-                while True:
-                    bbox = draw.textbbox((0, 0), multiline_prompt, font=font)
-                    text_size = (bbox[2] - bbox[0], bbox[3] - bbox[1])
-                    if text_size[0] <= 620 and text_size[1] <= 460:  # Adjust these values if needed
-                        break
-                    font_size -= 1
-                    font = ImageFont.truetype("arial.ttf", font_size)
-
-                draw.text((10, 10), multiline_prompt, fill=(255, 255, 255), font=font)
-                image_list.append(reasoning_image)
-        # Now add last assistant message to the end to show result of browser use
-        assistant_message_image = Image.new("RGB", (640, 480), "black")
-        draw = ImageDraw.Draw(assistant_message_image)
-        font_size = 32
-        font = ImageFont.truetype("arial.ttf", font_size)
-        multiline_prompt = self.split_prompt_for_gif(self.last_assistant_message_for_gif)
-        while True:
-            bbox = draw.textbbox((0, 0), multiline_prompt, font=font)
-            text_size = (bbox[2] - bbox[0], bbox[3] - bbox[1])
-            if text_size[0] <= 620 and text_size[1] <= 460:  # Adjust these values if needed
-                break
-            font_size -= 1
-            font = ImageFont.truetype("arial.ttf", font_size)
-
-        draw.text((10, 10), multiline_prompt, fill=(255, 255, 255), font=font)
-        image_list.append(assistant_message_image)
-        # Save as GIF
+            
+            # If there's a corresponding reasoning, add a text slide for it
+            if i < len(reasoning_list):
+                reasoning_slide = self.create_text_slide(reasoning_list[i])
+                image_list.append(reasoning_slide)
+        
+        # Finally, add the assistant message slide
+        assistant_slide = self.create_text_slide(self.last_assistant_message_for_gif)
+        image_list.append(assistant_slide)
+        
+        # Save the frames as a GIF
         image_list[0].save(gif_path, save_all=True, append_images=image_list[1:], loop=0, duration=6000)
-        # Clear previous caches related to gifs
+        
+        # Clear caches
         self.images_cache = []
         self.reasoning_cache = []
         self.gif_prompt = ""
         return gif_path
 
-    def split_prompt_for_gif(self, prompt, max_words=7):
-        words = prompt.split()
-        lines = []
 
-        for i in range(0, len(words), max_words):
-            line = ' '.join(words[i:i + max_words])
-            lines.append(line)
-
-        multiline_string = '\n'.join(lines)
-        return multiline_string
 
     async def unload(self) -> None:
         """Unload the skill."""
