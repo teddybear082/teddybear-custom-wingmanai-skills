@@ -455,11 +455,12 @@ class BrowserUse(Skill):
                 if element_to_type_into:
                     self.scroll_to_element(element_to_type_into)
                     self.click_element(element_to_type_into)
-                    element_to_type_into.clear()
-                    time.sleep(0.3)
-                    element_to_type_into.send_keys(text_to_type)
-                    time.sleep(0.3)
-                    element_to_type_into.send_keys(Keys.ENTER)
+                    #element_to_type_into.clear()
+                    ActionChains(self.driver).send_keys(text_to_type).key_down(Keys.ENTER).key_up(Keys.ENTER).perform()
+                    #time.sleep(0.3)
+                    #element_to_type_into.send_keys(text_to_type)
+                    #time.sleep(0.3)
+                    #element_to_type_into.send_keys(Keys.ENTER)
                     function_response = f"Typed text {text_to_type} into element."
                 else:
                     function_response = f"Could not type.  Can't seem to find element to type into."
@@ -805,8 +806,9 @@ class BrowserUse(Skill):
     async def on_add_assistant_message(self, message: str, tool_calls: list) -> None:
         self.last_assistant_message_for_gif = message
 
-    def create_text_slide(self, text, size=(640, 360), font_path="arial.ttf", initial_font_size=32, margin=10):
-        """Create an image slide with centered text that auto-scales to fit.  Use 16:9 ratio to match browser screenshots."""
+    # Helper function for creating optional .gif
+    def create_text_slide(self, text, size, font_path="arial.ttf", initial_font_size=32, margin=10):
+        """Create an image slide with centered text that auto-scales to fit using the given size."""
         img = Image.new("RGB", size, "black")
         draw = ImageDraw.Draw(img)
         # Wrap text into multiple lines (using your original word-splitting)
@@ -852,9 +854,26 @@ class BrowserUse(Skill):
         directory_path = get_writable_dir("files")
         gif_path = os.path.join(directory_path, gif_name)
         
+        # Determine common slide size from the first image, capped at 1280x720
+        if images:
+            first_image_data = base64.b64decode(images[0])
+            first_img = Image.open(BytesIO(first_image_data))
+            first_width, first_height = first_img.size
+            aspect_ratio = first_width / first_height
+            max_width, max_height = 1280, 720
+            if aspect_ratio > (max_width / max_height):
+                target_width = max_width
+                target_height = int(max_width / aspect_ratio)
+            else:
+                target_height = max_height
+                target_width = int(max_height * aspect_ratio)
+            common_size = (target_width, target_height)
+        else:
+            common_size = (640, 360)  # fallback if no images provided
+
         image_list = []
-        # Create the initial slide with the prompt
-        prompt_slide = self.create_text_slide("User Request: " + prompt)
+        # Create the initial slide with the prompt using common_size
+        prompt_slide = self.create_text_slide("User Request: " + prompt, size=common_size)
         image_list.append(prompt_slide)
         
         # Process each image and corresponding reasoning text slide
@@ -862,27 +881,27 @@ class BrowserUse(Skill):
             # Decode and prepare the image slide
             image_data = base64.b64decode(img_b64)
             img = Image.open(BytesIO(image_data))
-            img.thumbnail((640, 480))
+            # Resize image to fit within the common slide size while maintaining aspect ratio
+            img.thumbnail(common_size)
             image_list.append(img)
             
-            # If there's a corresponding reasoning, add a text slide for it
+            # If there's a corresponding reasoning, add a text slide for it using common_size
             if i < len(reasoning_list):
-                reasoning_slide = self.create_text_slide(reasoning_list[i])
+                reasoning_slide = self.create_text_slide(reasoning_list[i], size=common_size)
                 image_list.append(reasoning_slide)
         
-        # Finally, add the assistant message slide
-        assistant_slide = self.create_text_slide(self.last_assistant_message_for_gif)
+        # Finally, add the assistant message slide using common_size
+        assistant_slide = self.create_text_slide(self.last_assistant_message_for_gif, size=common_size)
         image_list.append(assistant_slide)
         
         # Save the frames as a GIF
-        image_list[0].save(gif_path, save_all=True, append_images=image_list[1:], loop=0, duration=6000)
+        image_list[0].save(gif_path, save_all=True, append_images=image_list[1:], loop=0, duration=6000, disposal=2)
         
         # Clear caches
         self.images_cache = []
         self.reasoning_cache = []
         self.gif_prompt = ""
         return gif_path
-
 
 
     async def unload(self) -> None:
