@@ -33,6 +33,7 @@ class BrowserUse(Skill):
         # Internal state variables, question of whether we should allow muliple browser sessions simulataneously?
         self.driver = None
         self.cached_selector_map = {}
+        self.last_action_performed = None
         self.dom_service = None
         self.user_message_count = 0
         self.num_browser_tabs = 0
@@ -89,6 +90,7 @@ class BrowserUse(Skill):
             self.driver.quit()
         
         # Clear previous caches
+        self.last_action_performed = None
         self.cached_selector_map = {}
         self.dom_service = None
         self.num_browser_tabs = 0
@@ -438,9 +440,10 @@ class BrowserUse(Skill):
                 element_for_Box_ID = self.cached_selector_map[Box_ID]
                 element_to_click = self.driver.find_element(By.XPATH, element_for_Box_ID.xpath)
                 if element_to_click:
-                    self.scroll_to_element(element_to_click)
+                    if not element_to_click.is_displayed():
+                        self.scroll_to_element(element_to_click)
                     self.click_element(element_to_click)
-                    function_response = f"Clicked element."
+                    function_response = f"Clicked element: {element_for_Box_ID} for BoxID {Box_ID}."
                 else:
                     function_response = f"Could not click element.  Could not locate element."
             except StaleElementReferenceException:
@@ -453,15 +456,17 @@ class BrowserUse(Skill):
                 element_for_Box_ID = self.cached_selector_map[Box_ID]
                 element_to_type_into = self.driver.find_element(By.XPATH, element_for_Box_ID.xpath)
                 if element_to_type_into:
-                    self.scroll_to_element(element_to_type_into)
+                    if not element_to_type_into.is_displayed():
+                        self.scroll_to_element(element_to_type_into)
                     self.click_element(element_to_type_into)
                     #element_to_type_into.clear()
-                    ActionChains(self.driver).send_keys(text_to_type).key_down(Keys.ENTER).key_up(Keys.ENTER).perform()
-                    #time.sleep(0.3)
-                    #element_to_type_into.send_keys(text_to_type)
-                    #time.sleep(0.3)
-                    #element_to_type_into.send_keys(Keys.ENTER)
-                    function_response = f"Typed text {text_to_type} into element."
+                    #ActionChains(self.driver).send_keys(text_to_type).key_down(Keys.ENTER).key_up(Keys.ENTER).perform()
+                    time.sleep(0.3)
+                    element_to_type_into.send_keys(text_to_type)
+                    time.sleep(0.3)
+                    element_to_type_into.send_keys(Keys.ENTER)
+                    time.sleep(0.3)
+                    function_response = f"Typed text {text_to_type} into element for BoxID {Box_ID}: {element_for_Box_ID}."
                 else:
                     function_response = f"Could not type.  Can't seem to find element to type into."
             except StaleElementReferenceException:
@@ -509,10 +514,11 @@ class BrowserUse(Skill):
                 element_for_Box_ID = self.cached_selector_map[Box_ID]
                 element = self.driver.find_element(By.XPATH, element_for_Box_ID.xpath)
                 if element:
-                    self.scroll_to_element(element)
+                    if not element.is_displayed():
+                        self.scroll_to_element(element)
                     action_chain = ActionChains(self.driver)
                     action_chain.double_click(element).perform()
-                    function_response = "Double clicked element."
+                    function_response = f"Double clicked element for BoxID {Box_ID}: {element_for_Box_ID}."
                 else:
                     function_response = "Element not found for double click."
             except Exception as e:
@@ -523,10 +529,11 @@ class BrowserUse(Skill):
                 element_for_Box_ID = self.cached_selector_map[Box_ID]
                 element = self.driver.find_element(By.XPATH, element_for_Box_ID.xpath)
                 if element:
-                    self.scroll_to_element(element)
+                    if not element.is_displayed():
+                        self.scroll_to_element(element)
                     action_chain = ActionChains(self.driver)
                     action_chain.context_click(element).perform()
-                    function_response = "Right clicked element."
+                    function_response = f"Right clicked element for BoxID {Box_ID}: {element_for_Box_ID}."
                 else:
                     function_response = "Element not found for right click."
             except Exception as e:
@@ -571,7 +578,7 @@ class BrowserUse(Skill):
             # Add audio feedback at longer steps,if enabled by the user
             if self.use_voice_feedback:
                 announcement = "Getting text from web page."
-                self.threaded_execution(self.wingman.play_to_user, announcement, True, self.wingman.config.sound)
+                await self.wingman.play_to_user(announcement, True, self.wingman.config.sound)
             self.driver.switch_to.window(self.driver.current_window_handle)
             user_query = parameters.get("user_query")
             llm_response = None
@@ -618,7 +625,7 @@ class BrowserUse(Skill):
         elif tool_name == "get_recommended_action_from_browser_state":
             if self.use_voice_feedback:
                 announcement = "Analyzing web page."
-                self.threaded_execution(self.wingman.play_to_user, announcement, True, self.wingman.config.sound)
+                await self.wingman.play_to_user(announcement, True, self.wingman.config.sound)
             self.driver.switch_to.window(self.driver.current_window_handle)
             user_goal = parameters.get("user_goal")
             interactable_elements = await self.get_clickable_elements(self.dom_service)
@@ -638,11 +645,14 @@ class BrowserUse(Skill):
             self.driver.switch_to.window(current_tab)
             system_prompt = f"""
                 You are a helpful computer control assistant and have access to the user's browser to perform actions in it.
+                BACKGROUND INFORMATION:
                 The current website the user is on is: {self.driver.current_url}.  The tabs in the browser are: {tab_dictionary_array} and the current browser tab is: {current_tab}.
-                Your PRIME OBJECTIVE is to recommend the next browser step to accomplish the user's goal. Your blueprint to accomplish your PRIME OBJECTIVE is as follows:
+                PRIME OBJECTIVE:
+                Your PRIME OBJECTIVE is to recommend the NEXT browser step to accomplish the user's goal. 
+                Your blueprint to accomplish your PRIME OBJECTIVE is as follows:
                 (1) Restate the user's goal, if any: {user_goal}.
                 (2) EITHER provide details about the next interactable browser element that should be interacted with, starting with its Box ID (the number of the box its surrounded by) OR the other browser action that should be performed, for example:
-                        (a) click / double click / right click the element at BOX_ID: (number), which is (brief explanation)
+                        (a) click / double click / right click the element at Box_ID: (number), which is (brief explanation)
                         (b) open web page to URL: (url)
                         (c) get the list of available browser tabs so we can determine which we need next
                         (d) open a new browser tab and then go to URL: (url)
@@ -651,8 +661,8 @@ class BrowserUse(Skill):
                         (g) go back a page
                         (h) go forward a page
                         (i) scroll up / down / left / right by (units)
-                        (j) type into the element at BOX_ID: (number) the following text: (text to type)
-                        (k) drag from the element at BOX_ID: (number) and drop to the element at BOX_ID: (number)
+                        (j) type into the element at Box_ID: (number) the following text: (text to type)
+                        (k) drag from the element at Box_ID: (number) and drop to the element at Box_ID: (number)
                         (l) extract the text from the browser page to try to answer the user's question which is: (user question)
                 (3) If the user's goal is already met, state that and provide any necessary details or information in response to the user's goal if the user wanted information.
                 (4) If you hit a roadblock and cannot accomplish the user's goal, explain the problem and give a recommendation how an AI might try to fix the problem.
@@ -667,7 +677,7 @@ class BrowserUse(Skill):
                     {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": f"Keeping in mind the user's goal '{user_goal}', which element should be acted upon next or which action should be performed? If none, and the user asked for information be sure to provide it.  Here are the interactable elements: {interactable_elements}.  \n\nIf it matters, the available browser tabs are: {self.driver.window_handles}, and the current active browser tab is: {self.driver.current_window_handle}"},
+                            {"type": "text", "text": f"Keeping in mind the user's goal '{user_goal}', which element should be acted upon next or which action should be performed? If none, and the user asked for information be sure to provide it.  Here are the interactable elements: {interactable_elements}.  \n\nIf it matters, the available browser tabs are: {self.driver.window_handles}, the current active browser tab is: {self.driver.current_window_handle}, and the last action was: {self.last_action_performed}."},
                             {
                                 "type": "image_url",
                                 "image_url": {
@@ -706,15 +716,22 @@ class BrowserUse(Skill):
             # Clear highlights before next action, and that way if there is no further action, highlights are gone.
             await self.remove_highlights()
 
-        # Add some general browser info unless we closed the browser
+        # Store the last action for user by get_recommended_action_from_browser_state if needed
+        if tool_name != "get_browser_window_text_content":
+            self.last_action_performed = function_response
+        else:
+            self.last_action_performed = "Got text from browser page."
+        
+        # Add some general browser info to the function response unless we closed the browser
         if tool_name != "close_browser":
             function_response += self.get_current_browser_state()
         benchmark.finish_snapshot()
+        
         if self.settings.debug_mode:
-            if tool_name != "get_recommended_action_from_browser_state":
+            if tool_name != "get_browser_window_text_content":
                 await self.printr.print_async(f"Full function response was: {function_response}", LogType.INFO)
             else:
-                await self.printr.print_async("Got recommended action from browser state.", LogType.INFO)
+                await self.printr.print_async("Got text from browser page.", LogType.INFO)
         return function_response, instant_response
 
     # Not presently used
@@ -756,6 +773,7 @@ class BrowserUse(Skill):
     async def get_clickable_elements(self, dom_service):
         # Make sure highlights are clear before getting new elements
         await self.remove_highlights()
+        self.cached_selector_map = {}
         interactable_elements = {}
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
         dom_state = await dom_service.get_clickable_elements()
@@ -912,6 +930,7 @@ class BrowserUse(Skill):
                 self.driver.quit()
                 self.driver = None
         self.cached_selector_map = {}
+        self.last_action_performed = None
         self.dom_service = None
         self.user_message_count = 0
         self.num_browser_tabs = 0
