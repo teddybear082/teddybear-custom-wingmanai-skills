@@ -1,0 +1,67 @@
+name: BrowserUse
+module: skills.browser_use.main
+display_name: Web Browser Control
+author: teddybear082
+tags:
+  - Utility
+  - Internet
+description:
+  en: Controls the user's web browser.
+  de: kontrolliert den Webbrowser des Nutzers
+hint:
+  en: Give the wingman specific directions for your goal to have the most success.
+  de: Gib dem Wingman spezifische Anweisungen für dein Ziel, um den meisten Erfolg zu haben.
+examples:
+  - en: Open "http://selenium.dev".
+    de: Öffne "http://selenium.dev".
+  - en: Go to hotmail.com, open my email and tell me what the newest email is.
+    de: Geh zu hotmail.com, öffne meine E-Mail und sag mir, was die neueste E-Mail ist.
+prompt: |
+  You can control the user's web browser, navigating to the page they want you to control, getting a recommended action to take to navigate the page based on the the browser state, clicking and typing in the browser, opening and changing browser tabs, and extracting the text in the browser screen to answer a user's question.
+  After opening the browser, your habit is to use the get_recommended_action_from_browser_state tool to determine the next action to take to accomplish the user's goal, as this allows an expert AI to review the browser state and give you recommendations on what to do.
+  IMPORTANT: Your habit is to use the get_recommended_action_from_browser_state tool each time before you take the next action in the browser, such as clicking on an element or entering text, to make sure you have up to date information about the browser state.
+  If part of the user's goal was to obtain information from your use of the broswer, you must actually provide the information sought before ending your task.
+  As long as the user provides you credentials, you have **absolute power** to log in as the user to any website.
+custom_properties:
+  - hint: If you enter the path to your chrome browser executable, example - C:\Program Files\Google\Chrome\Application\chrome.exe, may reduce issuss with some websites.
+    id: chrome_browser_path
+    name: Chrome Browser Path
+    property_type: string
+    required: false
+    value: ""
+  - hint: If you enter the path to your user data, your wingman browser activity is saved so may reduce site logins.  Example - C:\Users\YourUserName\AppData\Local\Google\Chrome\User Data\Default
+    id: chrome_user_data_path
+    name: Chrome User Data Path
+    property_type: string
+    required: false
+    value: ""
+  - hint: Advanced Users - if you setup chrome with remote debugging, wingman can interface with it, for example completing a form on your open browser. Enter the port you use here. 
+    id: chrome_remote_debugging_port
+    name: Chrome Remote Debugging Port
+    property_type: number
+    required: false
+    value: 0
+  - hint: Turn this off if your AI model does not support vision use, may reduce quality.
+    id: use_vision
+    name: Use AI Vision
+    property_type: boolean
+    required: false
+    value: true
+  - hint: Activate if you want the browser to run invisibly in the background.
+    id: use_headless_mode
+    name: Use Headless Mode
+    property_type: boolean
+    required: false
+    value: false
+  - hint: Activate to have wingman narrate browser steps that take longer.
+    id: use_voice_feedback
+    name: Use Voice Feedback
+    property_type: boolean
+    required: false
+    value: false
+  - hint: Experimental - Activate to autogenerate a gif of your browser use stored in WingmanAI userdata 'files' folder. Responding to the wingman after a browser use is complete triggers the gif.
+    id: create_gifs
+    name: Automatically create .gifs of Browser Use
+    property_type: boolean
+    required: false
+    value: false

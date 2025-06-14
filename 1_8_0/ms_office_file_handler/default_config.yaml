@@ -1,0 +1,24 @@
+name: MSOfficeFileHandler
+module: skills.ms_office_file_handler.main
+display_name: MS Office File Tools
+author: teddybear082
+tags:
+  - Utility
+description:
+  en: Create and read Microsoft Office files including Excel, PowerPoint, and Word.
+  de: Erstellen und lesen von Microsoft Office-Dateien einschließlich Excel, PowerPoint und Word.
+hint:
+  en: The main purpose is to read the text of MS Office documents, but the skill also allows creation of basic template documents. The skill is NOT for editing existing documents and if used that way may damage the underlying document.
+  de: Der Hauptzweck ist, den Text von MS Office-Dokumenten zu lesen, aber mit der Funktion kann man auch einfache Vorlagendokumente erstellen. Die Funktion ist NICHT zum Bearbeiten von vorhandenen Dokumenten gedacht, und wenn man sie so benutzt, könnte das das Dokument beschädigen.
+examples:
+  - en: Create an Excel file at path "/path/to/file.xlsx" with data [["Header1", "Header2"], ["Row1Col1", "Row1Col2"]].
+    de: Erstelle eine Excel-Datei unter dem Pfad "/path/to/file.xlsx" mit den Daten [["Header1", "Header2"], ["Row1Col1", "Row1Col2"]].
+  - en: Read the content of the Word document at "/path/to/document.docx".
+    de: Lese den Inhalt des Word-Dokuments unter "/path/to/document.docx".
+  - en: Create a PowerPoint presentation at path "/path/to/presentation.pptx".
+    de: Erstelle eine PowerPoint-Präsentation unter dem Pfad "/path/to/presentation.pptx".
+prompt: |
+  This skill allows your wingman to create and read Microsoft Office files including Excel (such as .xlsx), PowerPoint (such as .pptx), and Word (such as .docx). 
+  You can ask to create these files with specific content or read existing files.
+  If a user asks to create an Excel file, a PowerPoint presentation, or a Word document, use the corresponding tool.
+custom_properties: []
