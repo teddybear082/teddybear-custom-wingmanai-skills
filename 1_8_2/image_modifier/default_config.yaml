@@ -1,0 +1,20 @@
+name: ImageModifier
+module: skills.image_modifier.main
+display_name: Image Modifier
+author: teddybear082
+tags:
+  - Image
+  - Utility
+description:
+  en: A skill to modify and save image files by converting formats, renaming, and resizing.
+  de: Eine Fähigkeit, die Bilddateien durch Formatumwandlung, Umbenennung und Größenänderung zu ändern und zu speichern.
+hint:
+  en: This skill can be used to convert image formats, resize images, and rename image files.
+  de: Mit dieser Fähigkeit können Bildformate umgewandelt, Bilder in der Größe verändert und Bilddateien umbenannt werden.
+examples:
+  - en: Convert the image from JPEG to PNG and save it.
+    de: Konvertiere das Bild von JPEG zu PNG und speichere es.
+  - en: Resize the image to 500x500 pixels.
+    de: Ändere die Bildgröße auf 500x500 Pixel.
+prompt: |
+  This skill allows you to convert image formats, resize images, and rename image files. You can call the respective tool for these tasks.

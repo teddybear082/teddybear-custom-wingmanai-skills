@@ -1,0 +1,18 @@
+## Natural Comments Skill Requirements
+
+1.  **Proactive Messaging:** The skill should send messages without explicit user triggers, breaking periods of silence.
+2.  **Conversation Context:** Proactive messages should be relevant to the ongoing conversation history.
+3.  **Screenshot Analysis:**
+    *   The skill should periodically take screenshots.
+    *   If the screenshot content is relevant to the current conversation context, the skill should comment on it (e.g., seeing a landmark in a game that's being discussed).
+    *   Irrelevant visual context should be ignored (e.g., coding environment during a food discussion).
+4.  **Configurable Timers:**
+    *   Allow setting a silence duration threshold (timer) after which the skill considers breaking the silence.
+    *   The timer must reset whenever the user sends a message.
+5.  **Message Limits:**
+    *   Allow configuring the maximum number of proactive messages the skill can send consecutively before going silent again until the user interacts.
+6.  **Implementation:**
+    *   The skill should reside in the `natural_comments` folder.
+    *   It must integrate with the Wingman framework, referencing `vision_ai` and `radio_chatter` for existing patterns and API usage. Avoid inventing non-existent functions/APIs.
+7.  **Dependencies:** Identify and manage necessary dependencies.
+8.  **Screenshot Storage:** Create and use a dedicated folder within the skill's directory for storing screenshots. 
