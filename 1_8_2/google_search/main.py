@@ -4,6 +4,7 @@ from api.interface import SettingsConfig, SkillConfig
 from services.benchmark import Benchmark
 from skills.skill_base import Skill
 from trafilatura import fetch_url, extract
+from trafilatura.meta import reset_caches
 from trafilatura.settings import DEFAULT_CONFIG
 from copy import deepcopy
 
@@ -86,8 +87,14 @@ class GoogleSearch(Skill):
                         )
                     trafilatura_result = extract(
                         trafilatura_downloaded,
+                        output_format="markdown",
                         include_comments=False,
-                        include_tables=False,
+                        include_tables=True, #was False
+                        include_links=False,
+                        include_images=False,
+                        include_formatting=True,
+                        favor_recall=True,
+                        url=trafilatura_url,
                     )
                     if trafilatura_result:
                         processed_results.append(
@@ -111,9 +118,15 @@ class GoogleSearch(Skill):
                             )
                         processed_results.append("website: " + link + "\n" + "content: None able to be extracted")
             for result in results:
-                self.threaded_execution(gather_information, result)
+                await gather_information(result)
 
             final_results = "\n\n".join(processed_results)
-            function_response = f"Results for '{query}': {final_results}"
+            function_response = f"Results for web query '{query}' (each website found and content for that website): {final_results}"
+            if self.settings.debug_mode:
+                await self.printr.print_async(
+                    f"Final Results for {query} (each website found and content for that website): {final_results}.",
+                    color=LogType.INFO,
+                )
             benchmark.finish_snapshot()
+            reset_caches()
         return function_response, instant_response
