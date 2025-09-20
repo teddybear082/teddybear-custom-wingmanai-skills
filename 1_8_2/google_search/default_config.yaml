@@ -17,13 +17,13 @@ examples:
   - en: Latest news about AI
     de: Neueste Nachrichten über KI
 prompt: |
-  This skill can execute searches on Google and return results formatted for the user.
-  You may specify options such as the number of results, language, and more.
+  This skill can execute searches on Google and return results formatted for the user using perform_google_search.
+  You specify the search query to execute and other options if applicable.
   
   Examples indicating that the user wants to search the internet are:
 
   - "Search the web for..." or "Search the internet for..."
-  - "Use Gppgle to search for..."
+  - "Use Google to search for..."
   - "Find more information about..."
   - "What is the latest news about..." (or any other mention of current or recent information)
   - How is the weather forecast for... (or any other mention of future information)

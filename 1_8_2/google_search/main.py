@@ -61,10 +61,19 @@ class GoogleSearch(Skill):
             unique = True
             lang = parameters.get("lang", "en")
             region = parameters.get("region", None)
+            safe = None
+            results = []
             if self.settings.debug_mode:
                 message = f"GoogleSearchSkill: executing tool '{tool_name}' with query '{query}'"
                 await self.printr.print_async(text=message, color=LogType.INFO)
-            results = list(search(query, num_results=num_results, unique=unique, lang=lang, region=region))
+            try:
+                results = list(search(query, num_results=num_results, unique=unique, lang=lang, region=region, safe=safe))
+            except Exception as e:
+                if self.settings.debug_mode:
+                    await self.printr.print_async(
+                        f"googlesearch skill problem with search: {e}",
+                        color=LogType.INFO,
+                    )
             if self.settings.debug_mode:
                 await self.printr.print_async(
                     f"googlesearch skill found results: {results}",
