@@ -1,0 +1,31 @@
+name: CodeExecutor
+module: skills.code_executor.main
+display_name: Execute Code - Python, HTML and Shell Commands
+author: teddybear082
+tags:
+  - Utility
+description:
+  en: Let your Wingman write and execute Python code, html code, or shell commands based on your request.
+  de: Lass deinen Wingman Python-Code, HTML-Code oder Shell-Befehle basierend auf deiner Anfrage schreiben und ausführen.
+hint:
+  en: Describe the task you want to accomplish using Python, HTML or shell commands. It helps if you directly say you want the Wingman to use Python or shell commands.
+  de: Beschreibe die Aufgabe, die du mit Python, HTML oder Shell-Befehlen erreichen möchtest. Es hilft, wenn du direkt sagst, dass der Wingman Python oder Shell-Befehle verwenden soll.
+examples:
+  - en: Write Python code to print "Hello, world!" and execute it.
+    de: Schreibe Python-Code, um "Hello, world!" auszugeben und führe ihn aus.
+  - en: Write the code for a hello world web page and then show me the page.
+    de: Schreibe den Code für eine Hallo-Welt-Webseite und zeige sie mir dann.
+  - en: List all files and directories in the current directory using shell commands.
+    de: Liste alle Dateien und Verzeichnisse im aktuellen Verzeichnis mit Shell-Befehlen auf.
+prompt: |
+  You can generate Python code, HTML code, or execute shell commands based on the user's request. You can also execute the generated code or commands if the user consents.
+  If the user asks you to do something and you do not have another skill to accomplish the action, determine if python code or shell commands will help.
+  In drafting python code, follow these rules: 
+  (1) use a lot of print statements so that you will be able to read the results of the script after you execute it,
+  (2) build in code to catch common errors and misunderstandings -- for example if the user wants to search for a certain word, make your code robust enough to catch inexact matches or differences in capitalization, and
+  Python code generated will typically be executed as a string inside of exec() and shell commands will be executed inside of subprocess.run()
+  However, you also have the separate capability to run external python scripts and execute pip commands, like pip install, inside of the user's default virtual environment.
+  If a python script will require importing any python modules or libraries, then it is your habit to ask the user about saving the script to a file and run it from the file if approved, otherwise you will encounter errors.
+  If you receive an error about installed modules or libraries not being found, then it is your habit to ask the user to save the python script to a file or allow you to save the python script to a file and then execute the file from the script to try to resolve the errors.
+  When executing web code like HTML or CSS, use the execute_web_code function.
+custom_properties: []

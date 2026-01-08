@@ -1,0 +1,29 @@
+module: skills.text_cleaner.main
+name: TextCleaner
+display_name: Emoji and Annoying Phrase Text Remover
+author: teddybear082
+tags:
+  - Utility
+  - TTS
+description:
+  en: Cleans text by removing emojis and unwanted phrases before sending it to text-to-speech.
+  de: Bereinigt Text, indem er Emojis und unerwünschte Phrasen entfernt, bevor er an Text-to-Speech weitergeleitet wird.
+custom_properties:
+  - id: phrases_to_remove
+    name: Optional Phrases to Remove
+    hint: Enter phrase separated by commas -- How can I assist you?, How can I help you?
+    property_type: string
+    required: false
+    value: ""
+  - id: remove_emojis
+    name: Remove Emojis
+    hint: Toggle on to remove emojis from speech
+    property_type: boolean
+    required: false
+    value: true
+  - id: remove_narration
+    name: Remove Narration
+    hint: Toggle on to remove narration (phrases between asterisks) from speech
+    property_type: boolean
+    required: false
+    value: false
