@@ -1,0 +1,42 @@
+module: skills.ffmpeg_tools.main
+name: FFmpegTools
+display_name: Audio Editing Tools
+author: teddybear082
+
+tags:
+  - Audio
+  - Video
+  - Utility
+
+auto_activate: false
+discoverable_by_default: false
+
+description:
+  en: |
+    Download FFmpeg and provide tools for common audio processing tasks. Convert audio formats, extract audio from videos, trim audio files, compress audio, and get media file information.
+  de: | 
+    Lade FFmpeg herunter und stelle Werkzeuge für gängige Audioverarbeitungsaufgaben bereit. Konvertiere Audioformate, extrahiere Audio aus Videos, schneide Audiodateien, komprimiere Audio und erhalte Informationen zu Mediendateien.
+discovery_keywords:
+  - convert audio
+  - extract audio
+  - trim audio
+  - compress audio
+  - video processing
+  - audio processing
+  - FFmpeg
+  - media conversion
+  - file conversion
+  - change format
+  - MP3 conversion
+  - audio extraction
+  - cut audio
+  - media info
+  - video info
+
+custom_properties:
+  - id: ffmpeg_download_url
+    name: FFmpeg Download URL
+    hint: URL to download FFmpeg from. Leave blank to use the default GitHub release URL.
+    value: ''
+    required: false
+    property_type: string
