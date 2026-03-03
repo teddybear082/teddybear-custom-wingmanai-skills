@@ -5,6 +5,8 @@ author: teddybear082
 tags:
   - Utility
   - TTS
+auto_activate: true
+discoverable_by_default: false
 description:
   en: Cleans text by removing emojis and unwanted phrases before sending it to text-to-speech.
   de: Bereinigt Text, indem er Emojis und unerwünschte Phrasen entfernt, bevor er an Text-to-Speech weitergeleitet wird.
@@ -24,6 +26,12 @@ custom_properties:
   - id: remove_narration
     name: Remove Narration
     hint: Toggle on to remove narration (phrases between asterisks) from speech
+    property_type: boolean
+    required: false
+    value: false
+  - id: preprocess_english_text
+    name: Preprocess English Text
+    hint: Toggle on to normalize English text (numbers to words, expand abbreviations, etc.) for better TTS
     property_type: boolean
     required: false
     value: false

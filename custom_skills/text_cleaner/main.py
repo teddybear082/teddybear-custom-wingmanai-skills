@@ -4,6 +4,8 @@ from api.interface import SettingsConfig, SkillConfig, WingmanInitializationErro
 from api.enums import LogType
 from services.benchmark import Benchmark
 from skills.skill_base import Skill
+#from .dependencies.preprocess import TextPreprocessor
+from preprocess import TextPreprocessor
 if TYPE_CHECKING:
     from wingmen.open_ai_wingman import OpenAiWingman
     
@@ -18,7 +20,9 @@ class TextCleaner(Skill):
         self.custom_phrases_to_remove = []
         self.remove_emojis = True
         self.remove_narration = False
+        self.preprocess_english_text = False
         self.message_to_clean = ""
+        self.preprocessor = None
         
     async def validate(self) -> list[WingmanInitializationError]:
         errors = await super().validate()
@@ -27,6 +31,20 @@ class TextCleaner(Skill):
         self.custom_phrases_to_remove = [phrase.strip() for phrase in custom_phrases_string.split(",")]
         self.remove_emojis = self.retrieve_custom_property_value("remove_emojis", errors)
         self.remove_narration = self.retrieve_custom_property_value("remove_narration", errors)
+        self.preprocess_english_text = self.retrieve_custom_property_value("preprocess_english_text", errors)
+        
+        if self.preprocess_english_text and self.preprocessor is None:
+            self.preprocessor = TextPreprocessor(
+                remove_urls=False,
+                remove_emails=False,
+                remove_html=True,
+                remove_hashtags=True,
+                remove_mentions=False,
+                remove_punctuation=False,
+                remove_stopwords=False,
+                remove_extra_whitespace=False,
+            )
+            
         return errors
 
     async def on_play_to_user(self, text: str, sound_config: dict) -> str:
@@ -70,6 +88,11 @@ class TextCleaner(Skill):
             
         # Remove extra spaces created during cleanup
         cleaned_text = re.sub(r"\s+", " ", cleaned_text).strip()
+
+        # Preprocess English text if enabled
+        if self.preprocess_english_text and self.preprocessor:
+            cleaned_text = self.preprocessor(cleaned_text)
+
         if self.settings.debug_mode:
             await self.printr.print_async(
                 text=f"TextCleaner: Processed text '{text}' into '{cleaned_text}'",
